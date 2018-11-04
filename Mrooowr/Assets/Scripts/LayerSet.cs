@@ -15,7 +15,7 @@ public class LayerSet : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.CompareTag("Quint")){
-			gameObject.layer = col.transform.gameObject.layer;
+			gameObject.layer = col.gameObject.layer;
 		}
 	}
 }

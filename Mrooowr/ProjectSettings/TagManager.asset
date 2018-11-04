@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Quint
   layers:
   - Default
   - TransparentFX
@@ -13,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Quint-0
+  - Quint-1
+  - Quint-2
+  - Quint-3
+  - Quint-4
   - 
   - 
   - 
@@ -46,4 +47,19 @@ TagManager:
     locked: 0
   - name: chars
     uniqueID: 4061258089
+    locked: 0
+  - name: Quint-0
+    uniqueID: 1577341845
+    locked: 0
+  - name: Quint-1
+    uniqueID: 4182154623
+    locked: 0
+  - name: Quint-2
+    uniqueID: 3955722497
+    locked: 0
+  - name: Quint-3
+    uniqueID: 4159221549
+    locked: 0
+  - name: Quint-4
+    uniqueID: 1020799839
     locked: 0
