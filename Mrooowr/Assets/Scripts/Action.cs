@@ -4,7 +4,9 @@ using UnityEngine;
 using DoodleStudio95;
 
 public class Action : MonoBehaviour {
-	public DoodleAnimationFile origAnim, actionAnim;
+	DoodleAnimationFile origAnim;
+	public DoodleAnimationFile actionAnim;
+
 	public bool doAction = false;
 	//public 
 	// Use this for initialization
