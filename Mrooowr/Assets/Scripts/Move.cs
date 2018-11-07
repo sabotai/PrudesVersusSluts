@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DoodleStudio95;
@@ -10,6 +10,7 @@ public class Move : MonoBehaviour {
 	public float speed = 2f;
 	public bool facingRight = true;
 	public DoodleAnimationFile idleAnim, walkAnim;
+	public int player;
 
 	DoodleAnimator animator;
 
@@ -27,7 +28,9 @@ public class Move : MonoBehaviour {
 			if (Input.GetKey(KeyCode.D)) { 
 				rb.velocity += new Vector2(1.0f, 0f) * speed;
 				if (!facingRight) {
-					transform.localScale *= new Vector2(-1f, 1f);
+					//transform.localScale *= new Vector2(-1f, 1f);
+
+					transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0f, transform.localRotation.z);
 					facingRight = true;
 				}
 			}
@@ -35,7 +38,8 @@ public class Move : MonoBehaviour {
 			if (Input.GetKey(KeyCode.A)) { 
 				rb.velocity += new Vector2(-1.0f, 0f) * speed;
 				if (facingRight){
-					transform.localScale *= new Vector2(-1f, 1f);
+					//transform.localScale *= new Vector2(-1f, 1f);
+					transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180f, transform.localRotation.z);
 					facingRight = false;
 				} 
 			}
@@ -46,14 +50,23 @@ public class Move : MonoBehaviour {
 			if (Input.GetKey(KeyCode.S)) { 
 				rb.velocity += new Vector2(0f,-1f) * speed;
 			}
-			if (rb.velocity.magnitude > 0f)  {
-				if (animator.File != walkAnim) animator.File = walkAnim;
+
+			if (rb.velocity.magnitude > 0f){
+				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
+				if (!GetComponent<Action>().doAction)  {
+					if (animator.File != walkAnim) animator.File = walkAnim;
+				} 
+			}else {
+
+				rb.velocity = Vector2.zero;
+				if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
+
 			}
 		
 		} else {
 
 			rb.velocity = Vector2.zero;
-			if (animator.File != idleAnim) animator.File = idleAnim;
+			if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
 		}
 	}
 }

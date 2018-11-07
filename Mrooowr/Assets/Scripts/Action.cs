@@ -16,11 +16,10 @@ public class Action : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("P1_Action")) doAction = true;
-		if (doAction){
+		if (Input.GetButtonDown("P1_Action") && GetComponent<Move>().selected) {
+			doAction = true;
 
 			Play();
-			doAction = false;
 		}
 
 
@@ -44,12 +43,15 @@ public class Action : MonoBehaviour {
 			GetComponent<Move>().selected = true;
 		}
 		animator.ChangeAnimation(origAnim);
-		//doAction = false;
+		doAction = false;
 		//animator.Stop();
 	}
 
 	public void Play() {
 		StopAllCoroutines();
-		StartCoroutine(PlaySequence());
+		if (actionAnim)		StartCoroutine(PlaySequence()); else doAction = false;
+		transform.GetChild(1).gameObject.layer = gameObject.layer;
+		transform.GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
+		transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
 	}
 }

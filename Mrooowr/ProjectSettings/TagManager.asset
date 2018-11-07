@@ -14,17 +14,17 @@ TagManager:
   - UI
   - 
   - 
-  - Quint-0
-  - Quint-1
-  - Quint-2
-  - Quint-3
-  - Quint-4
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Slice-0
+  - Slice-1
+  - Slice-2
+  - Slice-3
+  - Slice-4
+  - Slice-5
+  - Slice-6
+  - Slice-7
+  - Slice-8
+  - Slice-9
+  - Slice-10
   - 
   - 
   - 
@@ -48,18 +48,36 @@ TagManager:
   - name: chars
     uniqueID: 4061258089
     locked: 0
-  - name: Quint-0
+  - name: Slice-0
     uniqueID: 1577341845
     locked: 0
-  - name: Quint-1
+  - name: Slice-1
     uniqueID: 4182154623
     locked: 0
-  - name: Quint-2
+  - name: Slice-2
     uniqueID: 3955722497
     locked: 0
-  - name: Quint-3
+  - name: Slice-3
     uniqueID: 4159221549
     locked: 0
-  - name: Quint-4
+  - name: Slice-4
     uniqueID: 1020799839
+    locked: 0
+  - name: Slice-5
+    uniqueID: 2428965019
+    locked: 0
+  - name: Slice-6
+    uniqueID: 868047643
+    locked: 0
+  - name: Slice-7
+    uniqueID: 4054403049
+    locked: 0
+  - name: Slice-8
+    uniqueID: 3960132669
+    locked: 0
+  - name: Slice-9
+    uniqueID: 2788626101
+    locked: 0
+  - name: Slice-10
+    uniqueID: 1579171195
     locked: 0

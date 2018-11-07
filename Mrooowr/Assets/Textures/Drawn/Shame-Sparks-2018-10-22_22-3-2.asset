@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Shame-Sparks-2018-10-22_22-3-2
   m_EditorClassIdentifier: 
   frames:
-  - _texture: {fileID: 28715931195323006}
-    _sprite: {fileID: 213548686954038710}
+  - _texture: {fileID: 28249073476065632}
+    _sprite: {fileID: 213212800140218704}
     m_Length: 1
   playbackMode: 1
   framesPerSecond: 8
@@ -24,7 +24,7 @@ MonoBehaviour:
   spriteSheetAssetGUID: 
   sounds: []
   version: 2029
---- !u!28 &28715931195323006
+--- !u!28 &28249073476065632
 Texture2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,7 +63,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!213 &213548686954038710
+--- !u!213 &213212800140218704
 Sprite:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,12 +84,12 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    55745b41d4dbefe43a76e8deb0fa58f3: 213548686954038710
+    00000000000000000000000000000000: 0
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 28715931195323006}
+    texture: {fileID: 28249073476065632}
     alphaTexture: {fileID: 0}
     m_SubMeshes:
     - serializedVersion: 2
@@ -179,7 +179,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 28715931195323006}
+    texture: {fileID: 28249073476065632}
     alphaTexture: {fileID: 0}
     m_SubMeshes:
     - serializedVersion: 2

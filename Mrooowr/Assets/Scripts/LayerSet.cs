@@ -30,10 +30,11 @@ public class LayerSet : MonoBehaviour {
 	}
 	*/
 	void OnTriggerEnter2D(Collider2D col){
+		Debug.Log(gameObject.name + " triggered");
 		if (col.CompareTag("Quint")){
-			Debug.Log("moving " + gameObject.name + " to " + LayerMask.LayerToName(col.gameObject.layer));
-			gameObject.layer = col.gameObject.layer;
-			GetComponent<SpriteRenderer>().sortingLayerName = LayerMask.LayerToName(col.gameObject.layer);
+			Debug.Log("moving " + gameObject.name + " to " + col.gameObject.name);
+			transform.parent.gameObject.layer = LayerMask.NameToLayer(col.gameObject.name);
+			transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = col.gameObject.name;
 		}
 	}
 }
