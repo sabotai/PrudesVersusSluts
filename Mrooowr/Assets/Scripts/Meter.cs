@@ -11,7 +11,15 @@ public class Meter : MonoBehaviour {
 	public Transform slutParent, prudeParent;
 	// Use this for initialization
 	void Start () {
-		if (isSlut) amt = -1f * max; else amt = 1f * max;
+        if (isSlut)
+        {
+            amt = -1f * max;
+        }
+        else
+        {
+            amt = 1f * max;
+            GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
+        }
 	}
 	
 	// Update is called once per frame
@@ -21,7 +29,8 @@ public class Meter : MonoBehaviour {
 			transform.parent = prudeParent;
 			GetComponent<Action>().SetAnim("prude");
 			GetComponent<Move>().SetAnim("prude");
-			if (GetComponent<Move>().selected){
+            GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
+            if (GetComponent<Move>().selected){
 				Debug.Log("PRUDES WIN!");
 				GetComponent<Move>().selected = false;
 				transform.parent.gameObject.GetComponent<Selection>().Select();
@@ -33,7 +42,8 @@ public class Meter : MonoBehaviour {
 			isSlut = true;
 			GetComponent<Action>().SetAnim("slut");
 			GetComponent<Move>().SetAnim("slut");
-			if (GetComponent<Move>().selected){
+            GetComponent<SpriteRenderer>().color = Color.white;
+            if (GetComponent<Move>().selected){
 				Debug.Log("SLUTS WIN!");
 				GetComponent<Move>().selected = false;
 				transform.parent.gameObject.GetComponent<Selection>().Select();
