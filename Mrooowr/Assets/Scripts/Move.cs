@@ -10,6 +10,8 @@ public class Move : MonoBehaviour {
 	public float speed = 2f;
 	public bool facingRight = true;
 	public DoodleAnimationFile idleAnim, walkAnim;
+	public DoodleAnimationFile slutIdleAnim, slutWalkAnim;
+	public DoodleAnimationFile prudeIdleAnim, prudeWalkAnim;
 	public int player;
 
 	DoodleAnimator animator;
@@ -18,14 +20,22 @@ public class Move : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<DoodleAnimator>();
+		if (!slutIdleAnim) slutIdleAnim = idleAnim;
+		if (!slutWalkAnim) slutWalkAnim = walkAnim;
+		if (!prudeIdleAnim) prudeIdleAnim = idleAnim;
+		if (!prudeWalkAnim) prudeWalkAnim = walkAnim;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (GetComponent<Meter>().isSlut) player = 1; else player = 2;
+
 		if (selected){
 			rb.velocity = Vector2.zero;
 
-			if (Input.GetKey(KeyCode.D)) { 
+			//if (Input.GetKey(KeyCode.D)) { 
+			if (Input.GetAxis("P" + player + "_Horizontal") > 0f){
 				rb.velocity += new Vector2(1.0f, 0f) * speed;
 				if (!facingRight) {
 					//transform.localScale *= new Vector2(-1f, 1f);
@@ -35,7 +45,7 @@ public class Move : MonoBehaviour {
 				}
 			}
 
-			if (Input.GetKey(KeyCode.A)) { 
+			if (Input.GetAxis("P" + player + "_Horizontal") < 0f){
 				rb.velocity += new Vector2(-1.0f, 0f) * speed;
 				if (facingRight){
 					//transform.localScale *= new Vector2(-1f, 1f);
@@ -43,11 +53,11 @@ public class Move : MonoBehaviour {
 					facingRight = false;
 				} 
 			}
-			if (Input.GetKey(KeyCode.W)) { 
+			if (Input.GetAxis("P" + player + "_Vertical") > 0f){
 				rb.velocity += new Vector2(0f, 1f) * speed;
 			}
 
-			if (Input.GetKey(KeyCode.S)) { 
+			if (Input.GetAxis("P" + player + "_Vertical") < 0f){
 				rb.velocity += new Vector2(0f,-1f) * speed;
 			}
 
@@ -67,6 +77,17 @@ public class Move : MonoBehaviour {
 
 			rb.velocity = Vector2.zero;
 			if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
+		}
+	}
+
+	public void SetAnim(string anim){
+		if (anim == "slut") {
+			idleAnim = slutIdleAnim;
+			walkAnim = slutWalkAnim;
+		}
+		if (anim == "prude") {
+			idleAnim = prudeIdleAnim;
+			walkAnim = prudeWalkAnim;
 		}
 	}
 }

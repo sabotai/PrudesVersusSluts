@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FryingPan-2.unity
     guid: e5b78c73ad51f5d4899fe1a3b72f6870
+  - enabled: 1
+    path: Assets/Scenes/FryingPan-3.unity
+    guid: fbbe99d8e46ac8240b775b449d0bd493
   m_configObjects: {}

@@ -5,18 +5,20 @@ using DoodleStudio95;
 
 public class Action : MonoBehaviour {
 	DoodleAnimationFile origAnim;
-	public DoodleAnimationFile actionAnim;
+	public DoodleAnimationFile actionAnim, slutActionAnim, prudeActionAnim;
 
 	public bool doAction = false;
 	//public 
 	// Use this for initialization
 	void Start () {
+		if (!slutActionAnim) slutActionAnim = actionAnim;
+		if (!prudeActionAnim) prudeActionAnim = actionAnim;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("P1_Action") && GetComponent<Move>().selected) {
+		if (Input.GetButtonDown("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
 			doAction = true;
 
 			Play();
@@ -53,5 +55,14 @@ public class Action : MonoBehaviour {
 		transform.GetChild(1).gameObject.layer = gameObject.layer;
 		transform.GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
 		transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+	}
+
+	public void SetAnim(string anim){
+		if (anim == "slut") {
+			actionAnim = slutActionAnim;
+		}
+		if (anim == "prude") {
+			actionAnim = prudeActionAnim;
+		}
 	}
 }
