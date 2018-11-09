@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 224811700375008086}
   - component: {fileID: 223840230463176654}
   - component: {fileID: 114694707274125926}
+  - component: {fileID: 114687689286000894}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -306,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.01
+  partDmg: 0.05
 --- !u!114 &114222880537419696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,6 +466,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
   m_Text: SLUT
+--- !u!114 &114687689286000894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638169987304334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d01fcb3b6ddaa40a5305bdc76e4088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -16
+  maxX: 16
+  minY: -9
+  maxY: 9
+  catchSpeed: 0.05
 --- !u!114 &114694707274125926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -528,6 +545,7 @@ MonoBehaviour:
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
   doAction: 0
+  auto: 0
 --- !u!198 &198135143094008198
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -5280,6 +5298,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.23}
+  m_AnchoredPosition: {x: 0, y: 1.94}
   m_SizeDelta: {x: 136.51, y: 27.07}
   m_Pivot: {x: 0.500862, y: 0.51207966}

@@ -63,7 +63,8 @@ public class Action : MonoBehaviour {
 		if (actionAnim)		StartCoroutine(PlaySequence()); else doAction = false;
 		transform.GetChild(1).gameObject.layer = gameObject.layer;
 		transform.GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
-		if (!transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().isPlaying) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+		//if (!transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().isPlaying) 
+		transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
 	}
 
 	public void SetAnim(string anim){

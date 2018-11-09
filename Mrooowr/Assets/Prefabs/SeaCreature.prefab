@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 199209118281417198}
   - component: {fileID: 198578956225639630}
   - component: {fileID: 114595619320715722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222828642039256986}
   - component: {fileID: 114673929360395008}
   - component: {fileID: 114635049680013002}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4859603784532508}
   - component: {fileID: 61297585777153122}
   - component: {fileID: 114103990719134070}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 61959641415175652}
   - component: {fileID: 114800665274469730}
   - component: {fileID: 222416316563128908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SeaCreature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 114469598201587600}
   - component: {fileID: 114587297117364630}
   - component: {fileID: 114971738461474422}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,8 @@ GameObject:
   - component: {fileID: 224849553774395912}
   - component: {fileID: 223047339440576236}
   - component: {fileID: 114549370967755900}
-  m_Layer: 0
+  - component: {fileID: 114523477395073068}
+  m_Layer: 11
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +267,7 @@ MonoBehaviour:
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
   doAction: 0
+  auto: 0
 --- !u!114 &114469598201587600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,6 +295,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114523477395073068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634265477697510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d01fcb3b6ddaa40a5305bdc76e4088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -16
+  maxX: 16
+  minY: -9
+  maxY: 9
+  catchSpeed: 0.05
 --- !u!114 &114549370967755900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5193,7 +5211,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634265477697510}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.037708927, y: 0.037708927, z: 0.037708927}
   m_Children:
@@ -5203,6 +5221,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3.14}
+  m_AnchoredPosition: {x: 0, y: 2.76}
   m_SizeDelta: {x: 136.51, y: 27.07}
   m_Pivot: {x: 0.500862, y: 0.51207966}

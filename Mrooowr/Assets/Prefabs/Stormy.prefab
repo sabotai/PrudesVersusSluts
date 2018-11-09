@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222378392092749586}
   - component: {fileID: 114371876268277836}
   - component: {fileID: 114765170074990032}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 224096707008713284}
   - component: {fileID: 223753100288383254}
   - component: {fileID: 114170715648121460}
-  m_Layer: 0
+  - component: {fileID: 114767794860152964}
+  m_Layer: 17
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ GameObject:
   - component: {fileID: 58424140527749356}
   - component: {fileID: 114908247650034704}
   - component: {fileID: 222945495912554006}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Stormy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +80,7 @@ GameObject:
   - component: {fileID: 4538021305369650}
   - component: {fileID: 61834237418437666}
   - component: {fileID: 114893317114131440}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +99,7 @@ GameObject:
   - component: {fileID: 114389593724329602}
   - component: {fileID: 114856052091513886}
   - component: {fileID: 114251135821290636}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 199878649105729520}
   - component: {fileID: 198471167432720590}
   - component: {fileID: 114555292685938204}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983027444897570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.037, y: 0.533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224719207757476682}
@@ -181,9 +182,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17, y: -0.48}
+  m_Offset: {x: 0.17, y: -0.32}
   serializedVersion: 2
-  m_Radius: 1.16
+  m_Radius: 1.07
 --- !u!61 &61834237418437666
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -224,6 +225,7 @@ MonoBehaviour:
   slutActionAnim: {fileID: 11400000, guid: ec0569d9ecbab504aa0f16ccf55b65be, type: 2}
   prudeActionAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   doAction: 0
+  auto: 0
 --- !u!114 &114170715648121460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.01
+  partDmg: 0.025
 --- !u!114 &114647339087144710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,6 +370,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c362d69567644b54784d5f1bbd31b4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114767794860152964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086572869078004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d01fcb3b6ddaa40a5305bdc76e4088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -16
+  maxX: 16
+  minY: -9
+  maxY: 9
+  catchSpeed: 0.05
 --- !u!114 &114856052091513886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,7 +467,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983027444897570}
   serializedVersion: 5
-  lengthInSec: 0.8
+  lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -461,7 +479,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.1
+    scalar: 1.5
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -5067,7 +5085,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213734900758982720, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  m_Sprite: {fileID: 213330311691555416, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

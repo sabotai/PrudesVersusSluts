@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222292845801312320}
   - component: {fileID: 114410889919092568}
   - component: {fileID: 114709299670703290}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 224137686457540346}
   - component: {fileID: 223996687441332362}
   - component: {fileID: 114821739483328810}
-  m_Layer: 0
+  - component: {fileID: 114081114901948184}
+  m_Layer: 12
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 199916549745813378}
   - component: {fileID: 198888723301361982}
   - component: {fileID: 114253119899539638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ GameObject:
   - component: {fileID: 4227300549613908}
   - component: {fileID: 61637970480003900}
   - component: {fileID: 114733575291281974}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 70058122389379986}
   - component: {fileID: 222762574205841612}
   - component: {fileID: 114288765102183146}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Eggy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 114959942033470220}
   - component: {fileID: 114294663559687384}
   - component: {fileID: 114150175238913206}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +210,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.29}
   m_Size: {x: 1.15, y: 2.12}
   m_Direction: 0
+--- !u!114 &114081114901948184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266446014532384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d01fcb3b6ddaa40a5305bdc76e4088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -16
+  maxX: 16
+  minY: -9
+  maxY: 9
+  catchSpeed: 0.05
 --- !u!114 &114150175238913206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,10 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345a6fc71ac9d644db9f469bc2bbb365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAnim: {fileID: 0}
+  actionAnim: {fileID: 11400000, guid: 615b15b376145d0409c2c2764aeddd90, type: 2}
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
   doAction: 0
+  auto: 1
 --- !u!114 &114410889919092568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  speed: 4
+  speed: 5
   facingRight: 0
   idleAnim: {fileID: 11400000, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   walkAnim: {fileID: 11400000, guid: 1858dfced81a75c4683db6622aa39682, type: 2}
@@ -461,7 +479,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.1
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -5067,7 +5085,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213595817502769684, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213198413831311138, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -39,7 +39,7 @@ public class Move : MonoBehaviour {
 				rb.velocity += new Vector2(1.0f, 0f) * speed;
 				if (!facingRight) {
 					//transform.localScale *= new Vector2(-1f, 1f);
-
+					transform.GetChild(2).GetChild(0).GetChild(0).gameObject.GetComponent<Labels>().FixRot();
 					transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0f, transform.localRotation.z);
 					facingRight = true;
 				}
@@ -49,6 +49,7 @@ public class Move : MonoBehaviour {
 				rb.velocity += new Vector2(-1.0f, 0f) * speed;
 				if (facingRight){
 					//transform.localScale *= new Vector2(-1f, 1f);
+					transform.GetChild(2).GetChild(0).GetChild(0).gameObject.GetComponent<Labels>().FixRot();
 					transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180f, transform.localRotation.z);
 					facingRight = false;
 				} 

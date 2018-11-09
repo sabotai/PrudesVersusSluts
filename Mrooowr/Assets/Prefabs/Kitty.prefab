@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 224175798990564874}
   - component: {fileID: 223770138771201210}
   - component: {fileID: 114601539932038218}
-  m_Layer: 0
+  - component: {fileID: 114604078541527046}
+  m_Layer: 13
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ GameObject:
   - component: {fileID: 222838015897872230}
   - component: {fileID: 114558976459927648}
   - component: {fileID: 114200795207586748}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 199032534132648124}
   - component: {fileID: 198081902111404540}
   - component: {fileID: 114500855800621242}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +81,7 @@ GameObject:
   - component: {fileID: 58114731182645106}
   - component: {fileID: 114912887917581440}
   - component: {fileID: 222943616470346944}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Kitty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 4908729987526684}
   - component: {fileID: 61587663123871458}
   - component: {fileID: 114031857749422508}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 114608360511622754}
   - component: {fileID: 114985229684250746}
   - component: {fileID: 114036386495092694}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +225,7 @@ MonoBehaviour:
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
   doAction: 0
+  auto: 0
 --- !u!114 &114031857749422508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70dca1987a59b64d933f0df3c1347d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 0
+  selected: 1
   speed: 8
   facingRight: 1
   idleAnim: {fileID: 11400000, guid: 18dfc079831314b459d817f31aed425c, type: 2}
@@ -292,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.01
+  partDmg: 0.001
 --- !u!114 &114558976459927648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,9 +318,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 4c538c1db22b22545bd8077444826950, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 18
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -373,6 +375,22 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 10
+--- !u!114 &114604078541527046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161087459154384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d01fcb3b6ddaa40a5305bdc76e4088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -16
+  maxX: 16
+  minY: -9
+  maxY: 9
+  catchSpeed: 0.05
 --- !u!114 &114608360511622754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,7 +708,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5067,7 +5085,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213171352151965296, guid: 18dfc079831314b459d817f31aed425c, type: 2}
+  m_Sprite: {fileID: 213272519963392098, guid: 18dfc079831314b459d817f31aed425c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5146,7 +5164,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161087459154384}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.021624753, y: 0.021624753, z: 0.021624753}
   m_Children:
@@ -5156,7 +5174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.95}
+  m_AnchoredPosition: {x: 0, y: 0.68}
   m_SizeDelta: {x: 136.51, y: 27.07}
   m_Pivot: {x: 0.500862, y: 0.51207966}
 --- !u!224 &224457457731327790
