@@ -31,7 +31,7 @@ public class Move : MonoBehaviour {
 	void Update () {
 		if (GetComponent<Meter>().isSlut) player = 1; else player = 2;
 
-		if (selected){
+		if (selected && !GetComponent<Action>().doAction){
 			rb.velocity = Vector2.zero;
 
 			//if (Input.GetKey(KeyCode.D)) { 

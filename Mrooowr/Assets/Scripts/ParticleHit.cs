@@ -16,16 +16,24 @@ public class ParticleHit : MonoBehaviour {
 
     void Update(){
     	var col = part.collision;
-    	if (transform.parent.gameObject.layer != col.collidesWith.value){
-    		//Debug.Log("changing " + LayerMask.LayerToName(col.collidesWith.value) + " to " + LayerMask.LayerToName(transform.parent.gameObject.layer));
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(transform.parent.gameObject.layer));
+    	int newLayer = transform.parent.gameObject.layer;
+
+    	Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
+    	if (newLayer == 8){    		
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1));
+     	} else if (newLayer == 18){
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1));
+ 
+    	} else if (newLayer >= 8) {
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1));
     	}
+   	
     }
 
     void OnParticleCollision(GameObject other)
     {	
     	if (other != transform.parent.gameObject){
-	    	Debug.Log("hit " + other.name);
+	    	//Debug.Log("hit " + other.name);
 	        int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
 	        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
@@ -40,7 +48,7 @@ public class ParticleHit : MonoBehaviour {
 	            if (rb)
 	            {
 	                Vector3 pos = collisionEvents[i].intersection;
-	                Vector3 force = collisionEvents[i].velocity * 10;
+	                Vector3 force = collisionEvents[i].velocity * 5f * Mathf.Abs(meter.amt);
 	                rb.AddForce(force);
 	            }
 	            if (meter){

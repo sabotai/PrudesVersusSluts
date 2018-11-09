@@ -8,6 +8,7 @@ public class Action : MonoBehaviour {
 	public DoodleAnimationFile actionAnim, slutActionAnim, prudeActionAnim;
 
 	public bool doAction = false;
+	public bool auto = false;
 	//public 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +19,18 @@ public class Action : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
-			doAction = true;
+		if (auto){
+			if (Input.GetButton("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
+					doAction = true;
 
-			Play();
+				Play();
+			} else {}
+		} else {
+			if (Input.GetButtonDown("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
+					doAction = true;
+
+				Play();
+			}
 		}
 
 
@@ -31,7 +40,7 @@ public class Action : MonoBehaviour {
 		DoodleAnimator animator = GetComponent<DoodleAnimator>();
 		int i = 0;
 		while(i < 1) {
-			GetComponent<Move>().selected = false;
+			//GetComponent<Move>().selected = false;
 			origAnim = GetComponent<DoodleAnimator>().File;
 			// Set the new animation
 			animator.ChangeAnimation(actionAnim);
@@ -42,7 +51,7 @@ public class Action : MonoBehaviour {
 			// Loop if we've reached the end
 			//if (i >= m_Animations.Length && m_Loop)
 			//	i = 0;
-			GetComponent<Move>().selected = true;
+			//GetComponent<Move>().selected = true;
 		}
 		animator.ChangeAnimation(origAnim);
 		doAction = false;
@@ -54,7 +63,7 @@ public class Action : MonoBehaviour {
 		if (actionAnim)		StartCoroutine(PlaySequence()); else doAction = false;
 		transform.GetChild(1).gameObject.layer = gameObject.layer;
 		transform.GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
-		transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+		if (!transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().isPlaying) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
 	}
 
 	public void SetAnim(string anim){
