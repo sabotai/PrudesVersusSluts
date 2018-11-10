@@ -13,6 +13,7 @@ public class Move : MonoBehaviour {
 	public DoodleAnimationFile slutIdleAnim, slutWalkAnim;
 	public DoodleAnimationFile prudeIdleAnim, prudeWalkAnim;
 	public int player;
+	AudioSource aud;
 
 	DoodleAnimator animator;
 
@@ -24,7 +25,7 @@ public class Move : MonoBehaviour {
 		if (!slutWalkAnim) slutWalkAnim = walkAnim;
 		if (!prudeIdleAnim) prudeIdleAnim = idleAnim;
 		if (!prudeWalkAnim) prudeWalkAnim = walkAnim;
-
+		aud = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -63,12 +64,13 @@ public class Move : MonoBehaviour {
 			}
 
 			if (rb.velocity.magnitude > 0f){
+				if (!aud.isPlaying) aud.Play();
 				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
 				if (!GetComponent<Action>().doAction)  {
 					if (animator.File != walkAnim) animator.File = walkAnim;
 				} 
 			}else {
-
+				aud.Stop();
 				rb.velocity = Vector2.zero;
 				if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
 
@@ -76,6 +78,7 @@ public class Move : MonoBehaviour {
 		
 		} else {
 
+			aud.Stop();
 			rb.velocity = Vector2.zero;
 			if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
 		}
