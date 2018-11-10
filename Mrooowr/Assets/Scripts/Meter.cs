@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Meter : MonoBehaviour {
 
-	public bool isSlut = true;
+	bool isSlut = true;
 	public float amt;
 	public float max = 1f;
+	public AudioClip hurtClip, slutConvertClip, prudeConvertClip;
 
 	public Transform slutParent, prudeParent;
 	// Use this for initialization
 	void Start () {
-        if (isSlut)
+		if (!slutParent) slutParent = GameObject.Find("Sluts").transform;
+		if (!prudeParent) prudeParent = GameObject.Find("Prudes").transform;
+        if (transform.parent.gameObject.GetComponent<Selection>().player == 1)
         {
+        	isSlut = true;
             amt = -1f * max;
         }
         else
         {
+        	isSlut = false;
             amt = 1f * max;
             GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.6f, 0.6f);
         }
@@ -25,36 +30,43 @@ public class Meter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (amt > 0 && isSlut) {
-			isSlut = false; 
-
-			transform.parent = prudeParent;
-			GetComponent<Action>().SetAnim("prude");
-			GetComponent<Move>().SetAnim("prude");
-
-            GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
-            if (GetComponent<Move>().selected){
-				//Debug.Log("PRUDES WIN!");
-				GetComponent<Move>().selected = false;
-				slutParent.gameObject.GetComponent<Selection>().CycleSelection();
-				//transform.parent.gameObject.GetComponent<Selection>().Select();
-			}
-
-		}else if (amt < 0 && !isSlut) {
-
-			transform.parent = slutParent;
-			isSlut = true;
-			GetComponent<Action>().SetAnim("slut");
-			GetComponent<Move>().SetAnim("slut");
-            GetComponent<SpriteRenderer>().color = Color.white;
-            if (GetComponent<Move>().selected){
-				//Debug.Log("SLUTS WIN!");
-				GetComponent<Move>().selected = false;
-
-				prudeParent.gameObject.GetComponent<Selection>().CycleSelection();
-			}
-
+			Prudify();
+		} else if (amt < 0 && !isSlut) {
+			Slutify();
 		}
 
 		amt = Mathf.Clamp(amt, -max, max);
+	}
+
+	public void Prudify(){
+		GetComponent<AudioSource>().PlayOneShot(prudeConvertClip, 0.2f);
+		isSlut = false; 
+
+		transform.parent = prudeParent;
+		GetComponent<Action>().SetAnim("prude");
+		GetComponent<Move>().SetAnim("prude");
+
+        GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
+        if (GetComponent<Move>().selected){
+			//Debug.Log("PRUDES WIN!");
+			GetComponent<Move>().selected = false;
+			slutParent.gameObject.GetComponent<Selection>().CycleSelection();
+			//transform.parent.gameObject.GetComponent<Selection>().Select();
+		}
+	}
+	public void Slutify(){
+		GetComponent<AudioSource>().PlayOneShot(slutConvertClip, 0.2f);
+
+		transform.parent = slutParent;
+		isSlut = true;
+		GetComponent<Action>().SetAnim("slut");
+		GetComponent<Move>().SetAnim("slut");
+        GetComponent<SpriteRenderer>().color = Color.white;
+        if (GetComponent<Move>().selected){
+			//Debug.Log("SLUTS WIN!");
+			GetComponent<Move>().selected = false;
+
+			prudeParent.gameObject.GetComponent<Selection>().CycleSelection();
+		}
 	}
 }

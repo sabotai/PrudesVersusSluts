@@ -98,9 +98,10 @@ GameObject:
   - component: {fileID: 70058122389379986}
   - component: {fileID: 222762574205841612}
   - component: {fileID: 114288765102183146}
+  - component: {fileID: 82072701835357064}
   m_Layer: 12
   m_Name: Eggy
-  m_TagString: Untagged
+  m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +211,101 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.29}
   m_Size: {x: 1.15, y: 2.12}
   m_Direction: 0
+--- !u!82 &82072701835357064
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897057575640120}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a9b6a6fcb5ff5e84087e050cff7acb5f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.85
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114081114901948184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +321,7 @@ MonoBehaviour:
   maxX: 16
   minY: -9
   maxY: 9
-  catchSpeed: 0.05
+  catchSpeed: 0.035
 --- !u!114 &114150175238913206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,9 +385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd294c282f77414e946f9614b611db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSlut: 0
   amt: 0
   max: 0.15
+  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
+  slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
+  prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!114 &114294663559687384
@@ -334,6 +432,7 @@ MonoBehaviour:
   actionAnim: {fileID: 11400000, guid: 615b15b376145d0409c2c2764aeddd90, type: 2}
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
+  actionClip: {fileID: 8300000, guid: 4af2194e86fe61c45adf7ea83c12a82c, type: 3}
   doAction: 0
   auto: 1
 --- !u!114 &114410889919092568
@@ -389,7 +488,6 @@ MonoBehaviour:
   slutWalkAnim: {fileID: 0}
   prudeIdleAnim: {fileID: 0}
   prudeWalkAnim: {fileID: 0}
-  player: 2
 --- !u!114 &114709299670703290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5085,7 +5183,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213198413831311138, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213595817502769684, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5192,7 +5290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7, y: 1.36}
+  m_AnchoredPosition: {x: 5.7, y: 0.26}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224854243396937870

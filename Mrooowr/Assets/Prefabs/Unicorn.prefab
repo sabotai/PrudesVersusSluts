@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114706639847456868}
   - component: {fileID: 114361623204918246}
   - component: {fileID: 114141304856306884}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 222649521353705470}
   - component: {fileID: 114593070548330420}
   - component: {fileID: 114819996981676128}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4383036395443936}
   - component: {fileID: 61566348519127196}
   - component: {fileID: 114447849344038308}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 223466423884331520}
   - component: {fileID: 114508702435722026}
   - component: {fileID: 114593037263384638}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,9 +99,10 @@ GameObject:
   - component: {fileID: 58644843431044536}
   - component: {fileID: 114151536317805676}
   - component: {fileID: 222059328340251800}
-  m_Layer: 0
+  - component: {fileID: 82217419758738328}
+  m_Layer: 16
   m_Name: Unicorn
-  m_TagString: Untagged
+  m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +118,7 @@ GameObject:
   - component: {fileID: 199984144711193162}
   - component: {fileID: 198611619559018430}
   - component: {fileID: 114622764765502954}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,6 +211,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!82 &82217419758738328
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660177177405656}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da67f3650d244de439ae883e65be7dd1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.85
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114141304856306884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,9 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd294c282f77414e946f9614b611db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSlut: 1
   amt: 0
   max: 1
+  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
+  slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
+  prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!114 &114160227489903896
@@ -254,6 +352,7 @@ MonoBehaviour:
   actionAnim: {fileID: 11400000, guid: 950386e8e38d0b446beac4363aa0a618, type: 2}
   slutActionAnim: {fileID: 0}
   prudeActionAnim: {fileID: 0}
+  actionClip: {fileID: 8300000, guid: 4af2194e86fe61c45adf7ea83c12a82c, type: 3}
   doAction: 0
   auto: 0
 --- !u!114 &114361623204918246
@@ -294,14 +393,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
+  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
     overrideFileSettings: 0
     customPlaybackMode: 1
-    customFramesPerSecond: 8
+    customFramesPerSecond: 6
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
     customFilterMode: 2
@@ -355,7 +454,7 @@ MonoBehaviour:
   maxX: 16
   minY: -9
   maxY: 9
-  catchSpeed: 0.05
+  catchSpeed: 0.035
 --- !u!114 &114593070548330420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -453,13 +552,12 @@ MonoBehaviour:
   selected: 0
   speed: 5
   facingRight: 1
-  idleAnim: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
+  idleAnim: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
   walkAnim: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
   slutIdleAnim: {fileID: 0}
   slutWalkAnim: {fileID: 0}
   prudeIdleAnim: {fileID: 0}
   prudeWalkAnim: {fileID: 0}
-  player: 1
 --- !u!198 &198611619559018430
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -5085,7 +5183,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213970655285255348, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5093,7 +5191,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &222059328340251800
@@ -5192,7 +5290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.105000004}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.73, y: -2.34}
+  m_AnchoredPosition: {x: -5.11, y: -2.74}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224918702427991194

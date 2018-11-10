@@ -12,7 +12,7 @@ public class Move : MonoBehaviour {
 	public DoodleAnimationFile idleAnim, walkAnim;
 	public DoodleAnimationFile slutIdleAnim, slutWalkAnim;
 	public DoodleAnimationFile prudeIdleAnim, prudeWalkAnim;
-	public int player;
+	int player;
 	AudioSource aud;
 
 	DoodleAnimator animator;
@@ -26,11 +26,12 @@ public class Move : MonoBehaviour {
 		if (!prudeIdleAnim) prudeIdleAnim = idleAnim;
 		if (!prudeWalkAnim) prudeWalkAnim = walkAnim;
 		aud = GetComponent<AudioSource>();
+		player = transform.parent.gameObject.GetComponent<Selection>().player;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (GetComponent<Meter>().isSlut) player = 1; else player = 2;
+		player = transform.parent.gameObject.GetComponent<Selection>().player;
 
 		if (selected && !GetComponent<Action>().doAction){
 			rb.velocity = Vector2.zero;

@@ -3,41 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ConstrainPos : MonoBehaviour {
-	public int minX, maxX, minY, maxY;
+	public float minX, maxX, minY, maxY;
 	Vector3 origPos;
 	public float catchSpeed = 0.03f;
+	public Vector3 origV3;
 	// Use this for initialization
 	void Start () {
 		origPos = transform.localPosition;
+		minX = -16f;
+		maxX = 16f;
+		minY = -9f;
+		maxY = 9f;
+		catchSpeed = 0.8f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x >= maxX || transform.position.x <= minX || transform.position.y <= minY || transform.position.y >= maxY){
-			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), Mathf.Clamp(transform.position.y, minY, maxY), transform.position.z);
-		} else {
-			transform.localPosition = Vector3.Lerp(transform.localPosition, origPos, catchSpeed);
-		}
+		float newMaxX = maxX + Camera.main.transform.position.x;
+		float newMaxY = maxY + Camera.main.transform.position.y;
+		float newMinX = minX + Camera.main.transform.position.x;
+		float newMinY = minY + Camera.main.transform.position.y;
+		origV3 = transform.parent.TransformPoint(origPos); //must convert to world space using parent!!
+		//Debug.Log("origV3 = " + origV3);
+		
+		transform.position = new Vector3(Mathf.Clamp(origV3.x, newMinX, newMaxX), Mathf.Clamp(origV3.y, newMinY, newMaxY), origV3.z);
 
-		/* new method test
-
-				if (transform.position.x >= maxX){
-			transform.position = Vector3.Lerp(transform.position, new Vector3(maxX, transform.position.y, transform.position.z), catchSpeed);
-		} 
-		if (transform.position.x <= minX) {
-			transform.position = Vector3.Lerp(transform.position, new Vector3(minX, transform.position.y, transform.position.z), catchSpeed);
-
-		}
-
-		if (transform.position.y <= minY){
-
-			transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.y, minY, transform.position.z), catchSpeed);
-		}
-
-		if (transform.position.y >= maxY){
-			transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.y, maxY, transform.position.z), catchSpeed);
-
-		}
-		*/
 	}
 }

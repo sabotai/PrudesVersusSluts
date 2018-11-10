@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Quint
+  - Slot
+  - Wall
+  - Characters
+  - Bounds
   layers:
   - Default
   - TransparentFX

@@ -20,12 +20,12 @@ public class ParticleHit : MonoBehaviour {
 
     	Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
     	if (newLayer == 8){    		
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1));
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1), "Bounds");
      	} else if (newLayer == 18){
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1));
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), "Bounds");
  
     	} else if (newLayer >= 8) {
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1));
+    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1), "Bounds");
     	}
    	
     }
@@ -41,18 +41,20 @@ public class ParticleHit : MonoBehaviour {
 
 	        Meter meter = other.GetComponent<Meter>();
 	        float hitAmt = partDmg;
-	        if (transform.parent.gameObject.GetComponent<Meter>().isSlut) hitAmt *= -1f;
+	        if (transform.parent.parent.gameObject.GetComponent<Selection>().player == 1) hitAmt *= -1f;
 
 	        while (i < numCollisionEvents)
 	        {
 	            if (rb)
-	            {
+	            {	
+
 	                Vector3 pos = collisionEvents[i].intersection;
 	                Vector3 force = collisionEvents[i].velocity * 5f * Mathf.Abs(meter.amt);
 	                rb.AddForce(force);
 	            }
 	            if (meter){
 	            	meter.amt += hitAmt;
+	            	other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Meter>().hurtClip, 0.2f);
 	            }
 	            i++;
 	        }

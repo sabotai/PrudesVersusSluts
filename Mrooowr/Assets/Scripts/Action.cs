@@ -6,7 +6,7 @@ using DoodleStudio95;
 public class Action : MonoBehaviour {
 	DoodleAnimationFile origAnim;
 	public DoodleAnimationFile actionAnim, slutActionAnim, prudeActionAnim;
-
+	public AudioClip actionClip;
 	public bool doAction = false;
 	public bool auto = false;
 	//public 
@@ -20,19 +20,17 @@ public class Action : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (auto){
-			if (Input.GetButton("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
-					doAction = true;
-
+			if (!doAction && Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
+				doAction = true;
 				Play();
-			} else {}
+			}
 		} else {
-			if (Input.GetButtonDown("P" + GetComponent<Move>().player + "_Action") && GetComponent<Move>().selected) {
-					doAction = true;
-
+			if (!doAction && Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
+				doAction = true;
 				Play();
 			}
 		}
-
+		if (doAction) GetComponent<AudioSource>().PlayOneShot(actionClip, 0.1f);
 
 	}
 
@@ -60,7 +58,11 @@ public class Action : MonoBehaviour {
 
 	public void Play() {
 		StopAllCoroutines();
-		if (actionAnim)		StartCoroutine(PlaySequence()); else doAction = false;
+		if (actionAnim)		{
+			StartCoroutine(PlaySequence()); 
+		} else {
+			doAction = false;
+		}
 		transform.GetChild(1).gameObject.layer = gameObject.layer;
 		transform.GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
 		//if (!transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().isPlaying) 
