@@ -873,8 +873,7 @@ MonoBehaviour:
   - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
   - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
-  - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
+  - {fileID: 1416131170247956, guid: 3f8236aa01d9f674da68d4bb77fbe172, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &313665425
 GameObject:
@@ -1787,13 +1786,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_File: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
     overrideFileSettings: 0
-    customPlaybackMode: 1
+    customPlaybackMode: 2
     customFramesPerSecond: 6
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
@@ -1859,12 +1858,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 1660177177405656, guid: e8c402fdf1300214087d8aeb10e9a4d3, type: 2}
-  - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
+  - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
+  - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
-  - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
+  - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &715927367
 GameObject:
@@ -2168,13 +2166,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_File: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
     overrideFileSettings: 0
-    customPlaybackMode: 1
+    customPlaybackMode: 2
     customFramesPerSecond: 6
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
@@ -2218,7 +2216,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2240,12 +2238,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 1660177177405656, guid: e8c402fdf1300214087d8aeb10e9a4d3, type: 2}
-  - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
+  - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
+  - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
-  - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
+  - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &875066834
 GameObject:
@@ -3005,8 +3002,7 @@ MonoBehaviour:
   - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
   - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
-  - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
+  - {fileID: 1416131170247956, guid: 3f8236aa01d9f674da68d4bb77fbe172, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &1232121237
 GameObject:
@@ -3872,7 +3868,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f3feee7c2ccfae74f94efbf9cd654b26, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4281,7 +4277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e291bf631eb0764b8676dd00e81bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAmt: 5
+  timerAmt: 2
   timerRunning: 1
 --- !u!1 &1632656993
 GameObject:
@@ -5846,7 +5842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_File: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -5918,12 +5914,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 1660177177405656, guid: e8c402fdf1300214087d8aeb10e9a4d3, type: 2}
-  - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
+  - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
+  - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
-  - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
+  - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &2012451225
 GameObject:
@@ -6093,8 +6088,7 @@ MonoBehaviour:
   - {fileID: 1897057575640120, guid: b9c8d229364b65d439e235ada6c3381e, type: 2}
   - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
   - {fileID: 1595176476332022, guid: e9482742511ff954e91a5cde55919483, type: 2}
-  - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
-  - {fileID: 1490633683173818, guid: 490e91194d7a50843b25c35c72c367a5, type: 2}
+  - {fileID: 1416131170247956, guid: 3f8236aa01d9f674da68d4bb77fbe172, type: 2}
   sub: {fileID: 1732279496}
 --- !u!1 &2021657676
 GameObject:

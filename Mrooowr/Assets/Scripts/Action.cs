@@ -12,6 +12,11 @@ public class Action : MonoBehaviour {
 	//public 
 	// Use this for initialization
 	void Start () {
+		if (transform.parent.gameObject.GetComponent<Selection>().player == 1) {
+			SetAnim("slut");
+		} else {
+			SetAnim("prude");
+		}
 		if (!slutActionAnim) slutActionAnim = actionAnim;
 		if (!prudeActionAnim) prudeActionAnim = actionAnim;
 		
@@ -20,12 +25,12 @@ public class Action : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (auto){
-			if (!doAction && Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
+			if (!doAction && !GetComponent<Hurt>().doHurt && Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
 				doAction = true;
 				Play();
 			}
 		} else {
-			if (!doAction && Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
+			if (!doAction && !GetComponent<Hurt>().doHurt && Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
 				doAction = true;
 				Play();
 			}

@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 114800665274469730}
   - component: {fileID: 222416316563128908}
   - component: {fileID: 82879289682748050}
+  - component: {fileID: 114737375499196554}
   m_Layer: 11
   m_Name: Creach
   m_TagString: Characters
@@ -407,6 +408,7 @@ MonoBehaviour:
   minY: -9
   maxY: 9
   catchSpeed: 0.035
+  origV3: {x: 0, y: 0, z: 0}
 --- !u!114 &114549370967755900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -536,6 +538,23 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &114737375499196554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490633683173818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtAnim: {fileID: 0}
+  slutHurtAnim: {fileID: 0}
+  prudeHurtAnim: {fileID: 0}
+  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
+  doHurt: 0
+  hurting: 0
 --- !u!114 &114800665274469730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -549,7 +568,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amt: 0
   max: 1
-  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}

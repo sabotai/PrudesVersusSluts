@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 114908247650034704}
   - component: {fileID: 222945495912554006}
   - component: {fileID: 82519117361383494}
+  - component: {fileID: 114648540364109984}
   m_Layer: 17
   m_Name: Stormy
   m_TagString: Characters
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionAnim: {fileID: 0}
-  slutActionAnim: {fileID: 11400000, guid: ec0569d9ecbab504aa0f16ccf55b65be, type: 2}
+  slutActionAnim: {fileID: 11400000, guid: bd0244f8021dde948ab92742af67c4b2, type: 2}
   prudeActionAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   actionClip: {fileID: 8300000, guid: 4af2194e86fe61c45adf7ea83c12a82c, type: 3}
   doAction: 0
@@ -456,6 +457,23 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &114648540364109984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416131170247956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
+  doHurt: 0
+  hurting: 0
 --- !u!114 &114765170074990032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,6 +501,7 @@ MonoBehaviour:
   minY: -9
   maxY: 9
   catchSpeed: 0.035
+  origV3: {x: 0, y: 0, z: 0}
 --- !u!114 &114856052091513886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -533,7 +552,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amt: 0
   max: 1
-  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
@@ -553,11 +571,11 @@ MonoBehaviour:
   speed: 3.5
   facingRight: 0
   idleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
-  walkAnim: {fileID: 11400000, guid: 9c2011c99e44d564e9401d24a0c83a6f, type: 2}
+  walkAnim: {fileID: 11400000, guid: ac541ed3e15255a4898f24dcf3e3c757, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: 319eb15dc0c1c8d4ca9e5b83f731c33e, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 4004c3d6229521647aec9a229bb0202b, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
-  prudeWalkAnim: {fileID: 11400000, guid: 9c2011c99e44d564e9401d24a0c83a6f, type: 2}
+  prudeWalkAnim: {fileID: 11400000, guid: ac541ed3e15255a4898f24dcf3e3c757, type: 2}
 --- !u!198 &198471167432720590
 ParticleSystem:
   m_ObjectHideFlags: 1

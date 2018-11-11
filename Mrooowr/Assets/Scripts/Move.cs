@@ -33,7 +33,7 @@ public class Move : MonoBehaviour {
 	void Update () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 
-		if (selected && !GetComponent<Action>().doAction){
+		if (selected && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt){
 			rb.velocity = Vector2.zero;
 
 			//if (Input.GetKey(KeyCode.D)) { 
@@ -67,13 +67,13 @@ public class Move : MonoBehaviour {
 			if (rb.velocity.magnitude > 0f){
 				if (!aud.isPlaying) aud.Play();
 				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
-				if (!GetComponent<Action>().doAction)  {
+				if (!GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt )  {
 					if (animator.File != walkAnim) animator.File = walkAnim;
 				} 
 			}else {
 				aud.Stop();
 				rb.velocity = Vector2.zero;
-				if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
+				if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) animator.File = idleAnim;
 
 			}
 		
@@ -81,7 +81,7 @@ public class Move : MonoBehaviour {
 
 			aud.Stop();
 			rb.velocity = Vector2.zero;
-			if (animator.File != idleAnim && !GetComponent<Action>().doAction) animator.File = idleAnim;
+			if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) animator.File = idleAnim;
 		}
 	}
 

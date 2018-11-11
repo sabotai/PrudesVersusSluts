@@ -54,7 +54,8 @@ public class ParticleHit : MonoBehaviour {
 	            }
 	            if (meter){
 	            	meter.amt += hitAmt;
-	            	other.GetComponent<AudioSource>().PlayOneShot(other.GetComponent<Meter>().hurtClip, 0.2f);
+
+	            	if (!other.GetComponent<Hurt>().doHurt) other.GetComponent<Hurt>().doHurt = true;
 	            }
 	            i++;
 	        }

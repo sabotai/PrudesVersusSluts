@@ -7,7 +7,7 @@ public class Meter : MonoBehaviour {
 	bool isSlut = true;
 	public float amt;
 	public float max = 1f;
-	public AudioClip hurtClip, slutConvertClip, prudeConvertClip;
+	public AudioClip slutConvertClip, prudeConvertClip;
 
 	public Transform slutParent, prudeParent;
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class Meter : MonoBehaviour {
         {
         	isSlut = false;
             amt = 1f * max;
-            GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.6f, 0.6f);
+            GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
         }
 	}
 	
@@ -38,6 +38,10 @@ public class Meter : MonoBehaviour {
 		amt = Mathf.Clamp(amt, -max, max);
 	}
 
+	public void PlayHurt(){
+
+	}
+
 	public void Prudify(){
 		GetComponent<AudioSource>().PlayOneShot(prudeConvertClip, 0.2f);
 		isSlut = false; 
@@ -46,7 +50,7 @@ public class Meter : MonoBehaviour {
 		GetComponent<Action>().SetAnim("prude");
 		GetComponent<Move>().SetAnim("prude");
 
-        GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
+        GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
         if (GetComponent<Move>().selected){
 			//Debug.Log("PRUDES WIN!");
 			GetComponent<Move>().selected = false;
