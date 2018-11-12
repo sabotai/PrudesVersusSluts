@@ -31,8 +31,8 @@ public class CamMove : MonoBehaviour {
 		for (int i = 0; i < prudeParent.childCount; i++){
 			avg += prudeParent.GetChild(i).position;
 		}
-		avg /= Manager.howManyChars;
-		avg = new Vector3(Mathf.Clamp(avg.x, maxLeft, maxRight), transform.position.y, transform.position.z);
+		avg /= (slutParent.childCount + prudeParent.childCount);
+		avg = new Vector3(Mathf.Clamp(avg.x, maxLeft - transform.GetChild(0).localPosition.x, maxRight - transform.GetChild(1).localPosition.x), transform.position.y, transform.position.z);
 
 
 		return avg;
