@@ -14,8 +14,8 @@ public class Move : MonoBehaviour {
 	public DoodleAnimationFile prudeIdleAnim, prudeWalkAnim;
 	int player;
 	AudioSource aud;
-
 	DoodleAnimator animator;
+	public bool playWalkSound = false;
 
 	// Use this for initialization
 	void Start () {
@@ -65,23 +65,29 @@ public class Move : MonoBehaviour {
 			}
 
 			if (rb.velocity.magnitude > 0f){
-				if (!aud.isPlaying) aud.Play();
+				if (!aud.isPlaying && playWalkSound) {
+					//aud.clip = defClip;
+					Debug.Log(gameObject.name + " walking sound");
+					aud.Play();
+				}
 				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
 				if (!GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt )  {
 					if (animator.File != walkAnim) animator.File = walkAnim;
 				} 
-			}else {
-				aud.Stop();
+			} else {
+				if (playWalkSound) aud.Stop();
 				rb.velocity = Vector2.zero;
 				if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) animator.File = idleAnim;
 
 			}
 		
 		} else {
-
-			aud.Stop();
 			rb.velocity = Vector2.zero;
-			if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) animator.File = idleAnim;
+			if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) {
+				animator.File = idleAnim;
+
+				if (playWalkSound) aud.Stop();
+			}
 		}
 	}
 

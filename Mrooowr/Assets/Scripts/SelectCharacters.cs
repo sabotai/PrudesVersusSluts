@@ -10,10 +10,13 @@ public class SelectCharacters : MonoBehaviour {
 	int currentSelection = 0;
 	int player;
 	public Text sub;
+	public AudioClip selectSound;
+	AudioSource aud;
 	// Use this for initialization
 	void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 		sub.text = "Choose your sluts/prudes!";
+		aud = Camera.main.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +28,8 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = 0;
 				}
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip);
+
 				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
@@ -35,6 +40,7 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = prefab.Length - 1;
 				}
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip);
 				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
@@ -60,18 +66,17 @@ public class SelectCharacters : MonoBehaviour {
 			GameObject sib = transform.parent.GetChild(transform.GetSiblingIndex() + 1).gameObject;
 			if (sib.CompareTag("Slot")){
 				//then activate the next one
+				aud.PlayOneShot(newbie.GetComponent<AudioSource>().clip, 0.5f);
 				sib.SetActive(true);
 			} else {
 				//begin game for me
-				if (player == 1) Manager.p1Ready = true; else if (player == 2) Manager.p2Ready = true;
-				if (sib.CompareTag("Wall")) Destroy(sib.gameObject);
+				if (sib.CompareTag("Wall")) sib.GetComponent<MoveMe>().move = true;
 				sub.text = "";
 				sub.transform.parent.gameObject.SetActive(false);
-				transform.parent.gameObject.GetComponent<Selection>().Select();
 			}
 			Destroy(gameObject);//.SetActive(false);
 		}
 	
-		
 	}
+
 }

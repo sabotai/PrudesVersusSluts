@@ -6,7 +6,7 @@ using DoodleStudio95;
 public class Action : MonoBehaviour {
 	DoodleAnimationFile origAnim;
 	public DoodleAnimationFile actionAnim, slutActionAnim, prudeActionAnim;
-	public AudioClip actionClip;
+
 	public bool doAction = false;
 	public bool auto = false;
 	//public 
@@ -35,7 +35,6 @@ public class Action : MonoBehaviour {
 				Play();
 			}
 		}
-		if (doAction) GetComponent<AudioSource>().PlayOneShot(actionClip, 0.1f);
 
 	}
 

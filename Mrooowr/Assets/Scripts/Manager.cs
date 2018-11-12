@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour {
 	public static bool p1Ready = false;
 	public static bool p2Ready = false;
 	public CamMove camMover;
+	public AudioClip selectClip, confirmClip;
 	// Use this for initialization
 	void Start () {
 		p1Ready = false;

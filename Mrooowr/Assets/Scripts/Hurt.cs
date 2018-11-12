@@ -27,7 +27,10 @@ public class Hurt : MonoBehaviour {
 		if (doHurt && !hurting) {
 			GetComponent<Action>().doAction = false;
 			hurting = true;
-			GetComponent<AudioSource>().PlayOneShot(hurtClip, 0.1f);
+			Debug.Log(gameObject.name + " hurting");
+			//GetComponent<AudioSource>().clip = hurtClip;
+			//GetComponent<AudioSource>().Play();
+			GetComponent<AudioSource>().PlayOneShot(hurtClip, 0.5f);
 			Play();
 		} else {
 			

@@ -9,9 +9,11 @@ public class SceneSelection : MonoBehaviour {
 	public GameObject prudes, sluts;
 	public Text subAnnouncer;
 	public float textDelay = 2f;
+	GameObject man;
 
 	// Use this for initialization
 	void Start () {
+		man = Camera.main.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,8 @@ public class SceneSelection : MonoBehaviour {
 				prudes.SetActive(true);
 				sluts.SetActive(true);
 				this.enabled = false;
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip);
+
 			}
 
 			if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
@@ -33,6 +37,8 @@ public class SceneSelection : MonoBehaviour {
 				} else {
 					selection = 0;
 				}
+
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip);
 			}
 			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
 				if (selection > 0){
@@ -40,6 +46,8 @@ public class SceneSelection : MonoBehaviour {
 				} else {
 					selection = transform.childCount - 1;
 				}
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip);
+
 			}
 
 			for (int i = 0; i < transform.childCount; i++){

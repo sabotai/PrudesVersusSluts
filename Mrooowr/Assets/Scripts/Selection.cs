@@ -38,6 +38,10 @@ public class Selection : MonoBehaviour {
 			} else {
 				selected = 0;
 			}
+			if (transform.childCount > 0){
+				AudioSource aud = transform.GetChild(selected).gameObject.GetComponent<AudioSource>();
+				aud.PlayOneShot(aud.clip);
+			}
 			Select();
 	}
 	public void Select(){
@@ -48,7 +52,7 @@ public class Selection : MonoBehaviour {
 		}
 
 		for(int i = 0; i < transform.childCount; i++){
-			if (!transform.GetChild(0).gameObject.CompareTag("Slot")){
+			if (!transform.GetChild(0).gameObject.CompareTag("Slot") && !transform.GetChild(0).gameObject.CompareTag("Wall")){
 				transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
 			}
 		}

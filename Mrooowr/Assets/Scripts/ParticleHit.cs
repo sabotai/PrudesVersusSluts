@@ -7,18 +7,30 @@ public class ParticleHit : MonoBehaviour {
     ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
     public float partDmg = 0f;
+    public AudioClip emitClip;
+
+    AudioSource aud;
 
     void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        aud = GetComponent<AudioSource>();
     }
 
     void Update(){
+    	if (part.particleCount > 0 && part.isEmitting) {
+    		ActionSounds();
+    	} else {
+    		aud.loop = false;
+    		//Stop();
+    	}
+
+
     	var col = part.collision;
     	int newLayer = transform.parent.gameObject.layer;
 
-    	Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
+    	//Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
     	if (newLayer == 8){    		
     		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1), "Bounds");
      	} else if (newLayer == 18){
@@ -28,6 +40,14 @@ public class ParticleHit : MonoBehaviour {
     		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1), "Bounds");
     	}
    	
+    }
+    void ActionSounds(){
+		if (!aud.isPlaying){
+			aud.clip = emitClip;
+			aud.loop = true;
+			aud.Play();
+			//aud.PlayDelayed(0.1f);//PlayOneShot(actionClip, 0.1f);
+		}	
     }
 
     void OnParticleCollision(GameObject other)
