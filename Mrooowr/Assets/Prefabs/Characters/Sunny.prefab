@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.035
+  partDmg: 0.17
   emitClip: {fileID: 8300000, guid: 9399210b8155f5d459fb5a62746057ec, type: 3}
 --- !u!114 &114647339087144710
 MonoBehaviour:
@@ -707,7 +707,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983027444897570}
   serializedVersion: 5
-  lengthInSec: 0.1
+  lengthInSec: 0.15
   simulationSpeed: 1
   stopAction: 0
   looping: 0

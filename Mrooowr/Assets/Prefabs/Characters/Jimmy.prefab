@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 82203108906399746}
   - component: {fileID: 114859833253428282}
   m_Layer: 17
-  m_Name: Stone
+  m_Name: Jimmy
   m_TagString: Characters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
