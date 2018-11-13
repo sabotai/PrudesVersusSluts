@@ -27,7 +27,7 @@ public class SceneSelection : MonoBehaviour {
 				prudes.SetActive(true);
 				sluts.SetActive(true);
 				this.enabled = false;
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.3f);
 
 			}
 
@@ -38,7 +38,7 @@ public class SceneSelection : MonoBehaviour {
 					selection = 0;
 				}
 
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.05f);
 			}
 			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
 				if (selection > 0){
@@ -46,7 +46,7 @@ public class SceneSelection : MonoBehaviour {
 				} else {
 					selection = transform.childCount - 1;
 				}
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.05f);
 
 			}
 

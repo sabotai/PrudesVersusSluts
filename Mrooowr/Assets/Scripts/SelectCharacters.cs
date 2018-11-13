@@ -28,7 +28,7 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = 0;
 				}
-				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip);
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
 
 				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 				transform.localScale = prefab[currentSelection].transform.localScale;
@@ -40,7 +40,7 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = prefab.Length - 1;
 				}
-				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip);
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
 				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}

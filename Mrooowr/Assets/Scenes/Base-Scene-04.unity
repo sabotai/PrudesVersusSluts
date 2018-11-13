@@ -1151,7 +1151,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1737,7 +1737,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
   - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
-  - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
+  - {fileID: 1340378810683076, guid: 5a750f7d3fa177945969ffe3283f165c, type: 2}
   - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
   sub: {fileID: 1732279496}
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
   - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
-  - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
+  - {fileID: 1340378810683076, guid: 5a750f7d3fa177945969ffe3283f165c, type: 2}
   - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
   sub: {fileID: 1732279496}
@@ -5064,7 +5064,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 1660177177405656, guid: dcc1b1b10db37fd44bb4c58395c23b6e, type: 2}
   - {fileID: 1897057575640120, guid: f30566cb3e441d14a8734fcb77a9364a, type: 2}
-  - {fileID: 1340378810683076, guid: f4a964d59ede71740a55c3d2cc5712b3, type: 2}
+  - {fileID: 1340378810683076, guid: 5a750f7d3fa177945969ffe3283f165c, type: 2}
   - {fileID: 1595176476332022, guid: c9b794968ed214f4295e7d510451d473, type: 2}
   - {fileID: 1416131170247956, guid: 62aeacf0557bedf47aff68bf0fff3042, type: 2}
   sub: {fileID: 1732279496}
