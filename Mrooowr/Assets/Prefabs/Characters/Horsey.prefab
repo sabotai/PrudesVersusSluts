@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 222059328340251800}
   - component: {fileID: 82217419758738328}
   - component: {fileID: 114519281481768462}
+  - component: {fileID: 114703972515448436}
   m_Layer: 16
   m_Name: Horsey
   m_TagString: Characters
@@ -134,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814034378898134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 0.48, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224382378419043176}
@@ -445,9 +446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345a6fc71ac9d644db9f469bc2bbb365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAnim: {fileID: 11400000, guid: 2ada59883bec1e24fa782c348e4121d8, type: 2}
-  slutActionAnim: {fileID: 11400000, guid: 18dce6c600422c1448d09f0a22f9e131, type: 2}
-  prudeActionAnim: {fileID: 11400000, guid: 2ada59883bec1e24fa782c348e4121d8, type: 2}
   doAction: 0
   auto: 0
 --- !u!114 &114361623204918246
@@ -545,9 +543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtAnim: {fileID: 0}
-  slutHurtAnim: {fileID: 11400000, guid: 34d74ac4428676d45beee838f7c7c949, type: 2}
-  prudeHurtAnim: {fileID: 11400000, guid: 25dfdced8e098e64d8b77cd88f64f1fe, type: 2}
   hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   doHurt: 0
   hurting: 0
@@ -614,6 +609,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDmg: 0.007
   emitClip: {fileID: 8300000, guid: 132b6a6b1681baf488e27132a4aa82ad, type: 3}
+--- !u!114 &114703972515448436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660177177405656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slutActionAnim: {fileID: 11400000, guid: 18dce6c600422c1448d09f0a22f9e131, type: 2}
+  prudeActionAnim: {fileID: 11400000, guid: 2ada59883bec1e24fa782c348e4121d8, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: 34d74ac4428676d45beee838f7c7c949, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: 25dfdced8e098e64d8b77cd88f64f1fe, type: 2}
+  slutIdleAnim: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  prudeIdleAnim: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
+  prudeWalkAnim: {fileID: 11400000, guid: 8e5009a6078e9db40ac6a2f887e94fcd, type: 2}
+  animReady: 1
+  animTimeOut: 2
 --- !u!114 &114706639847456868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,12 +682,6 @@ MonoBehaviour:
   selected: 0
   speed: 5
   facingRight: 1
-  idleAnim: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
-  walkAnim: {fileID: 11400000, guid: 8e5009a6078e9db40ac6a2f887e94fcd, type: 2}
-  slutIdleAnim: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
-  prudeIdleAnim: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
-  prudeWalkAnim: {fileID: 11400000, guid: 8e5009a6078e9db40ac6a2f887e94fcd, type: 2}
   playWalkSound: 0
 --- !u!198 &198611619559018430
 ParticleSystem:
@@ -692,7 +702,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.75
+    scalar: 0.4
     minScalar: 0
     maxCurve:
       serializedVersion: 2

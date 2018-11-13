@@ -47,8 +47,6 @@ public class Meter : MonoBehaviour {
 		isSlut = false; 
 
 		transform.parent = prudeParent;
-		GetComponent<Action>().SetAnim("prude");
-		GetComponent<Move>().SetAnim("prude");
 
         GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
         if (GetComponent<Move>().selected){
@@ -63,8 +61,6 @@ public class Meter : MonoBehaviour {
 
 		transform.parent = slutParent;
 		isSlut = true;
-		GetComponent<Action>().SetAnim("slut");
-		GetComponent<Move>().SetAnim("slut");
         GetComponent<SpriteRenderer>().color = Color.white;
         if (GetComponent<Move>().selected){
 			//Debug.Log("SLUTS WIN!");

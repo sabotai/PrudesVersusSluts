@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 222365877136503590}
   - component: {fileID: 82203108906399746}
   - component: {fileID: 114750137300852556}
+  - component: {fileID: 114804418131598764}
   m_Layer: 17
   m_Name: Mango
   m_TagString: Characters
@@ -563,12 +564,6 @@ MonoBehaviour:
   selected: 0
   speed: 2
   facingRight: 0
-  idleAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
-  walkAnim: {fileID: 11400000, guid: 262b7bf44f1672146b593776cc238c07, type: 2}
-  slutIdleAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: 262b7bf44f1672146b593776cc238c07, type: 2}
-  prudeIdleAnim: {fileID: 11400000, guid: 065e6ceb897f45d429e70f5fb8ca0841, type: 2}
-  prudeWalkAnim: {fileID: 11400000, guid: 464364b2c67063b439a279d97dcce288, type: 2}
   playWalkSound: 0
 --- !u!114 &114646872193311562
 MonoBehaviour:
@@ -665,9 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtAnim: {fileID: 0}
-  slutHurtAnim: {fileID: 11400000, guid: dad0e2cde47d06a42ac0b2128dcaa2e3, type: 2}
-  prudeHurtAnim: {fileID: 11400000, guid: 7e5ac8c829599d646958898165617aa3, type: 2}
   hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   doHurt: 0
   hurting: 0
@@ -698,6 +690,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114804418131598764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595176476332022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slutActionAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  prudeActionAnim: {fileID: 11400000, guid: d3871e444e41f2648aad98785c99980e, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: dad0e2cde47d06a42ac0b2128dcaa2e3, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: 7e5ac8c829599d646958898165617aa3, type: 2}
+  slutIdleAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  prudeIdleAnim: {fileID: 11400000, guid: 065e6ceb897f45d429e70f5fb8ca0841, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 262b7bf44f1672146b593776cc238c07, type: 2}
+  prudeWalkAnim: {fileID: 11400000, guid: 464364b2c67063b439a279d97dcce288, type: 2}
+  animReady: 1
+  animTimeOut: 2
 --- !u!114 &114912071059854966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -709,9 +722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345a6fc71ac9d644db9f469bc2bbb365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAnim: {fileID: 0}
-  slutActionAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
-  prudeActionAnim: {fileID: 11400000, guid: d3871e444e41f2648aad98785c99980e, type: 2}
   doAction: 0
   auto: 0
 --- !u!198 &198135143094008198

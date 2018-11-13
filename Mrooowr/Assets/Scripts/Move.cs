@@ -9,9 +9,6 @@ public class Move : MonoBehaviour {
 	public bool selected = true;
 	public float speed = 2f;
 	public bool facingRight = true;
-	public DoodleAnimationFile idleAnim, walkAnim;
-	public DoodleAnimationFile slutIdleAnim, slutWalkAnim;
-	public DoodleAnimationFile prudeIdleAnim, prudeWalkAnim;
 	int player;
 	AudioSource aud;
 	DoodleAnimator animator;
@@ -20,11 +17,6 @@ public class Move : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponent<DoodleAnimator>();
-		if (!slutIdleAnim) slutIdleAnim = idleAnim;
-		if (!slutWalkAnim) slutWalkAnim = walkAnim;
-		if (!prudeIdleAnim) prudeIdleAnim = idleAnim;
-		if (!prudeWalkAnim) prudeWalkAnim = walkAnim;
 		aud = GetComponent<AudioSource>();
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 	}
@@ -33,7 +25,7 @@ public class Move : MonoBehaviour {
 	void Update () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 
-		if (selected && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt){
+		if (selected && !GetComponent<Hurt>().doHurt){
 			rb.velocity = Vector2.zero;
 
 			//if (Input.GetKey(KeyCode.D)) { 
@@ -71,34 +63,26 @@ public class Move : MonoBehaviour {
 					aud.Play();
 				}
 				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
-				if (!GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt )  {
-					if (animator.File != walkAnim) animator.File = walkAnim;
-				} 
+				//if (GetComponent<AnimManager>().animReady){// && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt )  {
+					GetComponent<AnimManager>().Walk();//animator.ChangeAnimation(walkAnim);
+				//} 
 			} else {
 				if (playWalkSound) aud.Stop();
 				rb.velocity = Vector2.zero;
-				if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) animator.File = idleAnim;
+				if (GetComponent<AnimManager>().animReady)// !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) 
+					GetComponent<AnimManager>().Idle();//animator.ChangeAnimation(idleAnim);
 
 			}
 		
 		} else {
 			rb.velocity = Vector2.zero;
-			if (animator.File != idleAnim && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) {
-				animator.File = idleAnim;
+			if (GetComponent<AnimManager>().animReady){// && !GetComponent<Action>().doAction && !GetComponent<Hurt>().doHurt) {
+				//animator.ChangeAnimation(idleAnim);
+				GetComponent<AnimManager>().Idle();//animator.ChangeAnimation(idleAnim);
 
 				if (playWalkSound) aud.Stop();
 			}
 		}
 	}
 
-	public void SetAnim(string anim){
-		if (anim == "slut") {
-			idleAnim = slutIdleAnim;
-			walkAnim = slutWalkAnim;
-		}
-		if (anim == "prude") {
-			idleAnim = prudeIdleAnim;
-			walkAnim = prudeWalkAnim;
-		}
-	}
 }

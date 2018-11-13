@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 222945495912554006}
   - component: {fileID: 82519117361383494}
   - component: {fileID: 114648540364109984}
+  - component: {fileID: 114911866343906610}
   m_Layer: 17
   m_Name: Stormy
   m_TagString: Characters
@@ -415,9 +416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345a6fc71ac9d644db9f469bc2bbb365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAnim: {fileID: 0}
-  slutActionAnim: {fileID: 11400000, guid: bd0244f8021dde948ab92742af67c4b2, type: 2}
-  prudeActionAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   doAction: 0
   auto: 0
 --- !u!114 &114170715648121460
@@ -565,9 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
-  slutHurtAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
-  prudeHurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   doHurt: 0
   hurting: 0
@@ -679,6 +674,27 @@ MonoBehaviour:
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+--- !u!114 &114911866343906610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416131170247956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slutActionAnim: {fileID: 11400000, guid: bd0244f8021dde948ab92742af67c4b2, type: 2}
+  prudeActionAnim: {fileID: 11400000, guid: 559613cca9c618d41936e93564c5567a, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: 198c4985a2f484845b463ac5a3b543b9, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  slutIdleAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  prudeIdleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 4004c3d6229521647aec9a229bb0202b, type: 2}
+  prudeWalkAnim: {fileID: 11400000, guid: ac541ed3e15255a4898f24dcf3e3c757, type: 2}
+  animReady: 1
+  animTimeOut: 2
 --- !u!114 &114930190115598736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,12 +709,6 @@ MonoBehaviour:
   selected: 0
   speed: 3.5
   facingRight: 0
-  idleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
-  walkAnim: {fileID: 11400000, guid: ac541ed3e15255a4898f24dcf3e3c757, type: 2}
-  slutIdleAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: 4004c3d6229521647aec9a229bb0202b, type: 2}
-  prudeIdleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
-  prudeWalkAnim: {fileID: 11400000, guid: ac541ed3e15255a4898f24dcf3e3c757, type: 2}
   playWalkSound: 0
 --- !u!198 &198471167432720590
 ParticleSystem:
