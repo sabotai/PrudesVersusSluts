@@ -53,7 +53,10 @@ public class Selection : MonoBehaviour {
 
 		for(int i = 0; i < transform.childCount; i++){
 			if (!transform.GetChild(0).gameObject.CompareTag("Slot") && !transform.GetChild(0).gameObject.CompareTag("Wall")){
-				transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
+				if (!Manager.gameOver)
+					transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
+				else //select all when game over
+					transform.GetChild(i).gameObject.GetComponent<Move>().selected = true;
 			}
 		}
 		if (transform.childCount > 0 && transform.GetChild(selected).gameObject.CompareTag("Characters"))	transform.GetChild(selected).gameObject.GetComponent<Move>().selected = true;
