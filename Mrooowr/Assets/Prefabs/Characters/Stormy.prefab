@@ -687,8 +687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slutActionAnim: {fileID: 11400000, guid: bd0244f8021dde948ab92742af67c4b2, type: 2}
   prudeActionAnim: {fileID: 11400000, guid: 559613cca9c618d41936e93564c5567a, type: 2}
-  slutHurtAnim: {fileID: 11400000, guid: 198c4985a2f484845b463ac5a3b543b9, type: 2}
-  prudeHurtAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: 1ba8aac96ef24a94fad96541df35b5cd, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: 1aa81ea5511d8bc498511c8c294135d8, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 4004c3d6229521647aec9a229bb0202b, type: 2}
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   speed: 3.5
-  facingRight: 0
+  facingRight: 1
   playWalkSound: 0
 --- !u!198 &198471167432720590
 ParticleSystem:
@@ -5449,7 +5449,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416131170247956}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5458,7 +5458,7 @@ RectTransform:
   - {fileID: 224096707008713284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}

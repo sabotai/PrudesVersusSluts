@@ -17,6 +17,8 @@ public class SelectCharacters : MonoBehaviour {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 		sub.text = "Choose your sluts/prudes!";
 		aud = Camera.main.GetComponent<AudioSource>();
+		GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+				transform.localScale = prefab[currentSelection].transform.localScale;
 	}
 	
 	// Update is called once per frame
@@ -48,13 +50,13 @@ public class SelectCharacters : MonoBehaviour {
 
 		if (Input.GetButtonDown("P" + player + "_Action")){
 			Quaternion rot;
-			if (player == 1){
+			if (player == 2){
 				rot = Quaternion.identity;
 			} else {
 				rot = Quaternion.Euler(0f, 180f, 0f);
 			}
 			GameObject newbie = Instantiate(prefab[currentSelection], transform.position, rot, transform.parent);
-			if (player == 1){
+			if (player == 2){
 				newbie.GetComponent<Move>().facingRight = true;
 				} else {
 				newbie.GetComponent<Move>().facingRight = false;
