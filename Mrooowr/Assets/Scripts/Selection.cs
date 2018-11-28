@@ -30,6 +30,11 @@ public class Selection : MonoBehaviour {
 			Manager.gameOver = true;
 		}
 
+		if (transform.childCount > 0 && Manager.gameOver){
+			Select();
+			
+		}
+
 	}
 	public void CycleSelection(){
 
