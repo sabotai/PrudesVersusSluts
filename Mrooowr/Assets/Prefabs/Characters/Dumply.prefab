@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  speed: 1.5
+  speed: 2.3
   facingRight: 1
   playWalkSound: 0
 --- !u!114 &114461170820748662
@@ -677,15 +677,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 26e8ebba90793b042b89a5361b33f8d7, type: 2}
+  m_File: {fileID: 11400000, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
     overrideFileSettings: 0
-    customPlaybackMode: 2
-    customFramesPerSecond: 8
-    customBorder: {x: 170, y: 170, z: 170, w: 170}
+    customPlaybackMode: 1
+    customFramesPerSecond: 6
+    customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
     customFilterMode: 2
     wrapMode: 1

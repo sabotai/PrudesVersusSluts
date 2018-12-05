@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  speed: 1.5
+  speed: 2.3
   facingRight: 1
   playWalkSound: 0
 --- !u!114 &114461170820748662

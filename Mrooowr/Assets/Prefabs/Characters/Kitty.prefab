@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 82012005854862894}
   - component: {fileID: 114272928217160322}
   - component: {fileID: 114600146629562374}
+  - component: {fileID: 61337064452754878}
   m_Layer: 13
   m_Name: Kitty
   m_TagString: Characters
@@ -180,7 +181,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340378810683076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -189,6 +190,31 @@ CircleCollider2D:
   m_Offset: {x: 0.21, y: -0.47}
   serializedVersion: 2
   m_Radius: 1.07
+--- !u!61 &61337064452754878
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340378810683076}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14, y: -0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 1.72}
+  m_EdgeRadius: 0
 --- !u!61 &61587663123871458
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -690,7 +716,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1208125921090352}
   serializedVersion: 5
-  lengthInSec: 0.8
+  lengthInSec: 0.29
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -702,7 +728,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.1
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -762,7 +788,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -815,7 +841,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 30.94
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -931,7 +957,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 1.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1247,7 +1273,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 590
+    maxNumParticles: 64
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -1307,13 +1333,13 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 21.03
+    angle: 10.99
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
-    m_Position: {x: 1.66, y: -0.4, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 5.52}
+    m_Position: {x: 2.59, y: -0.6, z: 0}
+    m_Rotation: {x: 0, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1337,7 +1363,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.1
+      value: 1.08
       mode: 0
       spread: 0
       speed:
@@ -1394,9 +1420,9 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 0.54
+      value: 1.03
       mode: 3
-      spread: 0
+      spread: 1
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -1456,7 +1482,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4100,7 +4126,7 @@ ParticleSystem:
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.02
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4153,7 +4179,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.59
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4206,7 +4232,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.37
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4258,10 +4284,10 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.05
+    radiusScale: 0.25
     collidesWith:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 581632
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4405,13 +4431,13 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 0
+    enabled: 1
     mode: 0
     ratio: 1
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.27
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4462,8 +4488,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0.2
-    textureMode: 0
-    ribbonCount: 1
+    textureMode: 2
+    ribbonCount: 16
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
@@ -4537,7 +4563,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.53
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5232,8 +5258,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ef42f56efdb59604691d0cd2abbd932f, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ba606a462b9136f4e86bd3a475e94f88, type: 2}
+  - {fileID: 2100000, guid: ba606a462b9136f4e86bd3a475e94f88, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5250,18 +5276,18 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -233709207
-  m_SortingLayer: 1
+  m_SortingLayerID: 868047643
+  m_SortingLayer: 8
   m_SortingOrder: 9999
-  m_RenderMode: 3
-  m_SortMode: 0
-  m_MinParticleSize: 0
-  m_MaxParticleSize: 2
+  m_RenderMode: 2
+  m_SortMode: 3
+  m_MinParticleSize: 0.06
+  m_MaxParticleSize: 2.65
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 2
+  m_LengthScale: 1.7
   m_SortingFudge: 0
-  m_NormalDirection: 1
+  m_NormalDirection: 0
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
