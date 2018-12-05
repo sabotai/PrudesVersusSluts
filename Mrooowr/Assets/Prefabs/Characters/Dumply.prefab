@@ -743,7 +743,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161869181271034}
   serializedVersion: 5
-  lengthInSec: 1.5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -815,7 +815,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.25
+      scalar: 1.0416667
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1002,7 +1002,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15.74
+      scalar: 25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1318,13 +1318,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0.18
-    maxNumParticles: 2000
+    maxNumParticles: 2300
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.34
+      scalar: 3.32
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1383,7 +1383,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 2.4
-    m_Position: {x: 0, y: 1.38, z: 0}
+    m_Position: {x: 0.32, y: 2.4, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -4341,7 +4341,7 @@ ParticleSystem:
     radiusScale: 0.2
     collidesWith:
       serializedVersion: 2
-      m_Bits: 531456
+      m_Bits: 552960
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -5330,8 +5330,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -240564247
-  m_SortingLayer: 9
+  m_SortingLayerID: -1866002277
+  m_SortingLayer: 7
   m_SortingOrder: 9999
   m_RenderMode: 3
   m_SortMode: 0
