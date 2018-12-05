@@ -442,14 +442,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slutActionAnim: {fileID: 11400000, guid: 875a1230b840ed54e8b906b332fea9ac, type: 2}
-  prudeActionAnim: {fileID: 11400000, guid: f367760f728a2cb4fad4937ed2c65496, type: 2}
-  slutHurtAnim: {fileID: 11400000, guid: b352d495028cbcf42ac16829f6380bef, type: 2}
-  prudeHurtAnim: {fileID: 11400000, guid: c09ced8baf479ec4fb95d56cd28f7cb7, type: 2}
-  slutIdleAnim: {fileID: 11400000, guid: 15ea7d57c0aac1b49806a7c313d1cc87, type: 2}
-  prudeIdleAnim: {fileID: 11400000, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: a2a1f44e43f3fd8429d4014114d07f1c, type: 2}
-  prudeWalkAnim: {fileID: 11400000, guid: 239d086274fb29b48b0932153789912d, type: 2}
+  slutActionAnim: {fileID: 11400000, guid: f367760f728a2cb4fad4937ed2c65496, type: 2}
+  prudeActionAnim: {fileID: 11400000, guid: 875a1230b840ed54e8b906b332fea9ac, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: c09ced8baf479ec4fb95d56cd28f7cb7, type: 2}
+  prudeHurtAnim: {fileID: 11400000, guid: b352d495028cbcf42ac16829f6380bef, type: 2}
+  slutIdleAnim: {fileID: 11400000, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
+  prudeIdleAnim: {fileID: 11400000, guid: 15ea7d57c0aac1b49806a7c313d1cc87, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 8043600f3d2a9f84b89f759ef32e9989, type: 2}
+  prudeWalkAnim: {fileID: 11400000, guid: a2a1f44e43f3fd8429d4014114d07f1c, type: 2}
   animReady: 1
   animTimeOut: 2
 --- !u!114 &114103990719134070
