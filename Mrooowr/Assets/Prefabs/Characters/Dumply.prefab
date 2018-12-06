@@ -756,9 +756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.01
+  partDmg: 0.005
   emitClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
-  limitLayers: 1
+  limitLayers: 0
 --- !u!114 &114635049680013002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4490,7 +4490,7 @@ ParticleSystem:
     radiusScale: 0.2
     collidesWith:
       serializedVersion: 2
-      m_Bits: 552960
+      m_Bits: 4294967295
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

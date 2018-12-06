@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amt: 0
-  max: 3
+  max: 5
   slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
