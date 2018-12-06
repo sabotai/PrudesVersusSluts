@@ -8,6 +8,7 @@ public class ParticleHit : MonoBehaviour {
     public List<ParticleCollisionEvent> collisionEvents;
     public float partDmg = 0f;
     public AudioClip emitClip;
+    public bool limitLayers = true;
 
     AudioSource aud;
 
@@ -26,19 +27,20 @@ public class ParticleHit : MonoBehaviour {
     		//Stop();
     	}
 
+        if (limitLayers){
+        	var col = part.collision;
+        	int newLayer = transform.parent.gameObject.layer;
 
-    	var col = part.collision;
-    	int newLayer = transform.parent.gameObject.layer;
-
-    	//Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
-    	if (newLayer == 8){    		
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1), "Bounds");
-     	} else if (newLayer == 18){
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), "Bounds");
- 
-    	} else if (newLayer >= 8) {
-    		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1), "Bounds");
-    	}
+        	//Debug.Log(transform.parent.gameObject.name + " newLayer for particles = " + newLayer);
+        	if (newLayer == 8){    		
+        		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer + 1), "Bounds");
+         	} else if (newLayer == 18){
+        		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), "Bounds");
+     
+        	} else if (newLayer >= 8) {
+        		col.collidesWith = LayerMask.GetMask(LayerMask.LayerToName(newLayer), LayerMask.LayerToName(newLayer - 1), LayerMask.LayerToName(newLayer + 1), "Bounds");
+        	}
+        }
    	
     }
     void ActionSounds(){

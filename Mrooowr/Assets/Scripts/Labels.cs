@@ -14,17 +14,20 @@ public class Labels : MonoBehaviour {
 	void Update () {
 		if (transform.parent.parent.parent.gameObject.GetComponent<Move>().selected){
 			GetComponent<Text>().fontStyle = FontStyle.Bold;
-			transform.parent.gameObject.GetComponent<Outline>().effectDistance = new Vector2(5, -5);
+			transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(5, -5);
 		} else {
 			GetComponent<Text>().fontStyle = FontStyle.Normal;
-			transform.parent.gameObject.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+			transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
 		}
 		FixRot();
 		GetComponent<Text>().text = transform.parent.parent.parent.gameObject.name;
 
 		float amt = transform.parent.parent.parent.GetComponent<Meter>().amt;
 		float max = transform.parent.parent.parent.GetComponent<Meter>().max;
-		transform.parent.gameObject.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, (amt + max) / (max * 2f));
+		float pct = (amt + max) / (max * 2f);
+		transform.parent.gameObject.GetComponent<Image>().fillAmount = pct;
+
+		//transform.parent.gameObject.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, pct);
 	}
 
 	public void FixRot(){
