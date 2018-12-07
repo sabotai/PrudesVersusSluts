@@ -23,7 +23,7 @@ public class Meter : MonoBehaviour {
         {
         	isSlut = false;
             amt = 1f * max;
-            GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
+            //GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
         }
 	}
 	
@@ -48,7 +48,7 @@ public class Meter : MonoBehaviour {
 
 		transform.parent = prudeParent;
 
-        GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
+        //GetComponent<SpriteRenderer>().color = new Color(0.9f, 0.9f, 0.9f);
         if (GetComponent<Move>().selected){
 			//Debug.Log("PRUDES WIN!");
 			GetComponent<Move>().selected = false;

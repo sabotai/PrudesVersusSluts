@@ -59,6 +59,9 @@ GameObject:
   - component: {fileID: 198081902111404540}
   - component: {fileID: 114500855800621242}
   - component: {fileID: 82438185682986162}
+  - component: {fileID: 114186846273509048}
+  - component: {fileID: 114380425561904688}
+  - component: {fileID: 114394548108181584}
   m_Layer: 13
   m_Name: Particles
   m_TagString: Untagged
@@ -538,6 +541,32 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &114186846273509048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208125921090352}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_States: []
+  m_File: {fileID: 11400000, guid: c4b1ea485c50d0543b9ee2c73c6b31aa, type: 2}
+  speed: 0.49
+  m_Settings:
+    randomizeOnStart: 1
+    playOnStart: 1
+    overrideFileSettings: 0
+    customPlaybackMode: 1
+    customFramesPerSecond: 8
+    customBorder: {x: 0, y: 0, z: 0, w: 0}
+    customPixelsPerUnit: 100
+    customFilterMode: 2
+    wrapMode: 1
+    startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114200795207586748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,6 +607,32 @@ MonoBehaviour:
   hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
   doHurt: 0
   hurting: 0
+--- !u!114 &114380425561904688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208125921090352}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prudeAnim: {fileID: 11400000, guid: c4b1ea485c50d0543b9ee2c73c6b31aa, type: 2}
+  slutAnim: {fileID: 11400000, guid: 60293f879557639488b061a4bd8e5b58, type: 2}
+--- !u!114 &114394548108181584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208125921090352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4838ad3783a4ca44bbd6a0e3e61a9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prudeMat: {fileID: 2100000, guid: a96ba5a6d7550da4fa7d988eae53a638, type: 2}
+  slutMat: {fileID: 2100000, guid: ba606a462b9136f4e86bd3a475e94f88, type: 2}
 --- !u!114 &114500855800621242
 MonoBehaviour:
   m_ObjectHideFlags: 1
