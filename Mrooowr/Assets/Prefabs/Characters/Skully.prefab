@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114595619320715722}
   - component: {fileID: 82635702247154528}
   - component: {fileID: 114167337954482302}
+  - component: {fileID: 114342955131261952}
   m_Layer: 11
   m_Name: Particles
   m_TagString: Untagged
@@ -540,6 +541,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &114342955131261952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161869181271034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prudeAnim: {fileID: 11400000, guid: e1c021554759a9949804af67443a0e2a, type: 2}
+  slutAnim: {fileID: 11400000, guid: 7378f73c6725cde4ba921d27a2623447, type: 2}
 --- !u!114 &114406759822344794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,7 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amt: 0
-  max: 1
+  max: 1.7
   slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}

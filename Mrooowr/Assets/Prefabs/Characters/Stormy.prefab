@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 114555292685938204}
   - component: {fileID: 82064218676931242}
   - component: {fileID: 114809067696695054}
+  - component: {fileID: 114812992531769714}
   m_Layer: 17
   m_Name: Particles
   m_TagString: Untagged
@@ -614,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 1
+  partDmg: 0.7
   emitClip: {fileID: 8300000, guid: 9399210b8155f5d459fb5a62746057ec, type: 3}
   limitLayers: 1
 --- !u!114 &114629157176741194
@@ -758,6 +759,19 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &114812992531769714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1983027444897570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prudeAnim: {fileID: 11400000, guid: 60bc1c6a6c6c16a40ab8064eaf453040, type: 2}
+  slutAnim: {fileID: 11400000, guid: 2566ff0372c9c59449b15633f96d4340, type: 2}
 --- !u!114 &114856052091513886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amt: 0
-  max: 1
+  max: 1.5
   slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
   slutParent: {fileID: 0}
@@ -1107,7 +1121,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4382,7 +4396,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.12
+      scalar: 0.75
       minScalar: 0
       maxCurve:
         serializedVersion: 2
