@@ -13,18 +13,30 @@ public class AnimManager : MonoBehaviour {
 	DoodleAnimator animator;
 	public float animTimeOut = 2f;
 	float startTime = 0f;
+	public string namePrude, nameSlut;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<DoodleAnimator>();
+		if (transform.parent.gameObject.GetComponent<Selection>().player == 1) {
+			player = 1;
+			gameObject.name = nameSlut;
+		} else {
+			player = 2;
+			gameObject.name = namePrude;
+		}
+		if (player == 1) animator.ChangeAnimation(slutIdleAnim);
+		else if (player == 2) animator.ChangeAnimation(prudeIdleAnim);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (transform.parent.gameObject.GetComponent<Selection>().player == 1) {
 			player = 1;
+			gameObject.name = nameSlut;
 		} else {
 			player = 2;
+			gameObject.name = namePrude;
 		}
 
 		if (Time.time > startTime + animTimeOut && !animReady) animReady = true; 

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DoodleStudio95;
 
 public class Selection : MonoBehaviour {
 
 	public int player = 1;
-	int selected = 0;
+	int selected = 1;
 	public bool begun = false;
 	public Text announcer;
+	public GameObject selectEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -37,34 +39,87 @@ public class Selection : MonoBehaviour {
 
 	}
 	public void CycleSelection(){
+		int oldSelect = selected;
+		if (selected < transform.childCount - 1) {
+			selected++; 
+		} else {
+			selected = 0;
+		}
+		if (transform.childCount > 0){
+			AudioSource aud = transform.GetChild(selected).gameObject.GetComponent<AudioSource>();
+			aud.PlayOneShot(aud.clip);
 
-			if (selected < transform.childCount - 1) {
-				selected++; 
-			} else {
-				selected = 0;
-			}
-			if (transform.childCount > 0){
-				AudioSource aud = transform.GetChild(selected).gameObject.GetComponent<AudioSource>();
-				aud.PlayOneShot(aud.clip);
-			}
-			Select();
+			//have to manually run each of the single play animations because the inspector settings are giving weird results
+			GameObject poof = Instantiate(selectEffect, transform.GetChild(selected).position, Quaternion.identity) as GameObject;
+			//poof.GetComponent<DoodleAnimator>().Pause();
+			Play(poof);
+
+			//create the points for the select transition
+			Vector3[] pos = {transform.GetChild(selected).position, transform.GetChild(oldSelect).position};
+			//GetComponent<LineRenderer>().positions[0] = transform.GetChild(selected).position;
+			//GetComponent<LineRenderer>().positions[1] = transform.GetChild(oldSelect).position;	
+			
+			Debug.Log("selecting " + transform.GetChild(selected).gameObject.name + " from " + transform.GetChild(oldSelect).gameObject.name);
+			GetComponent<DoodleAnimator>().Pause();
+			GetComponent<LineRenderer>().SetPositions(pos);
+			//GetComponent<DoodleAnimator>().PlayAndPauseAt(0, -1);
+			Play(gameObject);
+		}
+		Select();
 	}
 	public void Select(){
 		if (!begun){
-			Debug.Log("selecting " + transform.GetChild(1).gameObject.name);
-			transform.GetChild(2).gameObject.GetComponent<Move>().selected = true;
+			transform.GetChild(1).gameObject.GetComponent<Move>().selected = true;
+				//disable name label
+			for(int i = 1; i < transform.childCount; i++)
+				if (i != selected) transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = false;
+				else  transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+			
 			begun = true;
 		}
 
 		for(int i = 0; i < transform.childCount; i++){
 			if (!transform.GetChild(0).gameObject.CompareTag("Slot") && !transform.GetChild(0).gameObject.CompareTag("Wall")){
-				if (!Manager.gameOver)
-					transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
-				else //select all when game over
+				if (!Manager.gameOver){
+					if (i != selected) {
+						transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
+						//disable name label
+						transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = false;
+					}
+
+				}
+				else {//select all when game over
 					transform.GetChild(i).gameObject.GetComponent<Move>().selected = true;
+					//enable name label
+					transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+				}
 			}
 		}
-		if (transform.childCount > 0 && transform.GetChild(selected).gameObject.CompareTag("Characters"))	transform.GetChild(selected).gameObject.GetComponent<Move>().selected = true;
+		if (transform.childCount > 0 && transform.GetChild(selected).gameObject.CompareTag("Characters"))	{
+				transform.GetChild(selected).gameObject.GetComponent<Move>().selected = true;
+				//enable name label
+				transform.GetChild(selected).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+			}
+
 	
 	}
+
+
+  IEnumerator PlaySequence(GameObject _whichObj) {
+    DoodleAnimator animator = _whichObj.GetComponent<DoodleAnimator>();
+    int i = 0;
+    animator.Pause();
+    while(i < 1) {
+      // Play the animation and wait until it's finished
+      yield return animator.PlayAndPauseAt();
+      // Advanced to the next animation
+      i++;
+    }
+    animator.Stop();
+  }
+
+  public void Play(GameObject whichObj) {
+    //StopAllCoroutines();
+    StartCoroutine(PlaySequence(whichObj));
+  }
 }

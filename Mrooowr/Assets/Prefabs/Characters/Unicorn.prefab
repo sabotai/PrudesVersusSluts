@@ -452,8 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_EffectDistance: {x: 0.25, y: -0.25}
   m_UseGraphicAlpha: 1
 --- !u!114 &114151536317805676
 MonoBehaviour:
@@ -496,8 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_EffectDistance: {x: 0.25, y: -0.25}
   m_UseGraphicAlpha: 1
 --- !u!114 &114319746954701254
 MonoBehaviour:
@@ -520,6 +520,8 @@ MonoBehaviour:
   prudeWalkAnim: {fileID: 11400000, guid: 8e5009a6078e9db40ac6a2f887e94fcd, type: 2}
   animReady: 1
   animTimeOut: 2
+  namePrude: Horsey
+  nameSlut: Uni
 --- !u!114 &114361623204918246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 00939108fb3ed4e3cb9664cc3e948d48, type: 2}
+  m_File: {fileID: 11400000, guid: 52ced16bd57faea45b2e05bac38cdc66, type: 2}
   speed: 0.47
   m_Settings:
     randomizeOnStart: 0
@@ -754,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 00939108fb3ed4e3cb9664cc3e948d48, type: 2}
+  m_File: {fileID: 11400000, guid: 52ced16bd57faea45b2e05bac38cdc66, type: 2}
   speed: 0.47
   m_Settings:
     randomizeOnStart: 0
@@ -5457,7 +5459,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213195525328404260, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_Sprite: {fileID: 213267217822219284, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5578,7 +5580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.845311, y: -2.7328606}
+  m_AnchoredPosition: {x: 2.773147, y: 5.442453}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224593419764225940

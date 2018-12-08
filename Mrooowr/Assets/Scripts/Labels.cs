@@ -14,10 +14,10 @@ public class Labels : MonoBehaviour {
 	void Update () {
 		if (transform.parent.parent.parent.gameObject.GetComponent<Move>().selected){
 			GetComponent<Text>().fontStyle = FontStyle.Bold;
-			transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(5, -5);
+			//transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(5, -5);
 		} else {
 			GetComponent<Text>().fontStyle = FontStyle.Normal;
-			transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+			//transform.parent.parent.GetChild(0).gameObject.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
 		}
 		FixRot();
 		GetComponent<Text>().text = transform.parent.parent.parent.gameObject.name;

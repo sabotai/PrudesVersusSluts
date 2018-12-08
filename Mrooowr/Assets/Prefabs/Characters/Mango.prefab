@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 00939108fb3ed4e3cb9664cc3e948d48, type: 2}
+  m_File: {fileID: 11400000, guid: 52ced16bd57faea45b2e05bac38cdc66, type: 2}
   speed: 0.47
   m_Settings:
     randomizeOnStart: 0
@@ -531,8 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_EffectDistance: {x: 0.25, y: -0.25}
   m_UseGraphicAlpha: 1
 --- !u!114 &114222880537419696
 MonoBehaviour:
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 00939108fb3ed4e3cb9664cc3e948d48, type: 2}
+  m_File: {fileID: 11400000, guid: 52ced16bd57faea45b2e05bac38cdc66, type: 2}
   speed: 0.47
   m_Settings:
     randomizeOnStart: 0
@@ -571,8 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_EffectDistance: {x: 0.25, y: -0.25}
   m_UseGraphicAlpha: 1
 --- !u!114 &114397994055285092
 MonoBehaviour:
@@ -860,6 +860,8 @@ MonoBehaviour:
   prudeWalkAnim: {fileID: 11400000, guid: 464364b2c67063b439a279d97dcce288, type: 2}
   animReady: 1
   animTimeOut: 2
+  namePrude: Jimmy
+  nameSlut: Mango
 --- !u!114 &114912071059854966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5638,7 +5640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.381872, y: -1.4291562}
+  m_AnchoredPosition: {x: 4.3340144, y: 5.5475845}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224665905543644166

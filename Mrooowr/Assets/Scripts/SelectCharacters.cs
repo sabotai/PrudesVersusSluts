@@ -17,8 +17,8 @@ public class SelectCharacters : MonoBehaviour {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 		sub.text = "Choose your sluts/prudes!";
 		aud = Camera.main.GetComponent<AudioSource>();
-		GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
-				transform.localScale = prefab[currentSelection].transform.localScale;
+		//GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+		transform.localScale = prefab[currentSelection].transform.localScale;
 	}
 	
 	// Update is called once per frame
@@ -31,8 +31,8 @@ public class SelectCharacters : MonoBehaviour {
 					currentSelection = 0;
 				}
 				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
-
-				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;
+				else if (player == 2) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim;
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
 			
@@ -43,7 +43,10 @@ public class SelectCharacters : MonoBehaviour {
 					currentSelection = prefab.Length - 1;
 				}
 				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
-				GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+				//GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+
+				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;
+				else if (player == 2) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim;
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
 		}
