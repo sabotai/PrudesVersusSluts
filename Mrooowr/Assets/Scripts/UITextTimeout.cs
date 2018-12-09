@@ -16,7 +16,7 @@ public class UITextTimeout : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > startTime + timerAmt && timerRunning){ //timer is up
+		if (Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning){ //timer is up
 			timerRunning = false;
 			GetComponent<Text>().text = "";
 			transform.parent.GetComponent<Image>().enabled = false;
@@ -25,7 +25,7 @@ public class UITextTimeout : MonoBehaviour {
 		} else if (GetComponent<Text>().text != "" && !timerRunning){ //new text?
 			transform.parent.GetComponent<Image>().enabled = true;
 			timerRunning = true;
-			startTime = Time.time;
+			startTime = Time.timeSinceLevelLoad;
 		}
 
 		if (Manager.gameOver) this.enabled = false;

@@ -11,11 +11,13 @@ public class Manager : MonoBehaviour {
 	public static bool p2Ready = false;
 	public CamMove camMover;
 	public AudioClip selectClip, confirmClip;
+	public static string winner = " ";
 	// Use this for initialization
 	void Start () {
 		p1Ready = false;
 		p2Ready = false;
 		gameOver = false;
+		winner = " ";
 	}
 	
 	// Update is called once per frame

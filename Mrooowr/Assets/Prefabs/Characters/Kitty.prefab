@@ -645,7 +645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partDmg: 0.008
-  emitClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  emitClip: {fileID: 8300000, guid: 356ce8a5df3c8e845a449a53eb048400, type: 3}
+  emitClipPrude: {fileID: 8300000, guid: 356ce8a5df3c8e845a449a53eb048400, type: 3}
+  emitClipSlut: {fileID: 8300000, guid: 5e63796d62c79e44e9378b32b476e13d, type: 3}
   limitLayers: 0
 --- !u!114 &114524008678213674
 MonoBehaviour:
@@ -781,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slutActionAnim: {fileID: 11400000, guid: 18dfc079831314b459d817f31aed425c, type: 2}
+  slutActionAnim: {fileID: 11400000, guid: 00383d9898d48f744bde977d85612e98, type: 2}
   prudeActionAnim: {fileID: 11400000, guid: fcd309fe4e2f8f14291f8ef963e2aaee, type: 2}
   slutHurtAnim: {fileID: 11400000, guid: ad79c911803c9e94890c4116a89fd2dd, type: 2}
   prudeHurtAnim: {fileID: 11400000, guid: 8e92ef0952240da45829fe2f4b4dfc76, type: 2}

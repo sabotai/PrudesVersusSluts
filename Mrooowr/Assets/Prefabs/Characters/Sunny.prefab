@@ -661,6 +661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDmg: 0.7
   emitClip: {fileID: 8300000, guid: 9399210b8155f5d459fb5a62746057ec, type: 3}
+  emitClipPrude: {fileID: 8300000, guid: b8c65784587071846999fbba5ceebee5, type: 3}
+  emitClipSlut: {fileID: 8300000, guid: 9399210b8155f5d459fb5a62746057ec, type: 3}
   limitLayers: 1
 --- !u!114 &114587471689091528
 MonoBehaviour:

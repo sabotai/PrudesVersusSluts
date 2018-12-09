@@ -25,9 +25,11 @@ public class Selection : MonoBehaviour {
 
 		if (transform.childCount == 0 && !Manager.gameOver){
 			if (player == 1){
-				announcer.text = "Prudes Win!";
+				announcer.text = Randomizer.prudeName + " Win!";
+				Manager.winner = Randomizer.prudeName;
 			} else {
-				announcer.text = "Sluts Win!";
+				announcer.text = Randomizer.slutName + " Win!";
+				Manager.winner = Randomizer.slutName;
 			}
 			Manager.gameOver = true;
 		}

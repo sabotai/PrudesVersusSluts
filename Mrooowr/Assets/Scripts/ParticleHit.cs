@@ -7,7 +7,7 @@ public class ParticleHit : MonoBehaviour {
     ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
     public float partDmg = 0f;
-    public AudioClip emitClip;
+    public AudioClip emitClip, emitClipPrude, emitClipSlut;
     public bool limitLayers = true;
 
     AudioSource aud;
@@ -20,6 +20,10 @@ public class ParticleHit : MonoBehaviour {
     }
 
     void Update(){
+        if (transform.parent.parent.GetComponent<Selection>().player == 1) emitClip = emitClipSlut;
+        else  emitClip = emitClipPrude;
+
+
     	if (part.particleCount > 0 && part.isEmitting) {
     		ActionSounds();
     	} else {
