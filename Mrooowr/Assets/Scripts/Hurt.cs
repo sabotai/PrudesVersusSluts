@@ -19,7 +19,7 @@ public class Hurt : MonoBehaviour {
 			Debug.Log(gameObject.name + " hurting");
 			//GetComponent<AudioSource>().clip = hurtClip;
 			//GetComponent<AudioSource>().Play();
-			GetComponent<AudioSource>().PlayOneShot(hurtClip, 0.5f);
+			GetComponent<AudioSource>().PlayOneShot(hurtClip, 1.2f);
 			Play();
 		} 
 	}

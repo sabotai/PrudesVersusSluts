@@ -7,29 +7,31 @@ public class ParticleHit : MonoBehaviour {
     ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
     public float partDmg = 0f;
-    public AudioClip emitClip, emitClipPrude, emitClipSlut;
+    //public AudioClip emitClip, emitClipPrude, emitClipSlut;
     public bool limitLayers = true;
 
-    AudioSource aud;
+   // AudioSource aud;
 
     void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
-        aud = GetComponent<AudioSource>();
+        //aud = GetComponent<AudioSource>();
     }
 
     void Update(){
+        /*
         if (transform.parent.parent.GetComponent<Selection>().player == 1) emitClip = emitClipSlut;
         else  emitClip = emitClipPrude;
 
 
     	if (part.particleCount > 0 && part.isEmitting) {
-    		ActionSounds();
+    		//ActionSounds();
     	} else {
     		aud.loop = false;
     		//Stop();
     	}
+        */
 
         if (limitLayers){
         	var col = part.collision;
@@ -47,6 +49,7 @@ public class ParticleHit : MonoBehaviour {
         }
    	
     }
+    /*
     void ActionSounds(){
 		if (!aud.isPlaying){
 			aud.clip = emitClip;
@@ -55,6 +58,7 @@ public class ParticleHit : MonoBehaviour {
 			//aud.PlayDelayed(0.1f);//PlayOneShot(actionClip, 0.1f);
 		}	
     }
+    */
 
     void OnParticleCollision(GameObject other)
     {	

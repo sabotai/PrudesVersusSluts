@@ -15,7 +15,7 @@ public class SelectCharacters : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
-		sub.text = "Choose your sluts/prudes!";
+		sub.text = "Choose your " + Randomizer.prudeName + " and " + Randomizer.slutName + "!";
 		aud = Camera.main.GetComponent<AudioSource>();
 		//GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 		transform.localScale = prefab[currentSelection].transform.localScale;
@@ -30,7 +30,7 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = 0;
 				}
-				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
 				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;
 				else if (player == 2) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim;
 				transform.localScale = prefab[currentSelection].transform.localScale;
@@ -42,7 +42,7 @@ public class SelectCharacters : MonoBehaviour {
 				} else {
 					currentSelection = prefab.Length - 1;
 				}
-				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.05f);
+				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
 				//GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 
 				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;

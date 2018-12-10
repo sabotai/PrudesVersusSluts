@@ -20,14 +20,14 @@ public class SceneSelection : MonoBehaviour {
 	void Update () {
 		if (Time.time > textDelay){
 			subAnnouncer.transform.parent.gameObject.SetActive(true);
-			subAnnouncer.text = "Choose your battleground";
+			subAnnouncer.text = "◀ Choose your battleground ▶";
 		}
 		if (Input.anyKeyDown){
 			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
 				prudes.SetActive(true);
 				sluts.SetActive(true);
 				this.enabled = false;
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.3f);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
 
 			}
 
@@ -38,7 +38,7 @@ public class SceneSelection : MonoBehaviour {
 					selection = 0;
 				}
 
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.05f);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
 			}
 			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
 				if (selection > 0){
@@ -46,7 +46,7 @@ public class SceneSelection : MonoBehaviour {
 				} else {
 					selection = transform.childCount - 1;
 				}
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.05f);
+				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
 
 			}
 

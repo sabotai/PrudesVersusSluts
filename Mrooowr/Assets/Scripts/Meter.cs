@@ -43,7 +43,7 @@ public class Meter : MonoBehaviour {
 	}
 
 	public void Prudify(){
-		GetComponent<AudioSource>().PlayOneShot(prudeConvertClip, 0.2f);
+		GetComponent<AudioSource>().PlayOneShot(prudeConvertClip, 0.7f);
 		isSlut = false; 
 
 		transform.parent = prudeParent;
@@ -57,7 +57,7 @@ public class Meter : MonoBehaviour {
 		}
 	}
 	public void Slutify(){
-		GetComponent<AudioSource>().PlayOneShot(slutConvertClip, 0.2f);
+		GetComponent<AudioSource>().PlayOneShot(slutConvertClip, 1f);
 
 		transform.parent = slutParent;
 		isSlut = true;

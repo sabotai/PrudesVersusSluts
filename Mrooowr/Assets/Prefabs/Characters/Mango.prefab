@@ -264,7 +264,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7bdbc8032f249de408d8af0707f3bcff, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -308,7 +308,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -518,10 +518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partDmg: 0.05
-  emitClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  emitClip: {fileID: 8300000, guid: f597abc0cf55aa9448650fd54e6a9be8, type: 3}
   emitClipPrude: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
-  emitClipSlut: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
-  limitLayers: 1
+  emitClipSlut: {fileID: 8300000, guid: f597abc0cf55aa9448650fd54e6a9be8, type: 3}
+  limitLayers: 0
 --- !u!114 &114208658254314022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,8 +589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amt: 0
   max: 7.5
-  slutConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
-  prudeConvertClip: {fileID: 8300000, guid: b23c4e4e863bb154a823fcc025174249, type: 3}
+  slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
+  prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!114 &114489171488655836
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e765b63f702efb247bd5ec1ab7d4c520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtClip: {fileID: 8300000, guid: a6be293dbdabef64abb54e360e0665c7, type: 3}
+  hurtClip: {fileID: 8300000, guid: fe978f77bd24e9e41814f095398cda3e, type: 3}
   doHurt: 0
   hurting: 0
 --- !u!114 &114761006613761836
@@ -877,6 +877,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doAction: 0
   auto: 0
+  emitClipPrude: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  emitClipSlut: {fileID: 8300000, guid: f597abc0cf55aa9448650fd54e6a9be8, type: 3}
 --- !u!198 &198135143094008198
 ParticleSystem:
   m_ObjectHideFlags: 1
