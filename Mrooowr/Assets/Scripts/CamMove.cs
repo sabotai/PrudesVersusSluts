@@ -9,6 +9,8 @@ public class CamMove : MonoBehaviour {
 	public bool max = false;
 	float maxRight, maxLeft;
 	public float speed = 0.6f;
+	public Transform reverseSlave;
+	public float parallaxAmt = 0.5f;
 	// Use this for initialization
 	void Start () {	
 		Manager.howManyChars = slutParent.childCount + prudeParent.childCount;
@@ -18,8 +20,9 @@ public class CamMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		transform.parent.position = Vector3.Lerp(transform.position, AvgCharPos(), speed);
+		Vector3 move = Vector3.Lerp(transform.position, AvgCharPos(), speed);
+		if (reverseSlave) reverseSlave.position += parallaxAmt * (transform.parent.position - move);
+		transform.parent.position = move;//Vector3.Lerp(transform.position, AvgCharPos(), speed);
 
 
 	}
