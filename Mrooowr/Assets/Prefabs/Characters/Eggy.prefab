@@ -449,7 +449,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397874022741160}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
@@ -575,9 +575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partDmg: 0.01
-  emitClip: {fileID: 8300000, guid: 131a37e1d3e89964081d935a144b6e3a, type: 3}
-  emitClipPrude: {fileID: 8300000, guid: 131a37e1d3e89964081d935a144b6e3a, type: 3}
-  emitClipSlut: {fileID: 8300000, guid: 131a37e1d3e89964081d935a144b6e3a, type: 3}
   limitLayers: 1
 --- !u!114 &114264422592094310
 MonoBehaviour:
@@ -819,7 +816,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397874022741160}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
   m_Name: 

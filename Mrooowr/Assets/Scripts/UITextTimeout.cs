@@ -19,11 +19,11 @@ public class UITextTimeout : MonoBehaviour {
 		if (Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning){ //timer is up
 			timerRunning = false;
 			GetComponent<Text>().text = "";
-			transform.parent.GetComponent<Image>().enabled = false;
+			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = false;
 
 			
 		} else if (GetComponent<Text>().text != "" && !timerRunning){ //new text?
-			transform.parent.GetComponent<Image>().enabled = true;
+			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = true;
 			timerRunning = true;
 			startTime = Time.timeSinceLevelLoad;
 		}
