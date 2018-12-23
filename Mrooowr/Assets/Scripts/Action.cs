@@ -21,7 +21,9 @@ public class Action : MonoBehaviour {
         if (transform.parent.GetComponent<Selection>().player == 1) emitClip = emitClipSlut;
         else  emitClip = emitClipPrude;
 
+        if (!doAction) aud.Stop();
 
+        //auto for eggy and anyone else who gets the auto
 		if (auto && !doAction && Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") && GetComponent<Move>().selected) {
 				doAction = true;
     			ActionSounds();
@@ -38,12 +40,12 @@ public class Action : MonoBehaviour {
 		}
 	}
     void ActionSounds(){
-		if (!aud.isPlaying){
+		//if (!aud.isPlaying){
 			aud.clip = emitClip;
 			aud.loop = true;
 			aud.Play();
 			//aud.PlayDelayed(0.1f);//PlayOneShot(actionClip, 0.1f);
-		}	
+		//}	
     }
 
 	public void Play() {
