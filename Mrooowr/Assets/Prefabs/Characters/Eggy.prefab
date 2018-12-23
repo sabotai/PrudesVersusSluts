@@ -449,7 +449,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397874022741160}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397874022741160}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
   m_Name: 
@@ -5425,7 +5425,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ef42f56efdb59604691d0cd2abbd932f, type: 2}
+  - {fileID: 2100000, guid: 0570ecf12e436844cb52fdd7f6ee6d25, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5501,7 +5501,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213595817502769684, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213094611700653660, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5642,7 +5642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.0114086, y: 5.3262286}
+  m_AnchoredPosition: {x: -2.2756367, y: -5.1129622}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224854243396937870

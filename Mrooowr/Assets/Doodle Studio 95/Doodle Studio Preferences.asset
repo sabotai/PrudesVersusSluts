@@ -140,7 +140,7 @@ MonoBehaviour:
     - {r: 0.39607844, g: 0.34509805, b: 0.29803923, a: 1}
     - {r: 0.5647059, g: 0.42352942, b: 0.3529412, a: 1}
     - {r: 0.57254905, g: 0.4117647, b: 0.27058825, a: 1}
-  m_SceneViewDrawing: 1
+  m_SceneViewDrawing: 0
   m_ShowJumbleTool: 0
   m_ReferenceImage: {fileID: 0}
   m_SoundRecorder: 0
