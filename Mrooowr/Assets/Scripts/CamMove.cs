@@ -10,6 +10,7 @@ public class CamMove : MonoBehaviour {
 	float maxRight, maxLeft;
 	public float speed = 0.6f;
 	GameObject[] reversed;
+	GameObject[] background;
 	public float parallaxAmt = 0.5f;
 	// Use this for initialization
 	void Start () {	
@@ -17,6 +18,7 @@ public class CamMove : MonoBehaviour {
 		maxRight = GameObject.Find("RightBound").transform.position.x;
 		maxLeft = GameObject.Find("LeftBound").transform.position.x;
 		reversed = GameObject.FindGameObjectsWithTag("Foreground");
+		background = GameObject.FindGameObjectsWithTag("Background");
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,11 @@ public class CamMove : MonoBehaviour {
 		if (reversed.Length > 0) {
 			foreach(GameObject fore in reversed)
 				fore.transform.position += parallaxAmt * (transform.parent.position - move);
+		}
+
+		if (background.Length > 0) {
+			foreach(GameObject back in background)
+				back.transform.position += -0.5f * parallaxAmt * (transform.parent.position - move);
 		}
 		transform.parent.position = move;//Vector3.Lerp(transform.position, AvgCharPos(), speed);
 

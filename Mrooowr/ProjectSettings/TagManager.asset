@@ -10,6 +10,7 @@ TagManager:
   - Characters
   - Bounds
   - Foreground
+  - Background
   layers:
   - Default
   - TransparentFX

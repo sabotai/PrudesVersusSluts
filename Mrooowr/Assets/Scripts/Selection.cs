@@ -11,15 +11,22 @@ public class Selection : MonoBehaviour {
 	public bool begun = false;
 	public Text announcer;
 	public GameObject selectEffect;
+	public bool isBot = false;
 
 	// Use this for initialization
 	void Start () {
-		
+		if (isBot) GetComponent<Bot>().enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("P" + player + "_Next") && begun){
+		if (Input.GetKeyDown(KeyCode.B) && player == 1){
+			GetComponent<Bot>().enabled = !GetComponent<Bot>().enabled;
+			isBot = true;
+		} 
+
+		if ((GetComponent<Bot>().swap || Input.GetButtonDown("P" + player + "_Next")) && begun){
+			if (isBot) GetComponent<Bot>().swap = false;
 			CycleSelection();
 		}
 
