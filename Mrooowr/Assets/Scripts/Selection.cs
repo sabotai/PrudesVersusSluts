@@ -24,6 +24,9 @@ public class Selection : MonoBehaviour {
 			GetComponent<Bot>().enabled = !GetComponent<Bot>().enabled;
 			isBot = true;
 		} 
+		if (Input.GetKeyDown(KeyCode.N) && player == 1){
+			GetComponent<Spawner>().enabled = !GetComponent<Spawner>().enabled;
+		} 
 
 		if ((GetComponent<Bot>().swap || Input.GetButtonDown("P" + player + "_Next")) && begun){
 			if (isBot) GetComponent<Bot>().swap = false;

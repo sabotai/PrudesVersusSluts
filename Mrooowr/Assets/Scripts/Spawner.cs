@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
 	public float spawnRate = 5f;
 	float nextSpawn;
 	public bool randomize = true;
+	public Vector3 spawnDir;
 	// Use this for initialization
 	void Start () {
 		nextSpawn = spawnRate * Random.value;
@@ -16,8 +17,8 @@ public class Spawner : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextSpawn) {
 			nextSpawn = Time.time + spawnRate * Random.value;
-			GameObject clone = Instantiate (cloneMe, transform.position, Quaternion.identity) as GameObject;
-			clone.transform.parent = transform.parent;
+			GameObject clone = Instantiate (cloneMe, transform.position, Quaternion.Euler(spawnDir.x, spawnDir.y, spawnDir.z), transform) as GameObject;
+			
 
 		}
 
