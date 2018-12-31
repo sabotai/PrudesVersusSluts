@@ -231,6 +231,8 @@ GameObject:
   - component: {fileID: 17520699}
   - component: {fileID: 17520703}
   - component: {fileID: 17520702}
+  - component: {fileID: 17520704}
+  - component: {fileID: 17520705}
   m_Layer: 19
   m_Name: Background-Streets-LimoFire_2018-12-26_3-32-40 Sprite
   m_TagString: Characters
@@ -250,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 7e0457ab67c983f41ab9eaee393e1da6, type: 2}
+  m_File: {fileID: 11400000, guid: d1fb680c81cd6de46a841823becfdabd, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -299,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213254952761040376, guid: 7e0457ab67c983f41ab9eaee393e1da6, type: 2}
+  m_Sprite: {fileID: 213833097379741628, guid: d1fb680c81cd6de46a841823becfdabd, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -365,6 +367,127 @@ EdgeCollider2D:
   - {x: -1.19, y: -1.52}
   - {x: -2.9, y: -1.13}
   - {x: -2.08, y: 0.19}
+--- !u!114 &17520704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17520698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331d59f4a335e243a9dc502f7f41f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: {fileID: 11400000, guid: 01a2f12c7c74c224eb399946946ad888, type: 2}
+  dead2: {fileID: 11400000, guid: 413190df5c4a66d45a0f54e3208e50a4, type: 2}
+  dead3: {fileID: 11400000, guid: 3562a764b3b42e54283f298ef1d31804, type: 2}
+  dead4: {fileID: 11400000, guid: e84647711a1278f479aa9e08df8cb138, type: 2}
+  dead5: {fileID: 11400000, guid: c7bcca383dcfd834791c77208a1dbb39, type: 2}
+  dead6: {fileID: 11400000, guid: 7e0457ab67c983f41ab9eaee393e1da6, type: 2}
+  move: 0
+  isDead: 0
+  isRat: 0
+  direction: {x: 0, y: 0, z: 0}
+  speed: 1
+  deadClip: {fileID: 8300000, guid: b8c65784587071846999fbba5ceebee5, type: 3}
+  minHits: 3
+  numHits: 0
+  goBoom: 1
+--- !u!82 &17520705
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17520698}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b8c65784587071846999fbba5ceebee5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &23917494
 GameObject:
   m_ObjectHideFlags: 0
@@ -13554,6 +13677,8 @@ GameObject:
   - component: {fileID: 1646011929}
   - component: {fileID: 1646011928}
   - component: {fileID: 1646011927}
+  - component: {fileID: 1646011931}
+  - component: {fileID: 1646011932}
   m_Layer: 19
   m_Name: Background-Streets-TrashFirstVertical_2018-12-26_2-50-45 Sprite (2)
   m_TagString: Bounds
@@ -13586,7 +13711,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: -0.72}
+  m_Offset: {x: 0.2, y: -1.51}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13597,7 +13722,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3.4}
+  m_Size: {x: 2, y: 2.08}
   m_EdgeRadius: 0
 --- !u!50 &1646011928
 Rigidbody2D:
@@ -13631,7 +13756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_File: {fileID: 11400000, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -13680,7 +13805,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213919036365370066, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_Sprite: {fileID: 213576992303626502, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13691,6 +13816,127 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1646011931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1646011925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331d59f4a335e243a9dc502f7f41f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  dead2: {fileID: 0}
+  dead3: {fileID: 0}
+  dead4: {fileID: 0}
+  dead5: {fileID: 0}
+  dead6: {fileID: 0}
+  move: 0
+  isDead: 0
+  isRat: 0
+  direction: {x: 0, y: 0, z: 0}
+  speed: 1
+  deadClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  minHits: 2
+  numHits: 0
+  goBoom: 1
+--- !u!82 &1646011932
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1646011925}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1648676459
 GameObject:
   m_ObjectHideFlags: 0
@@ -14130,6 +14376,8 @@ GameObject:
   - component: {fileID: 1695008285}
   - component: {fileID: 1695008284}
   - component: {fileID: 1695008283}
+  - component: {fileID: 1695008287}
+  - component: {fileID: 1695008288}
   m_Layer: 19
   m_Name: Background-Streets-TrashFirstVertical_2018-12-26_2-50-45 Sprite (1)
   m_TagString: Bounds
@@ -14144,7 +14392,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1695008281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.88, y: -1.76, z: 0.021720141}
+  m_LocalPosition: {x: 11.07, y: -0.36, z: 0.021720141}
   m_LocalScale: {x: 0.318076, y: 0.318076, z: 0.318076}
   m_Children: []
   m_Father: {fileID: 2000010872}
@@ -14162,7 +14410,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: -0.72}
+  m_Offset: {x: 0.2, y: -1.51}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14173,7 +14421,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3.4}
+  m_Size: {x: 2, y: 2.08}
   m_EdgeRadius: 0
 --- !u!50 &1695008284
 Rigidbody2D:
@@ -14207,7 +14455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_File: {fileID: 11400000, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -14256,7 +14504,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213919036365370066, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_Sprite: {fileID: 213576992303626502, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14267,6 +14515,127 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1695008287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695008281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331d59f4a335e243a9dc502f7f41f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  dead2: {fileID: 0}
+  dead3: {fileID: 0}
+  dead4: {fileID: 0}
+  dead5: {fileID: 0}
+  dead6: {fileID: 0}
+  move: 0
+  isDead: 0
+  isRat: 0
+  direction: {x: 0, y: 0, z: 0}
+  speed: 1
+  deadClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  minHits: 2
+  numHits: 0
+  goBoom: 1
+--- !u!82 &1695008288
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695008281}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1703627202
 Prefab:
   m_ObjectHideFlags: 0
@@ -15570,6 +15939,8 @@ GameObject:
   - component: {fileID: 1828409162}
   - component: {fileID: 1828409161}
   - component: {fileID: 1828409160}
+  - component: {fileID: 1828409164}
+  - component: {fileID: 1828409165}
   m_Layer: 19
   m_Name: Background-Streets-TrashFirstVertical_2018-12-26_2-50-45 Sprite
   m_TagString: Bounds
@@ -15602,7 +15973,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: -0.72}
+  m_Offset: {x: 0.2, y: -1.51}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15613,7 +15984,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3.4}
+  m_Size: {x: 2, y: 2.08}
   m_EdgeRadius: 0
 --- !u!50 &1828409161
 Rigidbody2D:
@@ -15647,7 +16018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_File: {fileID: 11400000, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -15696,7 +16067,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213919036365370066, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  m_Sprite: {fileID: 213576992303626502, guid: d949f14576a933048b3c59bc1d8ce225, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15707,6 +16078,127 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1828409164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828409158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331d59f4a335e243a9dc502f7f41f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dead: {fileID: 11400000, guid: f73696aff55365b4abb3cc2b69e66188, type: 2}
+  dead2: {fileID: 0}
+  dead3: {fileID: 0}
+  dead4: {fileID: 0}
+  dead5: {fileID: 0}
+  dead6: {fileID: 0}
+  move: 0
+  isDead: 0
+  isRat: 0
+  direction: {x: 0, y: 0, z: 0}
+  speed: 1
+  deadClip: {fileID: 8300000, guid: 4708066780d7824498afa87487011017, type: 3}
+  minHits: 2
+  numHits: 0
+  goBoom: 1
+--- !u!82 &1828409165
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828409158}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1836281987
 GameObject:
   m_ObjectHideFlags: 0
