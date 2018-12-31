@@ -20,7 +20,7 @@ public class SceneSelection : MonoBehaviour {
 	void Update () {
 		if (Time.time > textDelay){
 			subAnnouncer.transform.parent.gameObject.SetActive(true);
-			subAnnouncer.text = "◀ Choose your battleground ▶";
+			subAnnouncer.text = "<◀ Choose your battleground ▶>";
 		}
 		if (Input.anyKeyDown){
 			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
