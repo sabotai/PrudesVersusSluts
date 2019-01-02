@@ -12,6 +12,7 @@ public class SelectCharacters : MonoBehaviour {
 	public Text sub;
 	public AudioClip selectSound;
 	AudioSource aud;
+	public GameObject instructions;
 	// Use this for initialization
 	void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
@@ -31,8 +32,8 @@ public class SelectCharacters : MonoBehaviour {
 					currentSelection = 0;
 				}
 				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
-				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;
-				else if (player == 2) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim;
+				if (player == 1) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim);
+				else if (player == 2) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim);
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
 			
@@ -45,8 +46,8 @@ public class SelectCharacters : MonoBehaviour {
 				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
 				//GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 
-				if (player == 1) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim;
-				else if (player == 2) GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim;
+				if (player == 1) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim);
+				else if (player == 2) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim);
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
 		}
@@ -78,6 +79,7 @@ public class SelectCharacters : MonoBehaviour {
 				if (sib.CompareTag("Wall")) sib.GetComponent<MoveMe>().move = true;
 				sub.text = "";
 				sub.transform.parent.gameObject.SetActive(false);
+				instructions.SetActive(false);
 			}
 			Destroy(gameObject);//.SetActive(false);
 		}
