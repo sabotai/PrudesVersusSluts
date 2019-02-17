@@ -11,6 +11,8 @@ TagManager:
   - Bounds
   - Foreground
   - Background
+  - PhysicalPlane
+  - Music
   layers:
   - Default
   - TransparentFX
