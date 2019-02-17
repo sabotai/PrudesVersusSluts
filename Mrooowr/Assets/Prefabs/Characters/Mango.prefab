@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partDmg: 0.05
-  limitLayers: 0
+  limitLayers: 1
 --- !u!114 &114208658254314022
 MonoBehaviour:
   m_ObjectHideFlags: 1

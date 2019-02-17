@@ -5,6 +5,10 @@ TextureImporter:
     21300000: Background-Sky-SunRipple-SpriteSheet_0
     21300002: Background-Sky-SunRipple-SpriteSheet_1
     21300004: Background-Sky-SunRipple-SpriteSheet_2
+    21300006: frame_0_len_1_fps_6_playbackmode_1
+    21300008: frame_1_len_1
+    21300010: frame_2_len_1
+    21300012: frame_3_len_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -34,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -83,65 +87,96 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background-Sky-SunRipple-SpriteSheet_0
+      name: frame_0_len_1_fps_6_playbackmode_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 478
+        width: 2138
+        height: 478
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bca5510fe1fe048a330f7817d60ae4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame_1_len_1
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 478
+        width: 2138
+        height: 478
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2776b85e3b4ebf040bef58a8dde7e522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame_2_len_1
+      rect:
+        serializedVersion: 2
+        x: 4276
+        y: 478
+        width: 2138
+        height: 478
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0524cee67ab72644fa0e2475ea433c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame_3_len_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2138
         height: 478
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4740ef72a30055b4b99f168f860fc587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background-Sky-SunRipple-SpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 2138
-        y: 0
-        width: 2138
-        height: 478
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3899710f8eb93cb49b2ff7476fcc578b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background-Sky-SunRipple-SpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 4276
-        y: 0
-        width: 2138
-        height: 478
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7b5c861fd5c6a9428d018932f9c2035
+      spriteID: 5fe0b8c052db56d45bf0f992965123fa
       vertices: []
       indices: 
       edges: []
