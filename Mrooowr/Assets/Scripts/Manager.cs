@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour {
 	public static int howManyChars;
 	public static bool p1Ready = false;
 	public static bool p2Ready = false;
+	public static int numPlayers = 1;
 	public CamMove camMover;
 	public AudioClip selectClip, confirmClip;
 	public static string winner = " ";

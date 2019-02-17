@@ -13,6 +13,7 @@ public class SelectCharacters : MonoBehaviour {
 	public AudioClip selectSound;
 	AudioSource aud;
 	public GameObject instructions;
+	Bot bot;
 	// Use this for initialization
 	void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
@@ -20,11 +21,15 @@ public class SelectCharacters : MonoBehaviour {
 		aud = Camera.main.GetComponent<AudioSource>();
 		//GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 		transform.localScale = prefab[currentSelection].transform.localScale;
+		bot = GetComponent<Bot>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKeyDown){ //limit to only when key is being pressed
+			//bot
+
+
 			if (Input.GetAxis("P" + player + "_Horizontal") > 0f){
 				if (currentSelection < prefab.Length - 1){
 					currentSelection++;
@@ -81,6 +86,7 @@ public class SelectCharacters : MonoBehaviour {
 				sub.transform.parent.gameObject.SetActive(false);
 				instructions.SetActive(false);
 			}
+			if (Manager.numPlayers == 1 && bot) bot.enabled = true;
 			Destroy(gameObject);//.SetActive(false);
 		}
 	

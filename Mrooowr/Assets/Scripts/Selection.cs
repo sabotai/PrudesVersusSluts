@@ -20,8 +20,8 @@ public class Selection : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.B) && player == 1){
-			GetComponent<Bot>().enabled = !GetComponent<Bot>().enabled;
+		if (Manager.numPlayers == 1 && player == 1){
+			GetComponent<Bot>().enabled = true;//!GetComponent<Bot>().enabled;
 			isBot = true;
 		} 
 		if (Input.GetKeyDown(KeyCode.N) && player == 1){
