@@ -18,12 +18,15 @@ public class UITextTimeout : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (allowSkip && (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")))){ //timer is up
+		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (allowSkip && (Input.anyKeyDown))){ //timer is up
 			timerRunning = false;
 			GetComponent<Text>().text = "";
-			if (next != null) next.SetActive(true);
+			if (next != null) {
+				next.SetActive(true);
+				next = null;
+			}
 			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = false;
-			this.enabled = false;
+			//this.enabled = false;
 			
 		} else if (GetComponent<Text>().text != "" && !timerRunning){ //new text?
 			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = true;
@@ -31,6 +34,6 @@ public class UITextTimeout : MonoBehaviour {
 			startTime = Time.timeSinceLevelLoad;
 		}
 
-		if (Manager.gameOver) this.enabled = false;
+		//if (Manager.gameOver) this.enabled = false;
 	}
 }

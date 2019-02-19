@@ -26,8 +26,9 @@ public class SceneSelection : MonoBehaviour {
 			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
 				prudes.SetActive(true);
 				sluts.SetActive(true);
-				this.enabled = false;
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
+				//subAnnouncer.transform.parent.gameObject.SetActive(false);
+				this.enabled = false;
 
 			}
 

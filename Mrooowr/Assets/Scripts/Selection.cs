@@ -12,6 +12,7 @@ public class Selection : MonoBehaviour {
 	public Text announcer;
 	public GameObject selectEffect;
 	public bool isBot = false;
+	Vector3 oldSelect;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +52,10 @@ public class Selection : MonoBehaviour {
 
 	}
 	public void CycleSelection(){
-		int oldSelect = selected;
+
+		if (transform.childCount - 1 >= selected)	
+			oldSelect = transform.GetChild(selected).position;
+
 		if (selected < transform.childCount - 1) {
 			selected++; 
 		} else {
@@ -67,21 +71,23 @@ public class Selection : MonoBehaviour {
 			Play(poof);
 
 			//create the points for the select transition
-			Vector3[] pos = {transform.GetChild(selected).position, transform.GetChild(oldSelect).position};
+			Vector3[] pos = {transform.GetChild(selected).position, oldSelect};
 			//GetComponent<LineRenderer>().positions[0] = transform.GetChild(selected).position;
 			//GetComponent<LineRenderer>().positions[1] = transform.GetChild(oldSelect).position;	
 			
-			Debug.Log("selecting " + transform.GetChild(selected).gameObject.name + " from " + transform.GetChild(oldSelect).gameObject.name);
+			//Debug.Log("selecting " + transform.GetChild(selected).gameObject.name + " from " + transform.GetChild(oldSelect).gameObject.name);
 			GetComponent<DoodleAnimator>().Pause();
 			GetComponent<LineRenderer>().SetPositions(pos);
 			//GetComponent<DoodleAnimator>().PlayAndPauseAt(0, -1);
 			Play(gameObject);
+
 		}
 		Select();
 	}
 	public void Select(){
 		if (!begun){
-			transform.GetChild(1).gameObject.GetComponent<Move>().selected = true;
+			if (transform.GetChild(0).gameObject.tag == "Wall") transform.GetChild(1).gameObject.GetComponent<Move>().selected = true;
+ 			else transform.GetChild(0).gameObject.GetComponent<Move>().selected = true;
 				//disable name label
 			for(int i = 1; i < transform.childCount; i++)
 				if (i != selected) transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = false;
@@ -113,7 +119,9 @@ public class Selection : MonoBehaviour {
 				transform.GetChild(selected).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
 			}
 
-	
+		//if (transform.GetChild(selected))	
+		//	oldSelect = transform.GetChild(selected).position;
+
 	}
 
 

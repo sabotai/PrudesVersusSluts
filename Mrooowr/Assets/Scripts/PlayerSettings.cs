@@ -46,7 +46,8 @@ public class PlayerSettings : MonoBehaviour {
 
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
 				gameObject.SetActive(false);
-				//this.enabled = false;
+				//GetComponent<Image>().enabled = false;
+				this.enabled = false;
 
 			}
 
