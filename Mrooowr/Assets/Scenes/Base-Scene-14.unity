@@ -17662,7 +17662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e291bf631eb0764b8676dd00e81bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAmt: 5
+  timerAmt: 10
   timerRunning: 1
   next: {fileID: 620294481}
   allowSkip: 1
