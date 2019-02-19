@@ -12,17 +12,19 @@ public class PlayerSettings : MonoBehaviour {
 	public GameObject sceneSUI;
 	public Text subAnnouncer;
 	GameObject man;
+	public Color color1, color2;
 
 	// Use this for initialization
 	void Start () {
 		man = Camera.main.gameObject;
+		GetComponent<Image>().color = color1;
 		
 		p1Controls.SetActive(true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (selection == 1) subAnnouncer.text = "" + selection + " > Player";
+		if (selection == 1) subAnnouncer.text = "" + selection + " Player >";
 		if (selection == 2) subAnnouncer.text = "< " + selection + " Players";
 		if (Input.anyKeyDown){
 			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
@@ -38,7 +40,8 @@ public class PlayerSettings : MonoBehaviour {
 						Destroy(sloots.transform.GetChild(i).gameObject);//.gameObject.SetActive(false);
 						//sloots.transform.DetachChildren();
 					}
-					for (int i = 0; i < botHolder.childCount; i++){
+					int howMany = botHolder.childCount;
+					for (int i = 0; i < howMany; i++){
 						botHolder.GetChild(0).parent = sloots.transform;
 					}
 					sloots.SetActive(true);
@@ -53,6 +56,7 @@ public class PlayerSettings : MonoBehaviour {
 
 			if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
 				selection = 2;
+				GetComponent<Image>().color = color2;
 				//bot.enabled = false;
 				p2Controls.SetActive(true);
 
@@ -60,6 +64,8 @@ public class PlayerSettings : MonoBehaviour {
 			}
 			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
 				selection = 1;
+				GetComponent<Image>().color = color1;
+
 				//bot.enabled = true;
 				p2Controls.SetActive(false);
 

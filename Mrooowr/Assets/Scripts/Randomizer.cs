@@ -19,7 +19,7 @@ public class Randomizer : MonoBehaviour {
 	void Start () {
 		float randoF = Random.value;
 		int rando = 0;
-		if (randoF > 0.5f) rando = Random.Range(0, titleClips.Length);
+		if (randoF > 0.85f) rando = Random.Range(0, titleClips.Length);
 
 		GetComponent<AudioSource>().clip = titleClips[rando];
 		GetComponent<AudioSource>().Play();
