@@ -12,12 +12,13 @@ public class Intro : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+				next.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (allowSkip && (Input.anyKeyDown))){ //timer is up
+		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (Time.time > 1.5f && allowSkip && (Input.anyKeyDown))){ //timer is up
 			timerRunning = false;
 			if (next != null) {
 				next.SetActive(true);

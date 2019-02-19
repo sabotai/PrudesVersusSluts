@@ -18,7 +18,7 @@ public class UITextTimeout : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (allowSkip && (Input.anyKeyDown))){ //timer is up
+		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (Time.timeSinceLevelLoad > 0.5f && allowSkip && Input.anyKeyDown)){ //timer is up
 			timerRunning = false;
 			GetComponent<Text>().text = "";
 			if (next != null) {

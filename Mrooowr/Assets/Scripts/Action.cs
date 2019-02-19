@@ -21,7 +21,9 @@ public class Action : MonoBehaviour {
         if (transform.parent.GetComponent<Selection>().player == 1) emitClip = emitClipSlut;
         else  emitClip = emitClipPrude;
 
-        if (!doAction) aud.Stop();
+        //disabled this because it was stopping the full sneeze sound
+        //...cant remember why i had this to begin with
+        //if (!doAction) aud.Stop();
 
         //auto for eggy and anyone else who gets the auto
 		if (auto && !doAction 
