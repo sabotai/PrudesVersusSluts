@@ -14,8 +14,14 @@ public class SelectCharacters : MonoBehaviour {
 	AudioSource aud;
 	public GameObject instructions;
 	Bot bot;
-	// Use this for initialization
-	void Start () {
+
+
+    float debounce = 0f;
+    public float repeat = 0.2f;  // reduce to speed up auto-repeat input
+    bool axisReady = true;
+
+    // Use this for initialization
+    void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 		sub.text = "Choose your " + Randomizer.prudeName + " and " + Randomizer.slutName + "!";
 		aud = Camera.main.GetComponent<AudioSource>();
@@ -25,12 +31,34 @@ public class SelectCharacters : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.anyKeyDown){ //limit to only when key is being pressed
-			//bot
+	void Update ()
+    {
+
+        float vAxis = Input.GetAxis("P" + player + "_Vertical");
+        float hAxis = Input.GetAxis("P" + player + "_Horizontal");                                                      //bot
+        float now = Time.realtimeSinceStartup;
+        // check if user let go of the stick; if so, reset the input bounce control
+        if (Mathf.Abs(vAxis) < 0.1f && Mathf.Abs(hAxis) < 0.1f)
+        {
+            debounce = 0f;
+        }
+
+        // if it's been long enough since the last input, then we allow it
+        if (now - debounce > repeat)
+        {
+            axisReady = true;
+
+            debounce = Time.realtimeSinceStartup;
+        }
+        else
+        {
+            axisReady = false;
+        }
 
 
-			if (Input.GetAxis("P" + player + "_Horizontal") > 0f){
+        if (axisReady){ //limit to only when key is being pressed
+
+                if (Input.GetAxis("P" + player + "_Horizontal") > 0f && axisReady){
 				if (currentSelection < prefab.Length - 1){
 					currentSelection++;
 				} else {
@@ -42,7 +70,8 @@ public class SelectCharacters : MonoBehaviour {
 				transform.localScale = prefab[currentSelection].transform.localScale;
 			}
 			
-			if (Input.GetAxis("P" + player + "_Horizontal") < 0f){
+			if (Input.GetAxis("P" + player + "_Horizontal") < 0f && axisReady)
+            {
 				if (currentSelection > 0){
 					currentSelection--;
 				} else {

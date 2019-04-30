@@ -14,8 +14,13 @@ public class PlayerSettings : MonoBehaviour {
 	GameObject man;
 	public Color color1, color2;
 
-	// Use this for initialization
-	void Start () {
+
+    float debounce = 0f;
+    public float repeat = 0.1f;  // reduce to speed up auto-repeat input
+    bool axisReady = true;
+
+    // Use this for initialization
+    void Start () {
 		man = Camera.main.gameObject;
 		GetComponent<Image>().color = color1;
 		
@@ -26,35 +31,71 @@ public class PlayerSettings : MonoBehaviour {
 	void Update () {
 		if (selection == 1) subAnnouncer.text = "" + selection + " Player >";
 		if (selection == 2) subAnnouncer.text = "< " + selection + " Players";
-		if (Input.anyKeyDown){
-			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
-				//p1Controls.SetActive(true);
-				Manager.numPlayers = selection;
-				if (selection == 2) {
 
-					sceneS.enabled = true;
-					sceneSUI.SetActive(true);
-				} else {
-					pruuds.SetActive(true);
-					for (int i = 0; i < sloots.transform.childCount; i++){
-						Destroy(sloots.transform.GetChild(i).gameObject);//.gameObject.SetActive(false);
-						//sloots.transform.DetachChildren();
-					}
-					int howMany = botHolder.childCount;
-					for (int i = 0; i < howMany; i++){
-						botHolder.GetChild(0).parent = sloots.transform;
-					}
-					sloots.SetActive(true);
-				}
 
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
-				gameObject.SetActive(false);
-				//GetComponent<Image>().enabled = false;
-				this.enabled = false;
 
-			}
 
-			if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
+
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action"))
+            {
+                //p1Controls.SetActive(true);
+                Manager.numPlayers = selection;
+                if (selection == 2)
+                {
+
+                    sceneS.enabled = true;
+                    sceneSUI.SetActive(true);
+                }
+                else
+                {
+                    pruuds.SetActive(true);
+                    for (int i = 0; i < sloots.transform.childCount; i++)
+                    {
+                        Destroy(sloots.transform.GetChild(i).gameObject);//.gameObject.SetActive(false);
+                                                                         //sloots.transform.DetachChildren();
+                    }
+                    int howMany = botHolder.childCount;
+                    for (int i = 0; i < howMany; i++)
+                    {
+                        botHolder.GetChild(0).parent = sloots.transform;
+                    }
+                    sloots.SetActive(true);
+                }
+
+                man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
+                gameObject.SetActive(false);
+                //GetComponent<Image>().enabled = false;
+                this.enabled = false;
+
+            }
+        }
+
+
+        float vAxis = Input.GetAxis("P1_Vertical") + Input.GetAxis("P2_Vertical");
+        float hAxis = Input.GetAxis("P1_Horizontal") + Input.GetAxis("P2_Horizontal");                                                   //bot
+        float now = Time.realtimeSinceStartup;
+        // check if user let go of the stick; if so, reset the input bounce control
+        if (Mathf.Abs(vAxis) < 0.1f && Mathf.Abs(hAxis) < 0.1f)
+        {
+            debounce = 0f;
+        }
+
+        // if it's been long enough since the last input, then we allow it
+        if (now - debounce > repeat)
+        {
+            axisReady = true;
+
+            debounce = Time.realtimeSinceStartup;
+        }
+        else
+        {
+            axisReady = false;
+        }
+
+        if (axisReady) { 
+        if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
 				selection = 2;
 				GetComponent<Image>().color = color2;
 				//bot.enabled = false;
