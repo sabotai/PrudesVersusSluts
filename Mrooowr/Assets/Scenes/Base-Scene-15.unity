@@ -1138,7 +1138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &60661457
 Transform:
   m_ObjectHideFlags: 0
@@ -3870,7 +3870,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   instructions: {fileID: 464575139}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!1 &320881240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,6 +4761,133 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &419587114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419587115}
+  - component: {fileID: 419587116}
+  m_Layer: 0
+  m_Name: MusicPlayer (1)
+  m_TagString: Music
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419587115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419587114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -393.10544, y: -228.02563, z: -0.011284946}
+  m_LocalScale: {x: 1.0350134, y: 1.0350134, z: 1.0350134}
+  m_Children: []
+  m_Father: {fileID: 509232906}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &419587116
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419587114}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 63588ddcc774f2c4a84d33c4bd2d095d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 120
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &447973682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,7 +5922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484253812
 Transform:
   m_ObjectHideFlags: 0
@@ -6431,6 +6558,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1480331764}
+  - {fileID: 419587115}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7900,6 +8028,7 @@ MonoBehaviour:
   subAnnouncer: {fileID: 924952481}
   color1: {r: 1, g: 0, b: 0.44705886, a: 1}
   color2: {r: 0.1254902, g: 0.54509807, b: 0.98823535, a: 1}
+  repeat: 0.1
 --- !u!114 &620294484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8717,7 +8846,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   instructions: {fileID: 261320557}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!114 &693043019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8740,7 +8869,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: c3f3cac34ae6999469a55e166a8fc8a4, type: 3}
   instructions: {fileID: 261320557}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!1 &694009276
 GameObject:
   m_ObjectHideFlags: 0
@@ -10329,7 +10458,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   instructions: {fileID: 261320557}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!114 &864646026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14623,7 +14752,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   instructions: {fileID: 464575139}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!1 &1210174794
 GameObject:
   m_ObjectHideFlags: 0
@@ -15939,7 +16068,7 @@ MonoBehaviour:
   sluts: {fileID: 1910202366}
   subAnnouncer: {fileID: 1732279496}
   textDelay: 5
-  repeat: 0.2
+  repeat: 0.1
 --- !u!4 &1350710529
 Transform:
   m_ObjectHideFlags: 0
@@ -18587,6 +18716,11 @@ PrefabInstance:
       propertyPath: instructions
       value: 
       objectReference: {fileID: 464575139}
+    - target: {fileID: 114439216841102514, guid: ed42c4f130a42904791c05230934d34e,
+        type: 3}
+      propertyPath: repeat
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed42c4f130a42904791c05230934d34e, type: 3}
 --- !u!1 &1573815895
@@ -19332,6 +19466,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 07e848803988e444082406071faa0c4d, type: 3}
   - {fileID: 8300000, guid: ab0cad5b61bd9204ab4dd7a8019a8a6f, type: 3}
   - {fileID: 8300000, guid: 7464c7f8d37690d4bb8fa98ee13db6ba, type: 3}
+  - {fileID: 8300000, guid: d84c880baf931ed4a9a8858182448175, type: 3}
   prudeWinClips:
   - {fileID: 8300000, guid: 26b02513fc2c6454a8e119d897a84b84, type: 3}
   - {fileID: 8300000, guid: 919a237d1daecc546b477d7bae7263db, type: 3}
@@ -19365,6 +19500,7 @@ MonoBehaviour:
   - Goths
   - Mountains
   - Ottoman Turks
+  - Pruuds
   slutNames:
   - Sl**ts
   - Keys
@@ -19376,6 +19512,7 @@ MonoBehaviour:
   - Moths
   - Accountants
   - Dorks
+  - Sl**ts
 --- !u!82 &1618015762
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24946,7 +25083,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   instructions: {fileID: 261320557}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!114 &1992227948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24969,7 +25106,7 @@ MonoBehaviour:
   sub: {fileID: 1732279496}
   selectSound: {fileID: 8300000, guid: c3f3cac34ae6999469a55e166a8fc8a4, type: 3}
   instructions: {fileID: 261320557}
-  repeat: 0.3
+  repeat: 0.1
 --- !u!1 &1998414533
 GameObject:
   m_ObjectHideFlags: 0
