@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerSettings : MonoBehaviour {
-	int selection = 1;
+	int selection = 2;
 	public Bot bot;
 	public Transform botHolder;
 	public GameObject p1Controls, p2Controls, pruuds, sloots;
@@ -24,7 +24,8 @@ public class PlayerSettings : MonoBehaviour {
 		man = Camera.main.gameObject;
 		GetComponent<Image>().color = color1;
 		
-		p1Controls.SetActive(true);
+        p1Controls.SetActive(true);
+        p2Controls.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -62,6 +63,7 @@ public class PlayerSettings : MonoBehaviour {
                         botHolder.GetChild(0).parent = sloots.transform;
                     }
                     sloots.SetActive(true);
+                    pruuds.SetActive(true);
                 }
 
                 man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
