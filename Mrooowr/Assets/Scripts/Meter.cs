@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Meter : MonoBehaviour {
 
-	bool isSlut = true;
+	public bool isSlut = true;
 	public float amt;
 	public float max = 1f;
 	public AudioClip slutConvertClip, prudeConvertClip;
