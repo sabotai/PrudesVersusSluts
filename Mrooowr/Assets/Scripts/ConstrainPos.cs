@@ -12,8 +12,8 @@ public class ConstrainPos : MonoBehaviour {
 		origPos = transform.localPosition;
 		minX = -16f;
 		maxX = 16f;
-		minY = -9f;
-		maxY = 9f;
+		minY = -6f;
+		maxY = 12.5f;
 		catchSpeed = 0.8f;
 	}
 	

@@ -22,7 +22,7 @@ public class PlayerSettings : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		man = Camera.main.gameObject;
-		GetComponent<Image>().color = color1;
+		GetComponent<Image>().color = color2;
 		
         p1Controls.SetActive(true);
         p2Controls.SetActive(true);

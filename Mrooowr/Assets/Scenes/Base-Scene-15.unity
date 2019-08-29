@@ -3786,7 +3786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_File: {fileID: 11400000, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -6617,6 +6617,8 @@ MonoBehaviour:
   camMover: {fileID: 1173468002}
   selectClip: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   confirmClip: {fileID: 8300000, guid: d94ee7e6de7fbf04db246ccf1647c92b, type: 3}
+  prudeColorPub: {r: 1, g: 0.046096295, b: 0, a: 1}
+  slutColorPub: {r: 0, g: 0.81251574, b: 1, a: 1}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -14673,7 +14675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: cf6d876e74cb66843aff6d782a8a1c7c, type: 2}
+  m_File: {fileID: 11400000, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -18726,6 +18728,12 @@ PrefabInstance:
       propertyPath: repeat
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114453032729595546, guid: ed42c4f130a42904791c05230934d34e,
+        type: 3}
+      propertyPath: m_File
+      value: 
+      objectReference: {fileID: 11400000, guid: 726ecf38f158fbc45b05624334c6f47a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed42c4f130a42904791c05230934d34e, type: 3}
 --- !u!1 &1573815895

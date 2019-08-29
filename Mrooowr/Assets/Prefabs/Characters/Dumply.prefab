@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 114322402000965266}
   - component: {fileID: 114243028841253098}
   - component: {fileID: 114160106717915488}
+  - component: {fileID: 6108460659382442024}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.81251574, b: 1, a: 1}
+  m_Color: {r: 0.1254902, g: 0.54509807, b: 0.98823535, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -303,6 +304,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6108460659382442024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100253718973026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 1
 --- !u!1 &1161869181271034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5616,7 +5631,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213886425011234008, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
+  m_Sprite: {fileID: 213328968128811814, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5643,6 +5658,7 @@ MonoBehaviour:
   speed: 2.3
   facingRight: 1
   playWalkSound: 0
+  stopActionAudioWhileWalking: 1
 --- !u!114 &114708990084460880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5924,6 +5940,7 @@ GameObject:
   - component: {fileID: 114469598201587600}
   - component: {fileID: 114587297117364630}
   - component: {fileID: 114971738461474422}
+  - component: {fileID: 2322900920367310097}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite (1)
   m_TagString: Untagged
@@ -5972,7 +5989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.046096295, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6030,6 +6047,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &2322900920367310097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541481807623476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 0
 --- !u!1 &1634265477697510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,8 +6167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -16
   maxX: 16
-  minY: -9
-  maxY: 9
+  minY: -6
+  maxY: 12.5
   catchSpeed: 0.035
   origV3: {x: 0, y: 0, z: 0}
 --- !u!1 &1674703962590810
@@ -7792,6 +7823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentBased: 1
+  manualSlut: 0
 --- !u!1 &7225054330076870419
 GameObject:
   m_ObjectHideFlags: 0

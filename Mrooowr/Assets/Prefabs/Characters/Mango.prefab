@@ -4137,7 +4137,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.2
+    radiusScale: 1
     collidesWith:
       serializedVersion: 2
       m_Bits: 638976
@@ -5336,7 +5336,7 @@ SpriteRenderer:
   m_SortingLayerID: -1506341195
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213061604985778130, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  m_Sprite: {fileID: 213546905590766490, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5363,6 +5363,7 @@ MonoBehaviour:
   speed: 2
   facingRight: 0
   playWalkSound: 0
+  stopActionAudioWhileWalking: 1
 --- !u!114 &114489171488655836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6245,7 +6246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6527,6 +6528,7 @@ GameObject:
   - component: {fileID: 1971446957998144770}
   - component: {fileID: 728969279966578993}
   - component: {fileID: 7813569224439842733}
+  - component: {fileID: 3245534123301187812}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite (1)
   m_TagString: Untagged
@@ -6575,7 +6577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.046096295, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6633,6 +6635,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &3245534123301187812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298925517256439853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 0
 --- !u!1 &383494946062368655
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,6 +7177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentBased: 1
+  manualSlut: 0
 --- !u!1 &1154253112761152654
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9355,7 @@ GameObject:
   - component: {fileID: 6226419391168664587}
   - component: {fileID: 7160263899401633593}
   - component: {fileID: 9143185514131000083}
+  - component: {fileID: 7273615257284802774}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
@@ -9385,7 +9404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.81251574, b: 1, a: 1}
+  m_Color: {r: 0.1254902, g: 0.54509807, b: 0.98823535, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9443,6 +9462,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &7273615257284802774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927339442705797071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 1
 --- !u!1 &3937234937908917033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10765,8 +10798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -16
   maxX: 16
-  minY: -9
-  maxY: 9
+  minY: -6
+  maxY: 12.5
   catchSpeed: 0.035
   origV3: {x: 0, y: 0, z: 0}
 --- !u!1 &6483090817609499784
@@ -11134,7 +11167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

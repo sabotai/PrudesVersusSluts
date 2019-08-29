@@ -6034,7 +6034,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213706660220021754, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213198413831311138, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6061,6 +6061,7 @@ MonoBehaviour:
   speed: 5
   facingRight: 0
   playWalkSound: 0
+  stopActionAudioWhileWalking: 0
 --- !u!114 &114242750161232990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6364,7 +6365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7211,7 +7212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9068,6 +9069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentBased: 1
+  manualSlut: 0
 --- !u!1 &3416033822771753887
 GameObject:
   m_ObjectHideFlags: 0
@@ -10913,6 +10916,7 @@ GameObject:
   - component: {fileID: 5898898652929810204}
   - component: {fileID: 6214227248624559250}
   - component: {fileID: 2485278306938896799}
+  - component: {fileID: 4822112818628912541}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite (1)
   m_TagString: Untagged
@@ -10961,7 +10965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.046096295, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11019,6 +11023,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &4822112818628912541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795876183472270861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 0
 --- !u!1 &6956879326587347908
 GameObject:
   m_ObjectHideFlags: 0
@@ -11308,6 +11326,7 @@ GameObject:
   - component: {fileID: 832435789915974046}
   - component: {fileID: 1435357090989814655}
   - component: {fileID: 4475291194620636261}
+  - component: {fileID: 3697677610450495563}
   m_Layer: 11
   m_Name: tutorial_cloud Sprite
   m_TagString: Untagged
@@ -11356,7 +11375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.81251574, b: 1, a: 1}
+  m_Color: {r: 0.1254902, g: 0.54509807, b: 0.98823535, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11414,6 +11433,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &3697677610450495563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281081232580522060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBased: 0
+  manualSlut: 1
 --- !u!1 &7446577601315700551
 GameObject:
   m_ObjectHideFlags: 0
@@ -11612,8 +11645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -16
   maxX: 16
-  minY: -9
-  maxY: 9
+  minY: -6
+  maxY: 12.5
   catchSpeed: 0.035
   origV3: {x: 0, y: 0, z: 0}
 --- !u!1 &7666019878131196915
@@ -12080,6 +12113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085661e62c02df542b34a1905ffb5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentBased: 1
+  manualSlut: 0
 --- !u!1 &8634022926880814205
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class Move : MonoBehaviour {
 	AudioSource aud;
 	DoodleAnimator animator;
 	public bool playWalkSound = false;
+	public bool stopActionAudioWhileWalking = true;
+	bool walking = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,13 +26,15 @@ public class Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
-
+		walking = false; //starts out false until proven true
 		if (selected && !GetComponent<Hurt>().doHurt){
 			rb.velocity = Vector2.zero;
 
 			//if (Input.GetKey(KeyCode.D)) { 
 			if (Input.GetAxis("P" + player + "_Horizontal") > 0f
 				|| transform.parent.gameObject.GetComponent<Bot>().hori > 0f){
+
+				walking = true;
 				rb.velocity += new Vector2(1.0f, 0f) * speed;
 				if (!facingRight) {
 					//transform.localScale *= new Vector2(-1f, 1f);
@@ -42,6 +46,8 @@ public class Move : MonoBehaviour {
 
 			if (Input.GetAxis("P" + player + "_Horizontal") < 0f
 				|| transform.parent.gameObject.GetComponent<Bot>().hori < 0f){
+
+				walking = true;
 				rb.velocity += new Vector2(-1.0f, 0f) * speed;
 				if (facingRight){
 					//transform.localScale *= new Vector2(-1f, 1f);
@@ -52,13 +58,19 @@ public class Move : MonoBehaviour {
 			}
 			if (Input.GetAxis("P" + player + "_Vertical") > 0f
 				|| transform.parent.gameObject.GetComponent<Bot>().vert > 0f){
+
+				walking = true;
 				rb.velocity += new Vector2(0f, 1f) * speed;
 			}
 
 			if (Input.GetAxis("P" + player + "_Vertical") < 0f
 				|| transform.parent.gameObject.GetComponent<Bot>().vert < 0f){
+
+				walking = true;
 				rb.velocity += new Vector2(0f,-1f) * speed;
 			}
+			if (stopActionAudioWhileWalking && walking) transform.GetChild(1).gameObject.GetComponent<AudioSource>().Stop();
+
 
 			if (rb.velocity.magnitude > 0f){
 				if (!aud.isPlaying && playWalkSound) {
