@@ -29,6 +29,7 @@ public class LayerSet : MonoBehaviour {
 		}
 	}
 	*/
+
 	void OnTriggerStay2D(Collider2D col){
 		//Debug.Log(gameObject.name + " triggered");
 		if (col.CompareTag("Quint")){

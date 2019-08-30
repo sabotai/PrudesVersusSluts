@@ -633,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508772688694978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.064, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224382378419043176}
@@ -1088,7 +1088,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213497885329573866, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
+  m_Sprite: {fileID: 213905131206425948, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1354,6 +1354,10 @@ MonoBehaviour:
   prudeIdleAnim: {fileID: 11400000, guid: f28c605a260d57f4a850620b992f3fb8, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 38fc711e341162349b5b945c0ba9a59f, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: 8e5009a6078e9db40ac6a2f887e94fcd, type: 2}
+  prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+    type: 3}
+  slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+    type: 3}
   animReady: 1
   animTimeOut: 2
   namePrude: Horsey

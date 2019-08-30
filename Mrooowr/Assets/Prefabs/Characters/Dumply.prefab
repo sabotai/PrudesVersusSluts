@@ -5631,7 +5631,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213328968128811814, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
+  m_Sprite: {fileID: 213408323378697610, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5907,6 +5907,10 @@ MonoBehaviour:
   prudeIdleAnim: {fileID: 11400000, guid: 0a0c7f6aa3ab2b24fb5c427b032e28a4, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 8043600f3d2a9f84b89f759ef32e9989, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: 28dc7c4e624e9e040a76b98bedf889f2, type: 2}
+  prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+    type: 3}
+  slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+    type: 3}
   animReady: 1
   animTimeOut: 2
   namePrude: Skully

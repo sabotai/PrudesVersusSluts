@@ -6034,7 +6034,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213198413831311138, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213595817502769684, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6300,6 +6300,10 @@ MonoBehaviour:
   prudeIdleAnim: {fileID: 11400000, guid: 5c769e648546358419514cbcb460bcdc, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 358b4e2dce480314ba8e251cd179cb4a, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: 99b50b1dbbeb3b948b56102e543dc2dd, type: 2}
+  prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+    type: 3}
+  slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+    type: 3}
   animReady: 1
   animTimeOut: 2
   namePrude: Birdy

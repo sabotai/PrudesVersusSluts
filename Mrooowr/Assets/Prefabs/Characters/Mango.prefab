@@ -5602,6 +5602,10 @@ MonoBehaviour:
   prudeIdleAnim: {fileID: 11400000, guid: 065e6ceb897f45d429e70f5fb8ca0841, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 262b7bf44f1672146b593776cc238c07, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: 464364b2c67063b439a279d97dcce288, type: 2}
+  prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+    type: 3}
+  slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+    type: 3}
   animReady: 1
   animTimeOut: 2
   namePrude: Jimmy

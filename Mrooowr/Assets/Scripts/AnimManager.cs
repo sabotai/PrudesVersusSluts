@@ -9,6 +9,7 @@ public class AnimManager : MonoBehaviour {
 	public DoodleAnimationFile slutHurtAnim, prudeHurtAnim;
 	public DoodleAnimationFile slutIdleAnim, prudeIdleAnim; 
 	public DoodleAnimationFile slutWalkAnim, prudeWalkAnim; 
+	public GameObject prudeSwapEffect, slutSwapEffect;
 	public bool animReady = true;
 	DoodleAnimator animator;
 	public float animTimeOut = 2f;
@@ -31,12 +32,22 @@ public class AnimManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.parent.gameObject.GetComponent<Selection>().player == 1) {
+		if (transform.parent.gameObject.GetComponent<Selection>().player == 1 && player != 1) {
 			player = 1;
 			gameObject.name = nameSlut;
-		} else {
+
+			//have to manually run each of the single play animations because the inspector settings are giving weird results
+			GameObject poof = Instantiate(slutSwapEffect, transform.position, Quaternion.identity) as GameObject;
+			//poof.GetComponent<DoodleAnimator>().Pause();
+			Play(poof);
+		} else if (transform.parent.gameObject.GetComponent<Selection>().player == 2 && player != 2) {
 			player = 2;
 			gameObject.name = namePrude;
+
+			//have to manually run each of the single play animations because the inspector settings are giving weird results
+			GameObject poof = Instantiate(prudeSwapEffect, transform.position, Quaternion.identity) as GameObject;
+			//poof.GetComponent<DoodleAnimator>().Pause();
+			Play(poof);
 		}
 
 		if (Time.time > startTime + animTimeOut && !animReady) animReady = true; 
@@ -119,4 +130,23 @@ public class AnimManager : MonoBehaviour {
 
 		}
 	}
+
+
+  IEnumerator PlaySequence(GameObject _whichObj) {
+    DoodleAnimator animator = _whichObj.GetComponent<DoodleAnimator>();
+    int i = 0;
+    animator.Pause();
+    while(i < 1) {
+      // Play the animation and wait until it's finished
+      yield return animator.PlayAndPauseAt();
+      // Advanced to the next animation
+      i++;
+    }
+    animator.Stop();
+  }
+
+  public void Play(GameObject whichObj) {
+    //StopAllCoroutines();
+    StartCoroutine(PlaySequence(whichObj));
+  }
 }

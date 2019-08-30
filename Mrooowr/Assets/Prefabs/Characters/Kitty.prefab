@@ -5759,6 +5759,10 @@ MonoBehaviour:
   prudeIdleAnim: {fileID: 11400000, guid: dcbfe7e711a9e134ca360d947eba0adc, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 04c899a617ae4904fa9bfa95e98df438, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: 121492d61b9f4a64d81b2c414a07f595, type: 2}
+  prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+    type: 3}
+  slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+    type: 3}
   animReady: 1
   animTimeOut: 2
   namePrude: Catgut

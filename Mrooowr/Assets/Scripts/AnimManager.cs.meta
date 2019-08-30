@@ -3,7 +3,19 @@ guid: 65ae935e8cac9f24c99e86334d9e90e8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - slutActionAnim: {instanceID: 0}
+  - prudeActionAnim: {instanceID: 0}
+  - slutHurtAnim: {instanceID: 0}
+  - prudeHurtAnim: {instanceID: 0}
+  - slutIdleAnim: {instanceID: 0}
+  - prudeIdleAnim: {instanceID: 0}
+  - slutWalkAnim: {instanceID: 0}
+  - prudeWalkAnim: {instanceID: 0}
+  - prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
+      type: 3}
+  - slutSwapEffect: {fileID: 1706389956363836, guid: b6eb2058e1856484e951623438682e82,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
