@@ -31,8 +31,8 @@ public class MoveMe : MonoBehaviour {
 			}
 			transform.position += new Vector3(0f, gateTime * Time.deltaTime, 0f);
 		} else {
-
-			if (player == 1) Manager.p1Ready = true; else if (player == 2) Manager.p2Ready = true;
+			//dont forget that players are swapped
+			if (player == 2) Manager.p1Ready = true; else if (player == 1) Manager.p2Ready = true;
 			transform.parent.gameObject.GetComponent<Selection>().Select();
 			Destroy(gameObject);//.SetActive(false);
 		}

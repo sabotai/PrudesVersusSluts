@@ -12,6 +12,7 @@ public class CamMove : MonoBehaviour {
 	GameObject[] reversed;
 	GameObject[] background;
 	public float parallaxAmt = 0.5f;
+
 	// Use this for initialization
 	void Start () {	
 		Manager.howManyChars = slutParent.childCount + prudeParent.childCount;
@@ -39,13 +40,21 @@ public class CamMove : MonoBehaviour {
 	}
 	Vector3 AvgCharPos(){
 		Vector3 avg = Vector3.zero;
-		for (int i = 0; i < slutParent.childCount; i++){
-			avg += slutParent.GetChild(i).position;
-		}
 		for (int i = 0; i < prudeParent.childCount; i++){
 			avg += prudeParent.GetChild(i).position;
 		}
+
+		if (!Manager.usingBots){
+			for (int i = 0; i < slutParent.childCount; i++){
+				avg += slutParent.GetChild(i).position;
+			}
+		} 
+		
+		if (!Manager.usingBots){
 		avg /= (slutParent.childCount + prudeParent.childCount);
+		} else {
+			avg /= prudeParent.childCount;
+		}
 		avg = new Vector3(Mathf.Clamp(avg.x, maxLeft - transform.GetChild(0).localPosition.x, maxRight - transform.GetChild(1).localPosition.x), transform.position.y, transform.position.z);
 
 

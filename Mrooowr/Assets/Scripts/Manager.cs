@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour {
 	public static Color slutColor;
 	public Color prudeColorPub;
 	public Color slutColorPub;
+	public static bool usingBots = false;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,7 @@ public class Manager : MonoBehaviour {
 		prudeColor = prudeColorPub;
 		slutColor = slutColorPub;
 
+		Debug.Log("p1ready = " + p1Ready + "; p2ready = " + p2Ready);
 		if (p1Ready && p2Ready){
 			camMover.enabled = true;
 		}

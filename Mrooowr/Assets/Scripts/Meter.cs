@@ -30,7 +30,15 @@ public class Meter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (amt > 0 && isSlut) {
-			Prudify();
+
+			if (!Manager.usingBots)		{
+				Prudify();
+			}
+			else {
+				//slutParent.gameObject.GetComponent<Selection>().CycleSelection();
+				Destroy(gameObject);
+
+			}
 		} else if (amt < 0 && !isSlut) {
 			Slutify();
 		}

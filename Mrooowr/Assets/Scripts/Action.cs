@@ -28,18 +28,18 @@ public class Action : MonoBehaviour {
         //auto for eggy and anyone else who gets the auto
 		if (auto && !doAction 
 			&& (Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
-				|| transform.parent.GetComponent<Bot>().attack)
+				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
 			&& GetComponent<Move>().selected) {
-				transform.parent.GetComponent<Bot>().attack = false;
+				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
 				doAction = true;
     			ActionSounds();
 				Play();
 			
 		} else if (!doAction 
 			&& (Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
-				|| transform.parent.GetComponent<Bot>().attack)
+				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
 			&& GetComponent<Move>().selected) {
-				transform.parent.GetComponent<Bot>().attack = false;
+				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
 				doAction = true;
     			ActionSounds();
 				Play();

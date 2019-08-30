@@ -34,7 +34,7 @@ public class UITextTimeout : MonoBehaviour {
 			allowSkip = false;
 			startTime = Time.timeSinceLevelLoad;
 		}
-
+		if (next == null) allowSkip = false;
 		//if (Manager.gameOver) this.enabled = false;
 	}
 }

@@ -13,6 +13,8 @@ public class PlayerSettings : MonoBehaviour {
 	public Text subAnnouncer;
 	GameObject man;
 	public Color color1, color2;
+	public GameObject botScene;
+	CamMove camMove;
 
 
     float debounce = 0f;
@@ -21,6 +23,7 @@ public class PlayerSettings : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+    	camMove = Camera.main.gameObject.transform.GetChild(0).gameObject.GetComponent<CamMove>();
 		man = Camera.main.gameObject;
 		GetComponent<Image>().color = color2;
 		
@@ -62,8 +65,21 @@ public class PlayerSettings : MonoBehaviour {
                     {
                         botHolder.GetChild(0).parent = sloots.transform;
                     }
+
+                    //enable scene selection?
+                    //sceneS.enabled = true;
+                    //sceneSUI.SetActive(true);
+                    botScene.transform.parent = sceneS.transform;
+                    botScene.SetActive(true);
+                    sceneS.transform.GetChild(0).gameObject.SetActive(false);
+                    botScene.transform.SetAsFirstSibling();
+
+                    Manager.p2Ready = true;
                     sloots.SetActive(true);
-                    pruuds.SetActive(true);
+                    Manager.usingBots = true;
+                    //pruuds.SetActive(true);
+
+                    //camMove.enabled = true;
                 }
 
                 man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
@@ -102,6 +118,9 @@ public class PlayerSettings : MonoBehaviour {
 				GetComponent<Image>().color = color2;
 				//bot.enabled = false;
 				p2Controls.SetActive(true);
+				//hide botscene and show multi scene
+                botScene.SetActive(false);
+                sceneS.transform.GetChild(0).gameObject.SetActive(true);
 
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
 			}
@@ -111,6 +130,9 @@ public class PlayerSettings : MonoBehaviour {
 
 				//bot.enabled = true;
 				p2Controls.SetActive(false);
+				//show botscene and hide multi scene
+                botScene.SetActive(true);
+                sceneS.transform.GetChild(0).gameObject.SetActive(false);
 
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
 

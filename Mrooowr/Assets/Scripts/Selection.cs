@@ -16,21 +16,22 @@ public class Selection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (isBot) GetComponent<Bot>().enabled = true;
+		//if (isBot) GetComponent<Bot>().enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		/*
 		if (Manager.numPlayers == 1 && player == 1){
 			GetComponent<Bot>().enabled = true;//!GetComponent<Bot>().enabled;
 			isBot = true;
 		} 
+		*/
 		if (Input.GetKeyDown(KeyCode.N) && player == 1){
 			GetComponent<Spawner>().enabled = !GetComponent<Spawner>().enabled;
 		} 
 
-		if ((GetComponent<Bot>().swap || Input.GetButtonDown("P" + player + "_Next")) && begun){
-			if (isBot) GetComponent<Bot>().swap = false;
+		if ((Input.GetButtonDown("P" + player + "_Next")) && begun){
 			CycleSelection();
 		}
 
@@ -98,12 +99,21 @@ public class Selection : MonoBehaviour {
 
 		for(int i = 0; i < transform.childCount; i++){
 			if (!transform.GetChild(0).gameObject.CompareTag("Slot") && !transform.GetChild(0).gameObject.CompareTag("Wall")){
+
 				if (!Manager.gameOver){
 					if (i != selected) {
 						transform.GetChild(i).gameObject.GetComponent<Move>().selected = false;
 						//disable name label
 						transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = false;
 					}
+					/*
+					if (Manager.usingBots){
+
+						transform.GetChild(i).gameObject.GetComponent<Move>().selected = true;
+						//enable name label
+						transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+					}
+					*/
 
 				}
 				else {//select all when game over

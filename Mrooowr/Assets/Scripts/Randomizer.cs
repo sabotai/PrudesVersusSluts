@@ -13,14 +13,15 @@ public class Randomizer : MonoBehaviour {
 	public static string slutName = "Sl**ts";
 	int selection = 0;
 	bool won = false;
+	public float deviationPct = 0.15f;
 
 
 	// Use this for initialization
 	void Start () {
 		float randoF = Random.value;
 		int rando = 0;
-        if (randoF > 0.85f) rando = Random.Range(0, titleClips.Length);
-        else if (randoF > 0.5f) rando = titleClips.Length - 1;
+        if (randoF > (1f - deviationPct)) rando = Random.Range(0, titleClips.Length);
+        else if (randoF > ((1f - deviationPct)/2f)) rando = titleClips.Length - 1;
 
 		GetComponent<AudioSource>().clip = titleClips[rando];
 		GetComponent<AudioSource>().Play();
