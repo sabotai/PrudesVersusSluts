@@ -38,7 +38,7 @@ public class DeadSwap : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		numHits++;
 		if (numHits >= minHits){
-			//if (col.gameObject.CompareTag("Characters")) {
+			if (col.gameObject.CompareTag("Characters")) {
 
 				if (GetComponent<DoodleAnimator>().File == dead && dead2 != null){
 					GetComponent<DoodleAnimator>().ChangeAnimation(dead2);
@@ -87,7 +87,7 @@ public class DeadSwap : MonoBehaviour {
 					isDead = true;
 
 				}
-			//}
+			}
 
 
 		}
