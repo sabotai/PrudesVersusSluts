@@ -33,7 +33,7 @@ public class PlayerSettings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (selection == 1) subAnnouncer.text = "" + selection + " Player >";
+		if (selection == 1) subAnnouncer.text = "" + selection + " Player Practice Mode >";
 		if (selection == 2) subAnnouncer.text = "< " + selection + " Players";
 
 

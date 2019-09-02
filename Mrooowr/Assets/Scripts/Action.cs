@@ -51,6 +51,7 @@ public class Action : MonoBehaviour {
 	}
     void ActionSounds(){
 		//if (!aud.isPlaying){
+    	aud.pitch = 1f;
 			aud.clip = emitClip;
 			aud.loop = true;
 			aud.Play();

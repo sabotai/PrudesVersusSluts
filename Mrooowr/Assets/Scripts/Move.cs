@@ -76,6 +76,7 @@ public class Move : MonoBehaviour {
 				if (!aud.isPlaying && playWalkSound) {
 					//aud.clip = defClip;
 					Debug.Log(gameObject.name + " walking sound");
+					aud.pitch = 1f;
 					aud.Play();
 				}
 				if (transform.childCount > 1) transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();

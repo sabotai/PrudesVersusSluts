@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Preset_Character_Smooth:
     width: 384
     height: 512
-    filterMode: 2
+    filterMode: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Preset_Background_Smooth:
     width: 800
     height: 400
-    filterMode: 2
+    filterMode: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0

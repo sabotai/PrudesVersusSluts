@@ -102,6 +102,20 @@ public class SelectCharacters : MonoBehaviour {
 				}
 			newbie.name = prefab[currentSelection].name;
 
+			//manually assign layers to prevent starting on different layers
+			if (gameObject.name == "SlotA") {
+				newbie.layer = 17;
+				newbie.GetComponent<SpriteRenderer>().sortingLayerName = "Slice-9";
+			}
+			if (gameObject.name == "SlotB") {
+				newbie.layer = 15;
+				newbie.GetComponent<SpriteRenderer>().sortingLayerName = "Slice-7";
+			}
+			if (gameObject.name == "SlotC") {
+				newbie.layer = 13;
+				newbie.GetComponent<SpriteRenderer>().sortingLayerName = "Slice-5";
+			}
+
 
 			GameObject sib = transform.parent.GetChild(transform.GetSiblingIndex() + 1).gameObject;
 			if (sib.CompareTag("Slot")){

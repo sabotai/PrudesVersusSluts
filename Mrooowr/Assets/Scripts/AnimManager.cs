@@ -6,7 +6,7 @@ using DoodleStudio95;
 public class AnimManager : MonoBehaviour {
 	int player;
 	public DoodleAnimationFile slutActionAnim, prudeActionAnim;
-	public DoodleAnimationFile slutHurtAnim, prudeHurtAnim;
+	public DoodleAnimationFile slutHurtAnim, prudeHurtAnim, slutGoodHurtAnim, prudeGoodHurtAnim;
 	public DoodleAnimationFile slutIdleAnim, prudeIdleAnim; 
 	public DoodleAnimationFile slutWalkAnim, prudeWalkAnim; 
 	public GameObject prudeSwapEffect, slutSwapEffect;
@@ -97,13 +97,23 @@ public class AnimManager : MonoBehaviour {
 	}
 	public void Hurt(){
 		StopAllCoroutines();
-		
+		Debug.Log("ouch " + gameObject.name);
 		GetComponent<Action>().doAction = false;
 		animReady = false;
 		startTime = Time.time;
 
 		if (player == 1) StartCoroutine(PlaySequence(slutHurtAnim)); 
 		else if (player == 2) StartCoroutine(PlaySequence(prudeHurtAnim)); 
+	}
+	public void GoodHurt(){
+		StopAllCoroutines();
+		Debug.Log("ooo " + gameObject.name);
+		GetComponent<Action>().doAction = false;
+		animReady = false;
+		startTime = Time.time;
+
+		if (player == 1) StartCoroutine(PlaySequence(slutGoodHurtAnim)); 
+		else if (player == 2) StartCoroutine(PlaySequence(prudeGoodHurtAnim)); 
 	}
 
 	IEnumerator PlaySequence(DoodleAnimationFile anim) {
@@ -124,8 +134,9 @@ public class AnimManager : MonoBehaviour {
 		animReady = true;
 		if (anim == slutActionAnim || anim == prudeActionAnim){
 			GetComponent<Action>().doAction = false;
-		} else if (anim == slutHurtAnim || anim == prudeHurtAnim){
+		} else if (anim == slutHurtAnim || anim == prudeHurtAnim || anim == slutGoodHurtAnim || anim == prudeGoodHurtAnim){
 			GetComponent<Hurt>().doHurt = false;
+			GetComponent<Hurt>().goodHurt = false;
 			GetComponent<Hurt>().hurting = false;
 
 		}

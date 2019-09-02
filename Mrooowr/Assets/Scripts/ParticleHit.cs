@@ -84,8 +84,12 @@ public class ParticleHit : MonoBehaviour {
 	            }
 	            if (meter){
 	            	meter.amt += hitAmt;
+                    if (partDmg > .01f) other.GetComponent<Hurt>().hurtAmt = Random.Range(0.8f, 0.9f);
+                    else if (partDmg < .01f) other.GetComponent<Hurt>().hurtAmt = Random.Range(1.1f, 1.2f);
+                    else other.GetComponent<Hurt>().hurtAmt = Random.Range(0.95f, 1.05f);
 
-	            	if (!other.GetComponent<Hurt>().doHurt) other.GetComponent<Hurt>().doHurt = true;
+                    if (!other.GetComponent<Hurt>().goodHurt && other.transform.parent == transform.parent.parent)  other.GetComponent<Hurt>().goodHurt = true;
+	            	else if (!other.GetComponent<Hurt>().doHurt) other.GetComponent<Hurt>().doHurt = true;
 	            }
 	            i++;
 	        }

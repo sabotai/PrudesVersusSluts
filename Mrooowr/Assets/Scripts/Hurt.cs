@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hurt : MonoBehaviour {
-	public AudioClip hurtClip;
+	public AudioClip[] hurtClip;
+	public AudioClip healClip;
 	public bool doHurt = false;
+	public bool goodHurt = false;
 	public bool hurting = false;
+	public float hurtAmt = 1f;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,20 +16,30 @@ public class Hurt : MonoBehaviour {
 	void Update(){
 
 
-		if (doHurt && !hurting) {
+		if ((goodHurt || doHurt) && !hurting) {
 			GetComponent<Action>().doAction = false;
 			hurting = true;
-			Debug.Log(gameObject.name + " hurting");
 			//GetComponent<AudioSource>().clip = hurtClip;
 			//GetComponent<AudioSource>().Play();
-			GetComponent<AudioSource>().PlayOneShot(hurtClip, 1.2f);
+			AudioSource aud = transform.GetChild(transform.childCount - 1).gameObject.GetComponent<AudioSource>();
+			aud.pitch = hurtAmt;
+			AudioClip clip;
+			if (goodHurt) clip = healClip;
+			else clip = hurtClip[Random.Range(0,hurtClip.Length)];
+			aud.PlayOneShot(clip, Mathf.Min(0.6f, 1.5f - hurtAmt));
+			if (goodHurt) aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.13f); //sounded weird without a collision sound
 			Play();
+
+			//GetComponent<AudioSource>().pitch = 1f;
 		} 
+
+		hurtAmt = 1f;
 	}
 
 
 	public void Play() {
-		GetComponent<AnimManager>().Hurt();
+		if (goodHurt) GetComponent<AnimManager>().GoodHurt();
+		 else GetComponent<AnimManager>().Hurt();
 	}
 
 }
