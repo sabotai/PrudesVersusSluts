@@ -18,6 +18,9 @@ public class Manager : MonoBehaviour {
 	public Color prudeColorPub;
 	public Color slutColorPub;
 	public static bool usingBots = false;
+	public bool muteMusic = false;
+	bool mutedMusic = false;
+	public AudioSource[] musicPlayers;
 
 	// Use this for initialization
 	void Start () {
@@ -40,5 +43,24 @@ public class Manager : MonoBehaviour {
 		if (Input.GetButtonDown("Cancel")) SceneManager.LoadScene(0);
 
 		if (gameOver && Input.GetButtonDown("Submit")) SceneManager.LoadScene(0);
+
+
+		//music muting
+		if (Input.GetKeyDown(KeyCode.M)) muteMusic = !muteMusic;
+		if (muteMusic && !mutedMusic){
+
+			foreach (AudioSource musicPlayer in musicPlayers)
+	        {
+	            musicPlayer.enabled = false;
+	        }
+	        mutedMusic = true;
+		} else if (!muteMusic && mutedMusic) {
+
+			foreach (AudioSource musicPlayer in musicPlayers)
+	        {
+	            musicPlayer.enabled = true;
+	        }
+	        mutedMusic = false;
+		}
 	}
 }

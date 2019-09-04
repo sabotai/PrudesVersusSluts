@@ -27,9 +27,12 @@ public class Selection : MonoBehaviour {
 			isBot = true;
 		} 
 		*/
+
+		/*
 		if (Input.GetKeyDown(KeyCode.N) && player == 1){
 			GetComponent<Spawner>().enabled = !GetComponent<Spawner>().enabled;
 		} 
+		*/
 
 		if ((Input.GetButtonDown("P" + player + "_Next")) && begun){
 			CycleSelection();
