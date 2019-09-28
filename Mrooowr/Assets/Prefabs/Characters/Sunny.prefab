@@ -597,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213832772274235468, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  m_Sprite: {fileID: 213444109211779678, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -689,8 +689,8 @@ MonoBehaviour:
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: 93b0d4d6d474ea7449dc8a437d68bfb1, type: 3}
   emitClipSlut: {fileID: 8300000, guid: 8e6a0e39af1679b48a462c828da5f7cd, type: 3}
-  coolDownAmt: 0.7
-  spamPunishment: 1.01
+  coolDownAmt: 0.75
+  spamPunishment: 1
 --- !u!58 &58424140527749356
 CircleCollider2D:
   m_ObjectHideFlags: 0

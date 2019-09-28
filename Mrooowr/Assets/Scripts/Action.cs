@@ -42,6 +42,7 @@ public class Action : MonoBehaviour {
     			ActionSounds();
 				Play();
 			} else { //player is spamming
+				//maybe also add a sound?
 				coolDownAmt *= spamPunishment;
 			}
 			

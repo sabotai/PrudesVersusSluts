@@ -124,6 +124,15 @@ public class SelectCharacters : MonoBehaviour {
 				sib.SetActive(true);
 			} else {
 				//begin game for me
+				//first turn the layers off and then back on to make the trigger layers set
+				GameObject[] quints = GameObject.FindGameObjectsWithTag("Quint");
+
+				foreach (GameObject quint in quints) {
+					quint.SetActive(false);
+					quint.SetActive(true);
+
+				}
+
 				if (sib.CompareTag("Wall")) sib.GetComponent<MoveMe>().move = true;
 				sub.text = "";
 				sub.transform.parent.gameObject.SetActive(false);
