@@ -9,11 +9,15 @@ public class Action : MonoBehaviour {
     AudioClip emitClip;
     public AudioClip emitClipPrude, emitClipSlut;
     AudioSource aud;
-	//public 
+	public float coolDownAmt = 0f;
+	float startTime = 0f;
+	float origCoolDownAmt = 0f;
+	public float spamPunishment = 1.2f;
+
 	// Use this for initialization
 	void Start () {
         aud = transform.GetChild(1).gameObject.GetComponent<AudioSource>();
-		
+		origCoolDownAmt = coolDownAmt;
 	}
 	
 	// Update is called once per frame
@@ -30,19 +34,30 @@ public class Action : MonoBehaviour {
 			&& (Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
 				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
 			&& GetComponent<Move>().selected) {
+			if (Time.time > startTime + coolDownAmt){ //cooled down
+				coolDownAmt = origCoolDownAmt;
 				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
 				doAction = true;
+				startTime = Time.time;
     			ActionSounds();
 				Play();
+			} else { //player is spamming
+				coolDownAmt *= spamPunishment;
+			}
 			
 		} else if (!doAction 
 			&& (Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
 				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
-			&& GetComponent<Move>().selected) {
-				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
+			&& GetComponent<Move>().selected){
+			if (Time.time > startTime + coolDownAmt){ //cooled down
+				coolDownAmt = origCoolDownAmt;if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
 				doAction = true;
+				startTime = Time.time;
     			ActionSounds();
 				Play();
+			} else { //player is spamming
+				coolDownAmt *= spamPunishment;
+			}
 			
 		} else {
 
