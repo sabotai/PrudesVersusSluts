@@ -13,11 +13,14 @@ public class Action : MonoBehaviour {
 	float startTime = 0f;
 	float origCoolDownAmt = 0f;
 	public float spamPunishment = 1.2f;
+	Move move;
+	bool stopsForActionToggle = true;
 
 	// Use this for initialization
 	void Start () {
         aud = transform.GetChild(1).gameObject.GetComponent<AudioSource>();
 		origCoolDownAmt = coolDownAmt;
+		move = GetComponent<Move>();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +36,7 @@ public class Action : MonoBehaviour {
 		if (auto && !doAction 
 			&& (Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
 				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
-			&& GetComponent<Move>().selected) {
+			&& move.selected) {
 			if (Time.time > startTime + coolDownAmt){ //cooled down
 				coolDownAmt = origCoolDownAmt;
 				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
@@ -49,9 +52,12 @@ public class Action : MonoBehaviour {
 		} else if (!doAction 
 			&& (Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
 				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
-			&& GetComponent<Move>().selected){
+			&& move.selected){
 			if (Time.time > startTime + coolDownAmt){ //cooled down
-				coolDownAmt = origCoolDownAmt;if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
+				if (stopsForActionToggle) move.stopForAction = true;
+				coolDownAmt = origCoolDownAmt;
+				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
+
 				doAction = true;
 				startTime = Time.time;
     			ActionSounds();

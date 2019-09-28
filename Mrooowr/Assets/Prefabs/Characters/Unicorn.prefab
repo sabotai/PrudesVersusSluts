@@ -1090,7 +1090,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213905131206425948, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
+  m_Sprite: {fileID: 213563260869806170, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1166,6 +1166,8 @@ MonoBehaviour:
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
+  stopForAction: 0
+  moveCancelsPS: 1
 --- !u!114 &114160227489903896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1184,8 @@ MonoBehaviour:
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: 35b4dcbac0249144195cd0d514d4ea9e, type: 3}
   emitClipSlut: {fileID: 8300000, guid: 7291b1512a3ee2e459b439dbcd36b965, type: 3}
+  coolDownAmt: 0
+  spamPunishment: 1.2
 --- !u!58 &58644843431044536
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1456,8 +1460,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -233709207
-  m_SortingLayer: 1
+  m_SortingLayerID: 868047643
+  m_SortingLayer: 8
   m_SortingOrder: 9999
   m_RenderMode: 3
   m_SortMode: 0
@@ -1490,7 +1494,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814034378898134}
   serializedVersion: 6
-  lengthInSec: 0.8
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -1505,7 +1509,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.4
+    scalar: 0.37
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -2050,7 +2054,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 150
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -2315,7 +2319,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 70
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5128,7 +5132,7 @@ ParticleSystem:
     radiusScale: 0.2
     collidesWith:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 581632
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

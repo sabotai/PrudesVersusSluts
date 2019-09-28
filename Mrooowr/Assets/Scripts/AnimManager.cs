@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DoodleStudio95;
@@ -15,11 +15,13 @@ public class AnimManager : MonoBehaviour {
 	public float animTimeOut = 2f;
 	float startTime = 0f;
 	public string namePrude, nameSlut;
+	Selection selection;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<DoodleAnimator>();
-		if (transform.parent.gameObject.GetComponent<Selection>().player == 1) {
+		selection = transform.parent.gameObject.GetComponent<Selection>();
+		if (selection.player == 1) {
 			player = 1;
 			gameObject.name = nameSlut;
 		} else {
@@ -28,11 +30,12 @@ public class AnimManager : MonoBehaviour {
 		}
 		if (player == 1) animator.ChangeAnimation(slutIdleAnim);
 		else if (player == 2) animator.ChangeAnimation(prudeIdleAnim);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.parent.gameObject.GetComponent<Selection>().player == 1 && player != 1) {
+		if (selection.player == 1 && player != 1) {
 			player = 1;
 			gameObject.name = nameSlut;
 
@@ -40,7 +43,7 @@ public class AnimManager : MonoBehaviour {
 			GameObject poof = Instantiate(slutSwapEffect, transform.position, Quaternion.identity) as GameObject;
 			//poof.GetComponent<DoodleAnimator>().Pause();
 			Play(poof);
-		} else if (transform.parent.gameObject.GetComponent<Selection>().player == 2 && player != 2) {
+		} else if (selection.player == 2 && player != 2) {
 			player = 2;
 			gameObject.name = namePrude;
 
@@ -97,7 +100,7 @@ public class AnimManager : MonoBehaviour {
 	}
 	public void Hurt(){
 		StopAllCoroutines();
-		Debug.Log("ouch " + gameObject.name);
+		//Debug.Log("ouch " + gameObject.name);
 		GetComponent<Action>().doAction = false;
 		animReady = false;
 		startTime = Time.time;
@@ -107,7 +110,7 @@ public class AnimManager : MonoBehaviour {
 	}
 	public void GoodHurt(){
 		StopAllCoroutines();
-		Debug.Log("ooo " + gameObject.name);
+		//Debug.Log("ooo " + gameObject.name);
 		GetComponent<Action>().doAction = false;
 		animReady = false;
 		startTime = Time.time;
@@ -134,6 +137,7 @@ public class AnimManager : MonoBehaviour {
 		animReady = true;
 		if (anim == slutActionAnim || anim == prudeActionAnim){
 			GetComponent<Action>().doAction = false;
+			GetComponent<Move>().stopForAction = false;
 		} else if (anim == slutHurtAnim || anim == prudeHurtAnim || anim == slutGoodHurtAnim || anim == prudeGoodHurtAnim){
 			GetComponent<Hurt>().doHurt = false;
 			GetComponent<Hurt>().goodHurt = false;
