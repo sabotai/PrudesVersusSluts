@@ -5494,7 +5494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213171352151965296, guid: 18dfc079831314b459d817f31aed425c, type: 2}
+  m_Sprite: {fileID: 213272519963392098, guid: 18dfc079831314b459d817f31aed425c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5570,6 +5570,8 @@ MonoBehaviour:
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
+  stopForAction: 0
+  moveCancelsPS: 1
 --- !u!114 &114000893537267438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5586,6 +5588,8 @@ MonoBehaviour:
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: 356ce8a5df3c8e845a449a53eb048400, type: 3}
   emitClipSlut: {fileID: 8300000, guid: 5e63796d62c79e44e9378b32b476e13d, type: 3}
+  coolDownAmt: 0
+  spamPunishment: 1.2
 --- !u!58 &58114731182645106
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5616,7 +5620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSlut: 1
   amt: 0
-  max: 0.3
+  max: 0.6
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
   slutParent: {fileID: 0}

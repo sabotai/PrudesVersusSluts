@@ -1090,7 +1090,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213563260869806170, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
+  m_Sprite: {fileID: 213905131206425948, guid: 726ecf38f158fbc45b05624334c6f47a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
   stopForAction: 0
-  moveCancelsPS: 1
+  moveCancelsPS: 0
 --- !u!114 &114160227489903896
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5110,7 +5110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.05
+  partDmg: 0.2
   limitLayers: 0
 --- !u!82 &82621101292308088
 AudioSource:
@@ -5337,7 +5337,7 @@ SpriteRenderer:
   m_SortingLayerID: -1506341195
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213410860643365080, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  m_Sprite: {fileID: 213546905590766490, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5365,6 +5365,8 @@ MonoBehaviour:
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
+  stopForAction: 0
+  moveCancelsPS: 1
 --- !u!114 &114489171488655836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5429,6 +5431,8 @@ MonoBehaviour:
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: 3ea6feab6f7ea1043b1683151bc04bf9, type: 3}
   emitClipSlut: {fileID: 8300000, guid: f597abc0cf55aa9448650fd54e6a9be8, type: 3}
+  coolDownAmt: 0
+  spamPunishment: 1.2
 --- !u!70 &70172732498765144
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
