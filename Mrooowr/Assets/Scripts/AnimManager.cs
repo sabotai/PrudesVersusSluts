@@ -100,7 +100,7 @@ public class AnimManager : MonoBehaviour {
 	public void Hurt(){
 		StopAllCoroutines();
 		//Debug.Log("ouch " + gameObject.name);
-		GetComponent<Action>().doAction = false;
+		GetComponent<Action>().doAction = false; //cancel action
 		animReady = false;
 		startTime = Time.time;
 
@@ -141,6 +141,7 @@ public class AnimManager : MonoBehaviour {
 			GetComponent<Hurt>().doHurt = false;
 			GetComponent<Hurt>().goodHurt = false;
 			GetComponent<Hurt>().hurting = false;
+			GetComponent<Move>().stopForAction = false;
 
 		}
 	}
