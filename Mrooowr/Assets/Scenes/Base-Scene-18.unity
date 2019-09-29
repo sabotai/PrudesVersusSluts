@@ -9703,6 +9703,7 @@ MonoBehaviour:
   - {fileID: 2146688066}
   - {fileID: 1642693371}
   - {fileID: 419587116}
+  slootLevel: {fileID: 695124660}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -39629,3 +39630,87 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &6507187001717532237
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_Name
+      value: BloodParticle Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332961366421466526, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 130071978658301631, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 130071978658301631, guid: e98cfac76c4810b438b063f9046faf9b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e98cfac76c4810b438b063f9046faf9b, type: 3}
