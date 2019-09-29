@@ -2316,7 +2316,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 1.07, y: -2.25, z: 0}
+    m_Position: {x: 1.07, y: -1.2, z: 0}
     m_Rotation: {x: 0, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -6301,6 +6301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDmg: 0.7
   limitLayers: 1
+  bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+    type: 3}
+  bloodSize: 3
 --- !u!82 &82495646514834030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7745,7 +7748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: SLUT
+  m_Text: 
 --- !u!114 &7699326399930451312
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5225,6 +5225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDmg: 0.01
   limitLayers: 1
+  bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+    type: 3}
+  bloodSize: 1.5
 --- !u!82 &82113391148619756
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6035,7 +6038,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213198413831311138, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213706660220021754, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6063,6 +6066,8 @@ MonoBehaviour:
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 0
+  stopForAction: 0
+  moveCancelsPS: 1
 --- !u!114 &114242750161232990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6127,6 +6132,8 @@ MonoBehaviour:
   auto: 1
   emitClipPrude: {fileID: 8300000, guid: 131a37e1d3e89964081d935a144b6e3a, type: 3}
   emitClipSlut: {fileID: 8300000, guid: 131a37e1d3e89964081d935a144b6e3a, type: 3}
+  coolDownAmt: 0
+  spamPunishment: 1.2
 --- !u!70 &70058122389379986
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11351,7 +11358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: SLUT
+  m_Text: 
 --- !u!114 &1921508601461155119
 MonoBehaviour:
   m_ObjectHideFlags: 0

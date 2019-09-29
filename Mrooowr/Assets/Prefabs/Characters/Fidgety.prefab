@@ -1166,6 +1166,8 @@ MonoBehaviour:
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
+  stopForAction: 0
+  moveCancelsPS: 1
 --- !u!114 &114160227489903896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1184,8 @@ MonoBehaviour:
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: 35b4dcbac0249144195cd0d514d4ea9e, type: 3}
   emitClipSlut: {fileID: 8300000, guid: 7291b1512a3ee2e459b439dbcd36b965, type: 3}
+  coolDownAmt: 0
+  spamPunishment: 1.2
 --- !u!58 &58644843431044536
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1211,8 +1215,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01, y: -0.41}
-  m_Size: {x: 1.74, y: 2.85}
+  m_Offset: {x: -0.01, y: -0.03}
+  m_Size: {x: 3.09, y: 3.31}
   m_Direction: 0
 --- !u!114 &114151536317805676
 MonoBehaviour:
@@ -1457,8 +1461,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1577341845
-  m_SortingLayer: 2
+  m_SortingLayerID: -112812673
+  m_SortingLayer: 3
   m_SortingOrder: 9999
   m_RenderMode: 3
   m_SortMode: 0
@@ -1566,7 +1570,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.3846154
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2116,7 +2120,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.4, y: 0, z: 0}
+    m_Position: {x: 0.45, y: -0.37, z: 0}
     m_Rotation: {x: 0, y: 0, z: -10.5}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -2641,7 +2645,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 3.4906585
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2694,7 +2698,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 3.9636428
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -2934,7 +2938,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -3415,7 +3419,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5.9
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4722,7 +4726,7 @@ ParticleSystem:
     range: {x: 0, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -4832,7 +4836,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 20.677263
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -6099,8 +6103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.01
+  partDmg: 0.015
   limitLayers: 0
+  bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+    type: 3}
+  bloodSize: 1
 --- !u!82 &82240301136798748
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6211,7 +6218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_States: []
   m_File: {fileID: 11400000, guid: 74fbd70d2c614a74692957b756e3438f, type: 2}
-  speed: 1
+  speed: 0.65
   m_Settings:
     randomizeOnStart: 0
     playOnStart: 1
@@ -12551,7 +12558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: SLUT
+  m_Text: 
 --- !u!114 &6330982521703736317
 MonoBehaviour:
   m_ObjectHideFlags: 0

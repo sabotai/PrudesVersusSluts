@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,10 @@ public class ParticleHit : MonoBehaviour {
     public float partDmg = 0f;
     //public AudioClip emitClip, emitClipPrude, emitClipSlut;
     public bool limitLayers = true;
+    public GameObject bloodPrefab;
+    int maxBloodParts = 1;
+    public float bloodSize= 1f;
+    public bool friendlyBlood = false;
 
    // AudioSource aud;
 
@@ -81,6 +85,21 @@ public class ParticleHit : MonoBehaviour {
 	                Vector3 pos = collisionEvents[i].intersection;
 	                Vector3 force = collisionEvents[i].velocity * 5f * Mathf.Abs(meter.amt);
 	                rb.AddForce(force);
+                    if (i < maxBloodParts) {
+                        if (friendlyBlood || other.transform.parent != transform.parent.parent){
+                            GameObject bloody = Instantiate(bloodPrefab, pos, Quaternion.identity) as GameObject;
+                            var main = bloody.GetComponent<ParticleSystem>().main;
+                            main.startSize = bloodSize;
+
+                            if (other.name == "Horsey" || other.name == "Uni" || other.name == "Skully" || other.name == "Catgut" || other.name == "Birdy" || other.name == "Kitty") main.startColor = Color.red; 
+                            else if (other.name == "Eggy") main.startColor = new Color(255f/255f, 247f/255f, 50f/255f);
+                            else if (other.name == "Jimmy") main.startColor = new Color(114f/255f, 43f/255f, 128f/255f);
+                            else if (other.name == "Mango") main.startColor = new Color(239f/255f, 135f/255f, 81f/255f);
+                            else if (other.name == "Fidgety" || other.name == "Stormy") main.startColor = new Color(128f/255f, 128f/255f, 128f/255f);
+                            else if (other.name == "Dumply") main.startColor = new Color(177f/255f, 143f/255f, 98f/255f);
+
+                        } 
+                    }
 	            }
 	            if (meter){
 	            	meter.amt += hitAmt;

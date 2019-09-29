@@ -5040,8 +5040,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea7d4abffca22847b826d98873c26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partDmg: 0.008
+  partDmg: 0.0086
   limitLayers: 0
+  bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+    type: 3}
 --- !u!82 &82438185682986162
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11169,7 +11171,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: SLUT
+  m_Text: 
 --- !u!114 &5925727675263165816
 MonoBehaviour:
   m_ObjectHideFlags: 0

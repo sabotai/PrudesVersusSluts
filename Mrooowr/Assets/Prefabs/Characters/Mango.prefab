@@ -5112,6 +5112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDmg: 0.2
   limitLayers: 0
+  bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
+    type: 3}
+  bloodSize: 2
+  friendlyBlood: 0
 --- !u!82 &82621101292308088
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5337,7 +5341,7 @@ SpriteRenderer:
   m_SortingLayerID: -1506341195
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213546905590766490, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  m_Sprite: {fileID: 213410860643365080, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8221,7 +8225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: SLUT
+  m_Text: 
 --- !u!114 &2321963881333082909
 MonoBehaviour:
   m_ObjectHideFlags: 0
