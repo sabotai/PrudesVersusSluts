@@ -75,7 +75,8 @@ public class Move : MonoBehaviour {
 					walking = true;
 					rb.velocity += new Vector2(0f,-1f) * speed;
 				}
-				if (stopActionAudioWhileWalking && walking) transform.GetChild(1).gameObject.GetComponent<AudioSource>().Stop();
+				if (stopActionAudioWhileWalking && walking)
+					transform.GetChild(1).gameObject.GetComponent<AudioSource>().Stop();
 
 
 				if (rb.velocity.magnitude > 0f){ //if player is moving
@@ -91,6 +92,13 @@ public class Move : MonoBehaviour {
 					
 					//do a walk anim
 					GetComponent<AnimManager>().Walk();
+
+					//trying to fix the glitch where the heal audio keeps playing
+					if (walking){						
+						GetComponent<Hurt>().hurting = false;
+						GetComponent<Hurt>().doHurt = false;
+						GetComponent<Hurt>().goodHurt = false;
+					}
 					
 				} else {
 					if (playWalkSound) aud.Stop();
@@ -102,6 +110,11 @@ public class Move : MonoBehaviour {
 			} else { //stopped to do an action
 				if (Input.GetAxis("P" + player + "_Vertical") == 0f && Input.GetAxis("P" + player + "_Horizontal") == 0f){
 					stopForAction = false;
+					
+					//trying to fix the glitch where the heal audio keeps playing
+					GetComponent<Hurt>().hurting = false;
+					GetComponent<Hurt>().doHurt = false;
+					GetComponent<Hurt>().goodHurt = false;
 				}
 			}
 		

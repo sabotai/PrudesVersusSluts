@@ -26,8 +26,17 @@ public class Hurt : MonoBehaviour {
 			AudioClip clip;
 			if (goodHurt) clip = healClip;
 			else clip = hurtClip[Random.Range(0,hurtClip.Length)];
-			aud.PlayOneShot(clip, Mathf.Min(0.6f, 1.5f - hurtAmt));
-			if (goodHurt) aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.17f); //sounded weird without a collision sound
+			if (goodHurt) {		
+				//for goodHurt, use regular play so it doesnt glitch out
+				aud.clip = clip;
+				aud.volume = Mathf.Min(0.6f, 1.5f - hurtAmt);
+				aud.Play();
+				aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.17f); //sounded weird without a collision sound
+
+			} else {
+				//just play regular hurt
+				aud.PlayOneShot(clip, Mathf.Min(0.6f, 1.5f - hurtAmt));
+			}
 			Play();
 
 			//GetComponent<AudioSource>().pitch = 1f;

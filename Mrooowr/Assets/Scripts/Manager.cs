@@ -21,6 +21,8 @@ public class Manager : MonoBehaviour {
 	public bool muteMusic = false;
 	bool mutedMusic = false;
 	public AudioSource[] musicPlayers;
+	public static bool prudeMode = false;
+	public Transform slootLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +47,13 @@ public class Manager : MonoBehaviour {
 		if (gameOver && Input.GetButtonDown("Submit")) SceneManager.LoadScene(0);
 
 
+		//prude mode
+		if (Input.GetKeyDown(KeyCode.F12)) {
+			prudeMode = !prudeMode;
+
+			if (prudeMode) slootLevel.parent = null;
+			else slootLevel.parent = GameObject.Find("Scenes").transform;
+		}
 		//music muting
 		if (Input.GetKeyDown(KeyCode.M)) muteMusic = !muteMusic;
 		if (muteMusic && !mutedMusic){

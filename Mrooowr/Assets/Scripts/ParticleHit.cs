@@ -91,12 +91,16 @@ public class ParticleHit : MonoBehaviour {
                             var main = bloody.GetComponent<ParticleSystem>().main;
                             main.startSize = bloodSize;
 
-                            if (other.name == "Horsey" || other.name == "Uni" || other.name == "Skully" || other.name == "Catgut" || other.name == "Birdy" || other.name == "Kitty") main.startColor = Color.red; 
+                            if (other.name == "Horsey" || other.name == "Uni" || other.name == "Skully" || other.name == "Catgut" || other.name == "Birdy" || other.name == "Kitty") {
+                                if (!Manager.prudeMode) main.startColor = Color.red; 
+                            }
                             else if (other.name == "Eggy") main.startColor = new Color(255f/255f, 247f/255f, 50f/255f);
-                            else if (other.name == "Jimmy") main.startColor = new Color(114f/255f, 43f/255f, 128f/255f);
+                            else if (other.name == "Jimmy") main.startColor = new Color(230f/255f, 96f/255f, 255f/255f);
                             else if (other.name == "Mango") main.startColor = new Color(239f/255f, 135f/255f, 81f/255f);
-                            else if (other.name == "Fidgety" || other.name == "Stormy") main.startColor = new Color(128f/255f, 128f/255f, 128f/255f);
+                            else if (other.name == "Fidgety") main.startColor = new Color(128f/255f, 128f/255f, 128f/255f);
                             else if (other.name == "Dumply") main.startColor = new Color(177f/255f, 143f/255f, 98f/255f);
+                            else if (other.name == "Stormy") main.startColor = new Color(32f/255f, 139f/255f, 252f/255f);
+                            else if (other.name == "Sunny") main.startColor = new Color(162f/255f, 251f/255f, 252f/255f);
 
                         } 
                     }

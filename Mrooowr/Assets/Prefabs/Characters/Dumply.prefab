@@ -5063,7 +5063,7 @@ MonoBehaviour:
   limitLayers: 0
   bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
     type: 3}
-  bloodSize: 0
+  bloodSize: 0.7
   friendlyBlood: 0
 --- !u!82 &82635702247154528
 AudioSource:
