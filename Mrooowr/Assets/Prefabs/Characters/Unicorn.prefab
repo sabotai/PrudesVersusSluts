@@ -1165,9 +1165,9 @@ MonoBehaviour:
   speed: 6.5
   facingRight: 0
   playWalkSound: 0
-  stopActionAudioWhileWalking: 1
+  stopActionAudioWhileWalking: 0
   stopForAction: 0
-  moveCancelsPS: 0
+  moveCancelsPS: 1
 --- !u!114 &114160227489903896
 MonoBehaviour:
   m_ObjectHideFlags: 0
