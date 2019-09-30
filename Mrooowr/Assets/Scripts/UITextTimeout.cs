@@ -10,7 +10,7 @@ public class UITextTimeout : MonoBehaviour {
 	public bool timerRunning = true;
 	public GameObject next;
 	public bool allowSkip = false;
-
+	public bool disableParent = true;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,12 +20,12 @@ public class UITextTimeout : MonoBehaviour {
 	void Update () {
 		if ((Time.timeSinceLevelLoad > startTime + timerAmt && timerRunning) || (Time.timeSinceLevelLoad > 0.5f && allowSkip && Input.anyKeyDown)){ //timer is up
 			timerRunning = false;
-			GetComponent<Text>().text = "";
+			if (disableParent) GetComponent<Text>().text = "";
 			if (next != null) {
 				next.SetActive(true);
 				next = null;
 			}
-			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = false;
+			if (transform.parent.GetComponent<Image>() && disableParent) transform.parent.GetComponent<Image>().enabled = false;
 			//this.enabled = false;
 			
 		} else if (GetComponent<Text>().text != "" && !timerRunning){ //new text?

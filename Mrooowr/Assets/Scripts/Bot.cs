@@ -6,7 +6,7 @@ public class Bot : MonoBehaviour {
 	public bool swap;
 	public bool attack;
 	GameObject[] chars;
-	public float distThresh = 2f;
+	public float distThresh = 5f;
 	public float hori = 0f;
 	public float vert = 0f;
 	public GameObject target;
@@ -14,8 +14,8 @@ public class Bot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		UpdateEmenies();
-		swap = false;
+			UpdateEmenies();
+			swap = false;
 	}
 	
 	// Update is called once per frame
@@ -66,7 +66,7 @@ public class Bot : MonoBehaviour {
 			UpdateEmenies();
 			//if (Time.frameCount % 180 == 0) swap = true;
 		} else { //farther away
-			if (dist < distThresh * 10f) {
+			if (dist < distThresh * 15f) {
 				if (target.transform.position.x < transform.position.x) {
 					hori = -1f;
 				} else {

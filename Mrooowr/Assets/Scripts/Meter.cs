@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DoodleStudio95;
 
 public class Meter : MonoBehaviour {
 
@@ -8,8 +9,12 @@ public class Meter : MonoBehaviour {
 	public float amt;
 	public float max = 1f;
 	public AudioClip slutConvertClip, prudeConvertClip;
-
+	public GameObject botDeathPoof;
+	public AudioClip botDeath;
 	public Transform slutParent, prudeParent;
+	bool botDead = false;
+	float botTimeOut = 1f;
+	float startTime = 0f;
 	// Use this for initialization
 	void Start () {
 		if (!slutParent) slutParent = GameObject.Find("Sluts").transform;
@@ -34,10 +39,24 @@ public class Meter : MonoBehaviour {
 			if (!Manager.usingBots)		{
 				Prudify();
 			}
-			else {
-				//slutParent.gameObject.GetComponent<Selection>().CycleSelection();
-				Destroy(gameObject);
+			else if (!botDead){
 
+				if (botDeath != null) GetComponent<AudioSource>().PlayOneShot(botDeath);
+				
+				if (botDeathPoof != null) {
+					GameObject poof = Instantiate(botDeathPoof, transform.position, Quaternion.identity) as GameObject;
+					Play(poof);
+				}
+
+				//enable the next bot
+				if (transform.parent.childCount != 1){
+						transform.parent.GetChild(transform.parent.childCount - 1).gameObject.SetActive(true);
+						transform.parent.GetChild(transform.parent.childCount - 1).SetSiblingIndex(0);
+				}
+				botDead = true;
+				startTime = Time.time;
+			} else {
+				if (Time.time > botTimeOut + startTime) Destroy(gameObject);
 			}
 		} else if (amt < 0 && !isSlut) {
 			Slutify();
@@ -78,5 +97,35 @@ public class Meter : MonoBehaviour {
 
 			prudeParent.gameObject.GetComponent<Selection>().CycleSelection();
 		}
+		if (Manager.usingBots){
+			gameObject.AddComponent<Bot>();
+			gameObject.GetComponent<Move>().bot = GetComponent<Bot>();
+			gameObject.tag = "bot";
+			gameObject.GetComponent<Move>().selected = true;
+			//gameObject.GetComponent<Move>().Start();
+			//gameObject.GetComponent<Bot>().enabled = true;
+		}
 	}
+
+
+  IEnumerator PlaySequence(GameObject _whichObj) {
+    DoodleAnimator animator = _whichObj.GetComponent<DoodleAnimator>();
+    int i = 0;
+    animator.Pause();
+    while(i < 1) {
+      // Play the animation and wait until it's finished
+      yield return animator.PlayAndPauseAt();
+      // Advanced to the next animation
+      i++;
+
+			Destroy(gameObject);
+    }
+    animator.Stop();
+
+  }
+
+  public void Play(GameObject whichObj) {
+    //StopAllCoroutines();
+    StartCoroutine(PlaySequence(whichObj));
+  }
 }

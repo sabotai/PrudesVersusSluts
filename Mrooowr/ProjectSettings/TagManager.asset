@@ -13,6 +13,7 @@ TagManager:
   - Background
   - PhysicalPlane
   - Music
+  - bot
   layers:
   - Default
   - TransparentFX

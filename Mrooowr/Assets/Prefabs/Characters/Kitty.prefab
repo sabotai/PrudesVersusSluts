@@ -5044,6 +5044,8 @@ MonoBehaviour:
   limitLayers: 0
   bloodPrefab: {fileID: 7794993546265933880, guid: e98cfac76c4810b438b063f9046faf9b,
     type: 3}
+  bloodSize: 1
+  friendlyBlood: 0
 --- !u!82 &82438185682986162
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5496,7 +5498,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213272519963392098, guid: 18dfc079831314b459d817f31aed425c, type: 2}
+  m_Sprite: {fileID: 213790269248022746, guid: 18dfc079831314b459d817f31aed425c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

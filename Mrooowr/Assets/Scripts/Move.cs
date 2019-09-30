@@ -16,7 +16,7 @@ public class Move : MonoBehaviour {
 	public bool stopActionAudioWhileWalking = true;
 	bool walking = false;
 	public bool stopForAction = false;
-	Bot bot;
+	public Bot bot;
 	public bool moveCancelsPS = true;
 
 	// Use this for initialization
@@ -24,7 +24,7 @@ public class Move : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		aud = GetComponent<AudioSource>();
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
-		if (GetComponent<Bot>() != null) {
+		if (GetComponent<Bot>() != null){
 			bot = GetComponent<Bot>();
 		}
 	}
