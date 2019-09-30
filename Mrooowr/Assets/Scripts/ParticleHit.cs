@@ -13,6 +13,7 @@ public class ParticleHit : MonoBehaviour {
     int maxBloodParts = 1;
     public float bloodSize= 1f;
     public bool friendlyBlood = false;
+    GameObject oldPS, oldOldPS, lastHit, lastLastHit;
 
    // AudioSource aud;
 
@@ -87,7 +88,18 @@ public class ParticleHit : MonoBehaviour {
 	                rb.AddForce(force);
                     if (i < maxBloodParts) {
                         if (friendlyBlood || other.transform.parent != transform.parent.parent){
-                            GameObject bloody = Instantiate(bloodPrefab, pos, Quaternion.identity) as GameObject;
+                            GameObject bloody;
+                            //use the old particle system to not slow down the game too much with instantiation and too many ps
+                            //if (oldPS == null || (other != lastHit)){
+                            if (oldPS == null){
+                               bloody = Instantiate(bloodPrefab, pos, Quaternion.identity) as GameObject;
+                            } else {
+                                bloody = oldPS;
+                                var sh = bloody.GetComponent<ParticleSystem>().shape;
+                                //oldOldPS.transform.position = pos;
+                                sh.position = bloody.transform.InverseTransformPoint(pos); //move emission location to the new hit point
+                                bloody.GetComponent<ParticleSystem>().Play();
+                            }
                             var main = bloody.GetComponent<ParticleSystem>().main;
                             main.startSize = bloodSize;
 
@@ -102,6 +114,9 @@ public class ParticleHit : MonoBehaviour {
                             else if (other.name == "Stormy") main.startColor = new Color(32f/255f, 139f/255f, 252f/255f);
                             else if (other.name == "Sunny") main.startColor = new Color(162f/255f, 251f/255f, 252f/255f);
 
+                            //store the old one
+                            oldPS = bloody;
+                            lastHit = other;
                         } 
                     }
 	            }
