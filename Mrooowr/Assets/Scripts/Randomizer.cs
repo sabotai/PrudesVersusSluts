@@ -23,6 +23,9 @@ public class Randomizer : MonoBehaviour {
         if (randoF > (1f - deviationPct)) rando = Random.Range(0, titleClips.Length);
         else if (randoF > ((1f - deviationPct)/2f)) rando = titleClips.Length - 1;
 
+        //use prudeMode to hide pvs from available titles
+        if (Manager.prudeMode) rando = Random.Range(1, titleClips.Length - 1);
+
 		GetComponent<AudioSource>().clip = titleClips[rando];
 		GetComponent<AudioSource>().Play();
 		prudeName = prudeNames[rando];

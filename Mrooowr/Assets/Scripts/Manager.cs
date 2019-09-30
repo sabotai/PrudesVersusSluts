@@ -47,6 +47,12 @@ public class Manager : MonoBehaviour {
 		if (gameOver && Input.GetButtonDown("Submit")) SceneManager.LoadScene(0);
 
 
+		if (Input.GetKeyDown(KeyCode.F1)) {
+			 SceneManager.LoadScene(0);
+		}
+		if (Input.GetKeyDown(KeyCode.F2)) {
+			 SceneManager.LoadScene(1);
+		}
 		//prude mode
 		if (Input.GetKeyDown(KeyCode.F12)) {
 			prudeMode = !prudeMode;
