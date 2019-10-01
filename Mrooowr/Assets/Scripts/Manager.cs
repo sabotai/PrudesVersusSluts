@@ -30,6 +30,7 @@ public class Manager : MonoBehaviour {
 		p2Ready = false;
 		gameOver = false;
 		winner = " ";
+		usingBots = false;
 	}
 	
 	// Update is called once per frame

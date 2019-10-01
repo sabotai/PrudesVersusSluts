@@ -10,6 +10,7 @@ public class Bot : MonoBehaviour {
 	public float hori = 0f;
 	public float vert = 0f;
 	public GameObject target;
+	public float awarenessDistance = 50f;
 	//public GameObject current;
 
 	// Use this for initialization
@@ -66,7 +67,7 @@ public class Bot : MonoBehaviour {
 			UpdateEmenies();
 			//if (Time.frameCount % 180 == 0) swap = true;
 		} else { //farther away
-			if (dist < distThresh * 15f) {
+			if (dist < awarenessDistance) {
 				if (target.transform.position.x < transform.position.x) {
 					hori = -1f;
 				} else {
