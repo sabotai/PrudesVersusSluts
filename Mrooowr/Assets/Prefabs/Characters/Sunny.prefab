@@ -597,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213770548148560512, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  m_Sprite: {fileID: 213755943776272014, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -626,6 +626,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
   stopForAction: 0
+  bot: {fileID: 0}
   moveCancelsPS: 1
 --- !u!114 &114647339087144710
 MonoBehaviour:
@@ -726,6 +727,8 @@ MonoBehaviour:
   max: 1.4
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
+  botDeathPoof: {fileID: 0}
+  botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!222 &222945495912554006
@@ -1766,7 +1769,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.40584415
+      scalar: 0.8116883
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6419,12 +6422,12 @@ MonoBehaviour:
   m_Settings:
     randomizeOnStart: 0
     playOnStart: 1
-    overrideFileSettings: 0
+    overrideFileSettings: 1
     customPlaybackMode: 1
     customFramesPerSecond: 8
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
-    customFilterMode: 2
+    customFilterMode: 0
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0

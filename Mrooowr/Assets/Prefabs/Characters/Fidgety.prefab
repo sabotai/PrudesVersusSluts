@@ -1090,7 +1090,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213048996636628800, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
+  m_Sprite: {fileID: 213686723679602636, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1167,6 +1167,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
   stopForAction: 0
+  bot: {fileID: 0}
   moveCancelsPS: 1
 --- !u!114 &114160227489903896
 MonoBehaviour:
@@ -1235,6 +1236,8 @@ MonoBehaviour:
   max: 1.5
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
+  botDeathPoof: {fileID: 0}
+  botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!222 &222059328340251800
@@ -1372,15 +1375,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ae935e8cac9f24c99e86334d9e90e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slutActionAnim: {fileID: 11400000, guid: 62ed42d912c0e2e49be210687d692ef7, type: 2}
+  slutActionAnim: {fileID: 11400000, guid: c2beeefd9f6f0924ba5e659824eaa57e, type: 2}
   prudeActionAnim: {fileID: 11400000, guid: 62ed42d912c0e2e49be210687d692ef7, type: 2}
-  slutHurtAnim: {fileID: 11400000, guid: 74804585a7ad4914eaa1da35568a933c, type: 2}
+  slutHurtAnim: {fileID: 11400000, guid: 69dc697fbac748d43afc36d2fe1ef83f, type: 2}
   prudeHurtAnim: {fileID: 11400000, guid: 74804585a7ad4914eaa1da35568a933c, type: 2}
-  slutGoodHurtAnim: {fileID: 11400000, guid: cfb2797661d90fd4b99576be3b18aece, type: 2}
+  slutGoodHurtAnim: {fileID: 11400000, guid: 887454e7eedc2b341a5c18a7a8cea1d3, type: 2}
   prudeGoodHurtAnim: {fileID: 11400000, guid: cfb2797661d90fd4b99576be3b18aece, type: 2}
-  slutIdleAnim: {fileID: 11400000, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
+  slutIdleAnim: {fileID: 11400000, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
-  slutWalkAnim: {fileID: 11400000, guid: bb8a0c795ed96f34eb319e759fd29460, type: 2}
+  slutWalkAnim: {fileID: 11400000, guid: 8991fa21c17132a4a90a599d14d54af3, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: bb8a0c795ed96f34eb319e759fd29460, type: 2}
   prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
     type: 3}
