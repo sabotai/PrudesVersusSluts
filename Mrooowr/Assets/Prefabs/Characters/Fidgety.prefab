@@ -1382,7 +1382,7 @@ MonoBehaviour:
   slutGoodHurtAnim: {fileID: 11400000, guid: 887454e7eedc2b341a5c18a7a8cea1d3, type: 2}
   prudeGoodHurtAnim: {fileID: 11400000, guid: cfb2797661d90fd4b99576be3b18aece, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
-  prudeIdleAnim: {fileID: 11400000, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
+  prudeIdleAnim: {fileID: 11400000, guid: 8f4b9f720dadd0a4a98c7e59fe6c0a42, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 8991fa21c17132a4a90a599d14d54af3, type: 2}
   prudeWalkAnim: {fileID: 11400000, guid: bb8a0c795ed96f34eb319e759fd29460, type: 2}
   prudeSwapEffect: {fileID: 1706389956363836, guid: 0b7794c6f22e6ce40ac83423d28a8438,
