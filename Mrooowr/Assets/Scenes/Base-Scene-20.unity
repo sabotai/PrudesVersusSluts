@@ -1597,6 +1597,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &65984907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5991,6 +5992,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &340569125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7113,6 +7115,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &410791752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8596,6 +8599,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &482611360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9145,6 +9149,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &496417357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13399,6 +13404,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &769318611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14997,6 +15003,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &851331467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15125,6 +15132,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &858160111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15906,6 +15914,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &924952481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16249,6 +16258,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &945511348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16485,6 +16495,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &968992057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18936,6 +18947,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1114420705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19221,6 +19233,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1118296096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20725,6 +20738,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1171818334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23156,6 +23170,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1327927109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26477,6 +26492,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1524408787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28168,7 +28184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.62
-  m_Text: Pruuds vs Sl**ts
+  m_Text: 
 --- !u!222 &1618015759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28189,11 +28205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e291bf631eb0764b8676dd00e81bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAmt: 10
-  timerRunning: 1
+  timerAmt: 3
+  timerRunning: 0
   next: {fileID: 402895702}
   allowSkip: 1
   disableParent: 0
+  keyResetTimer: 1
 --- !u!114 &1618015761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30896,6 +30913,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1732279496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31320,6 +31338,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1770041713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33990,6 +34009,7 @@ MonoBehaviour:
   next: {fileID: 0}
   allowSkip: 0
   disableParent: 1
+  keyResetTimer: 1
 --- !u!114 &1934943073
 MonoBehaviour:
   m_ObjectHideFlags: 0

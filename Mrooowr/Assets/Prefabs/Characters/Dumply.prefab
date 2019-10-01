@@ -5636,7 +5636,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213328968128811814, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
+  m_Sprite: {fileID: 213408323378697610, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5665,6 +5665,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
   stopForAction: 0
+  bot: {fileID: 0}
   moveCancelsPS: 1
 --- !u!114 &114708990084460880
 MonoBehaviour:
@@ -5775,6 +5776,8 @@ MonoBehaviour:
   max: 1.7
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
+  botDeathPoof: {fileID: 0}
+  botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!222 &222416316563128908
@@ -5916,8 +5919,8 @@ MonoBehaviour:
   prudeActionAnim: {fileID: 11400000, guid: 738d4883267e5fe4e8d6c03a8e6657ad, type: 2}
   slutHurtAnim: {fileID: 11400000, guid: c09ced8baf479ec4fb95d56cd28f7cb7, type: 2}
   prudeHurtAnim: {fileID: 11400000, guid: 3bc4de597b109e24cb12bc7265387367, type: 2}
-  slutGoodHurtAnim: {fileID: 11400000, guid: c09ced8baf479ec4fb95d56cd28f7cb7, type: 2}
-  prudeGoodHurtAnim: {fileID: 11400000, guid: 3bc4de597b109e24cb12bc7265387367, type: 2}
+  slutGoodHurtAnim: {fileID: 11400000, guid: a97edac9eec37ec47878ed4f6be2357c, type: 2}
+  prudeGoodHurtAnim: {fileID: 11400000, guid: 834720dd16afbdd40ac8fa08a623d56e, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 0a0c7f6aa3ab2b24fb5c427b032e28a4, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 8043600f3d2a9f84b89f759ef32e9989, type: 2}
