@@ -34,7 +34,7 @@ public class UITextTimeout : MonoBehaviour {
 		} else if (GetComponent<Text>().text != "" && !timerRunning){ //new text
 			if (transform.parent.GetComponent<Image>()) transform.parent.GetComponent<Image>().enabled = true;
 			timerRunning = true;
-			allowSkip = false;
+			//allowSkip = false;
 			startTime = Time.timeSinceLevelLoad;
 			//Debug.Log("introtime = " + Intro.introTime);
 		}
