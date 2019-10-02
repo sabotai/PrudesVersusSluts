@@ -1090,7 +1090,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213243885013751270, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
+  m_Sprite: {fileID: 213520235251496226, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
-  speed: 6.5
+  speed: 5.7
   facingRight: 0
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
@@ -1240,6 +1240,7 @@ MonoBehaviour:
   botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+  fullHealth: 1
 --- !u!222 &222059328340251800
 CanvasRenderer:
   m_ObjectHideFlags: 0

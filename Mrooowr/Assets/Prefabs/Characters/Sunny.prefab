@@ -597,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213755943776272014, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  m_Sprite: {fileID: 213770548148560512, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -731,6 +731,7 @@ MonoBehaviour:
   botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+  fullHealth: 1
 --- !u!222 &222945495912554006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -870,8 +871,8 @@ MonoBehaviour:
   prudeActionAnim: {fileID: 11400000, guid: 559613cca9c618d41936e93564c5567a, type: 2}
   slutHurtAnim: {fileID: 11400000, guid: 1ba8aac96ef24a94fad96541df35b5cd, type: 2}
   prudeHurtAnim: {fileID: 11400000, guid: 1aa81ea5511d8bc498511c8c294135d8, type: 2}
-  slutGoodHurtAnim: {fileID: 11400000, guid: 1ba8aac96ef24a94fad96541df35b5cd, type: 2}
-  prudeGoodHurtAnim: {fileID: 11400000, guid: 1aa81ea5511d8bc498511c8c294135d8, type: 2}
+  slutGoodHurtAnim: {fileID: 11400000, guid: 4571eabe33d6fe74a861b9ded9e11551, type: 2}
+  prudeGoodHurtAnim: {fileID: 11400000, guid: c7bc58db9549c774ab506a8fbf26a4ee, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 859080c011ed5df4fbab2b773a7d789a, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 4004c3d6229521647aec9a229bb0202b, type: 2}

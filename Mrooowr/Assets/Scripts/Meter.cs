@@ -15,8 +15,10 @@ public class Meter : MonoBehaviour {
 	bool botDead = false;
 	float botTimeOut = 1f;
 	float startTime = 0f;
+	public bool fullHealth = true;
 	// Use this for initialization
 	void Start () {
+		fullHealth = true;
 		if (!slutParent) slutParent = GameObject.Find("Sluts").transform;
 		if (!prudeParent) prudeParent = GameObject.Find("Prudes").transform;
         if (transform.parent.gameObject.GetComponent<Selection>().player == 1)
@@ -63,6 +65,9 @@ public class Meter : MonoBehaviour {
 		}
 
 		amt = Mathf.Clamp(amt, -max, max);
+
+		if ((amt == -max && isSlut) || (amt == max && !isSlut)) fullHealth = true;
+		else fullHealth = false;
 	}
 
 	public void PlayHurt(){
