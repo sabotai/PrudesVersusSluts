@@ -52,12 +52,12 @@ MonoBehaviour:
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
-    overrideFileSettings: 0
+    overrideFileSettings: 1
     customPlaybackMode: 1
     customFramesPerSecond: 16
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
-    customFilterMode: 2
+    customFilterMode: 0
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0

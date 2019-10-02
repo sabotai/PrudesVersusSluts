@@ -5370,6 +5370,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 1
   stopForAction: 0
+  bot: {fileID: 0}
   moveCancelsPS: 1
 --- !u!114 &114489171488655836
 MonoBehaviour:
@@ -5470,6 +5471,8 @@ MonoBehaviour:
   max: 7.5
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
+  botDeathPoof: {fileID: 0}
+  botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
 --- !u!222 &222365877136503590
@@ -5612,7 +5615,7 @@ MonoBehaviour:
   slutHurtAnim: {fileID: 11400000, guid: dad0e2cde47d06a42ac0b2128dcaa2e3, type: 2}
   prudeHurtAnim: {fileID: 11400000, guid: 7e5ac8c829599d646958898165617aa3, type: 2}
   slutGoodHurtAnim: {fileID: 11400000, guid: dad0e2cde47d06a42ac0b2128dcaa2e3, type: 2}
-  prudeGoodHurtAnim: {fileID: 11400000, guid: 7e5ac8c829599d646958898165617aa3, type: 2}
+  prudeGoodHurtAnim: {fileID: 11400000, guid: d5944d3f82c551f4c81d00caab503584, type: 2}
   slutIdleAnim: {fileID: 11400000, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
   prudeIdleAnim: {fileID: 11400000, guid: 065e6ceb897f45d429e70f5fb8ca0841, type: 2}
   slutWalkAnim: {fileID: 11400000, guid: 262b7bf44f1672146b593776cc238c07, type: 2}

@@ -633,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508772688694978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.064, z: 0}
+  m_LocalPosition: {x: 0.49, y: 0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224382378419043176}
@@ -1090,7 +1090,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213686723679602636, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
+  m_Sprite: {fileID: 213243885013751270, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 21ccc543220f01c4ab85f0a62d8eb911, type: 2}
+  m_File: {fileID: 11400000, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -1183,8 +1183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doAction: 0
   auto: 0
-  emitClipPrude: {fileID: 8300000, guid: 35b4dcbac0249144195cd0d514d4ea9e, type: 3}
-  emitClipSlut: {fileID: 8300000, guid: 7291b1512a3ee2e459b439dbcd36b965, type: 3}
+  emitClipPrude: {fileID: 8300000, guid: c188a61f56a22db4f8494b76311d52f9, type: 3}
+  emitClipSlut: {fileID: 8300000, guid: 2d32258ad3d7246458e3d6b91619413f, type: 3}
   coolDownAmt: 0
   spamPunishment: 1.2
 --- !u!58 &58644843431044536
@@ -1357,7 +1357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtClip:
-  - {fileID: 8300000, guid: fe978f77bd24e9e41814f095398cda3e, type: 3}
+  - {fileID: 8300000, guid: 13f7ccd2b13fd2d41a5b5cdb7f712b91, type: 3}
+  - {fileID: 8300000, guid: 13f7ccd2b13fd2d41a5b5cdb7f712b91, type: 3}
   healClip: {fileID: 8300000, guid: 3f289e1edc3f60c48aedcb7789d5e462, type: 3}
   doHurt: 0
   goodHurt: 0
@@ -1407,6 +1408,7 @@ GameObject:
   - component: {fileID: 114622764765502954}
   - component: {fileID: 82240301136798748}
   - component: {fileID: 671869710976867165}
+  - component: {fileID: 7244248291284180727}
   m_Layer: 16
   m_Name: Particles
   m_TagString: Untagged
@@ -1742,7 +1744,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2123,7 +2125,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.45, y: -0.37, z: 0}
+    m_Position: {x: 0.6, y: -0.87, z: 0}
     m_Rotation: {x: 0, y: 0, z: -10.5}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -6235,6 +6237,20 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &7244248291284180727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814034378898134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9220d82fe617c8f46bb0add64727c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prudeAnim: {fileID: 11400000, guid: 74fbd70d2c614a74692957b756e3438f, type: 2}
+  slutAnim: {fileID: 11400000, guid: 3dcd4d3fcea39be42a1750a0048c2c3e, type: 2}
 --- !u!1 &1826808121855566
 GameObject:
   m_ObjectHideFlags: 0
