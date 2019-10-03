@@ -31,11 +31,16 @@ public class Hurt : MonoBehaviour {
 				aud.clip = clip;
 				aud.volume = Mathf.Min(0.6f, 1.5f - hurtAmt);
 				aud.Play();
-				aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.17f); //sounded weird without a collision sound
+				if (GetComponent<Meter>().isSlut || hurtClip.Length == 1) aud.PlayOneShot(hurtClip[0], 0.17f);
+				else aud.PlayOneShot(hurtClip[1], 0.17f);
+				//aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.17f);
+				//aud.PlayOneShot(hurtClip[Random.Range(0,hurtClip.Length)], 0.17f); //sounded weird without a collision sound
 
 			} else {
 				//just play regular hurt
-				aud.PlayOneShot(clip, Mathf.Min(0.6f, 1.5f - hurtAmt));
+				if (GetComponent<Meter>().isSlut || hurtClip.Length == 1) aud.PlayOneShot(hurtClip[0], Mathf.Min(0.6f, 1.5f - hurtAmt));
+				else aud.PlayOneShot(hurtClip[1],  Mathf.Min(0.6f, 1.5f - hurtAmt));
+				//aud.PlayOneShot(clip, Mathf.Min(0.6f, 1.5f - hurtAmt));
 			}
 			Play();
 

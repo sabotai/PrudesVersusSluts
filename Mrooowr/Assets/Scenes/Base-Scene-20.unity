@@ -14730,6 +14730,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1459086067925216, guid: 611e6b34100181e4b8e665de2168a345, type: 3}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611e6b34100181e4b8e665de2168a345, type: 3}
 --- !u!1001 &845550384
@@ -28465,7 +28469,7 @@ MonoBehaviour:
   timerRunning: 0
   next: {fileID: 402895702}
   allowSkip: 1
-  disableParent: 0
+  disableParent: 1
   keyResetTimer: 1
 --- !u!114 &1618015761
 MonoBehaviour:
