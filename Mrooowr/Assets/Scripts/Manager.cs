@@ -23,6 +23,7 @@ public class Manager : MonoBehaviour {
 	public AudioSource[] musicPlayers;
 	public static bool prudeMode = false;
 	public Transform slootLevel;
+	public GameObject closeTransition;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,10 @@ public class Manager : MonoBehaviour {
 
 		if (Input.GetButtonDown("Cancel")) SceneManager.LoadScene(0);
 
-		if (gameOver && Input.GetButtonDown("Submit")) SceneManager.LoadScene(0);
+		if (gameOver && Input.GetButtonDown("Submit")) {
+			closeTransition.SetActive(true);
+
+		}
 
 
 		if (Input.GetKeyDown(KeyCode.F1)) {
