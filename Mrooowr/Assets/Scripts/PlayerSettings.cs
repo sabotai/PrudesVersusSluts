@@ -15,6 +15,7 @@ public class PlayerSettings : MonoBehaviour {
 	public Color color1, color2;
 	public GameObject botScene;
 	CamMove camMove;
+    public GameObject leftArrow, rightArrow;
 
 
     float debounce = 0f;
@@ -33,9 +34,19 @@ public class PlayerSettings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (selection == 1) subAnnouncer.text = "Practice >";
-        if (selection == 2) subAnnouncer.text = "< Multiplayer >";
-        if (selection == 3) subAnnouncer.text = "< Quit game";
+		if (selection == 1) {
+            subAnnouncer.text = "Single-Player Practice >";
+            leftArrow.SetActive(false);
+            rightArrow.SetActive(true);
+            } else if (selection == 2) {
+                subAnnouncer.text = "< Multiplayer >";
+                leftArrow.SetActive(true);
+                rightArrow.SetActive(true);
+                } else if (selection == 3) {
+                    subAnnouncer.text = "< Quit game";
+                    leftArrow.SetActive(true);
+                    rightArrow.SetActive(false);
+                }
 
 
 

@@ -15,6 +15,7 @@ public class DoodleAnimSequence : MonoBehaviour
 	public GameObject[] disableInBetween;
 	public GameObject toggleImageInBetween;
   public bool endGame = false;
+  public bool disableSelf = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,7 @@ public class DoodleAnimSequence : MonoBehaviour
         i = 0;
     }
     animator.Stop();
-
+    if (disableSelf) gameObject.SetActive(false);
      
   }
 

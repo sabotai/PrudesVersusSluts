@@ -68,7 +68,8 @@ public class Selection : MonoBehaviour {
 			Manager.gameOver = true;
 		}
 
-		if (transform.childCount > 0 && Manager.gameOver){
+		if (transform.childCount > 0 && Manager.gameOver ){
+			if (!Manager.usingBots || (player == 1))
 			Select();
 			
 		}

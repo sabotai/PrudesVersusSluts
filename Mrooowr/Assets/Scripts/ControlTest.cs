@@ -14,6 +14,6 @@ public class ControlTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxis("P1_Horizontal"));
+        //Debug.Log(Input.GetAxis("P1_Horizontal"));
     }
 }
