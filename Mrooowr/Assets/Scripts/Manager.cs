@@ -24,6 +24,9 @@ public class Manager : MonoBehaviour {
 	public static bool prudeMode = false;
 	public Transform slootLevel;
 	public GameObject closeTransition;
+	public static bool paused = false;
+	public GameObject pauseCanvas;
+	public static int gameState = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +35,8 @@ public class Manager : MonoBehaviour {
 		gameOver = false;
 		winner = " ";
 		usingBots = false;
+		paused = false;
+		gameState = 0;
 	}
 	
 	// Update is called once per frame
@@ -42,22 +47,47 @@ public class Manager : MonoBehaviour {
 		Debug.Log("p1ready = " + p1Ready + "; p2ready = " + p2Ready);
 		if (p1Ready && p2Ready){
 			camMover.enabled = true;
+			gameState = 1;
 		}
+		if (gameState == 1){
+			if (Input.GetButtonDown("Cancel")) {
+				paused = !paused;
+				//SceneManager.LoadScene(0);
 
-		if (Input.GetButtonDown("Cancel")) SceneManager.LoadScene(0);
+			}
+			if (paused){
+				Time.timeScale = 0f;
+				pauseCanvas.SetActive(true);
+				if (Input.GetKeyDown(KeyCode.Space)) {
+					Time.timeScale = 1f;
+					pauseCanvas.SetActive(false);
+					Application.Quit();
 
-		if (gameOver && Input.GetButtonDown("Submit")) {
-			closeTransition.SetActive(true);
+				}
+			} else {
+				Time.timeScale = 1f;
+				pauseCanvas.SetActive(false);
+			}
 
+			if (gameOver && Input.GetButtonDown("Submit")) {
+				closeTransition.SetActive(true);
+			}
+
+
+			if (Input.GetKeyDown(KeyCode.F1)) {
+				 //SceneManager.LoadScene(0);
+				paused = false;
+				gameOver = true;
+				Time.timeScale = 1f;
+				pauseCanvas.SetActive(false);
+				closeTransition.SetActive(true);
+			}
 		}
-
-
-		if (Input.GetKeyDown(KeyCode.F1)) {
-			 SceneManager.LoadScene(0);
-		}
+		/*
 		if (Input.GetKeyDown(KeyCode.F2)) {
 			 SceneManager.LoadScene(1);
 		}
+		*/
 		//prude mode
 		if (Input.GetKeyDown(KeyCode.F12)) {
 			prudeMode = !prudeMode;
