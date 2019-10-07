@@ -1010,6 +1010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224382378419043176}
+  - component: {fileID: 4516537518382776836}
   - component: {fileID: 212263966323988418}
   - component: {fileID: 114441014965578100}
   - component: {fileID: 50722517492436118}
@@ -1053,6 +1054,20 @@ RectTransform:
   m_AnchoredPosition: {x: 15.966602, y: -6.10656}
   m_SizeDelta: {x: 3.84, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4516537518382776836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660177177405656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a565243071ca4d64d9ff417f4b200067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slutSelect: {fileID: 8300000, guid: c4f182cd0acf99c4985ccb185864e92f, type: 3}
+  prudeSelect: {fileID: 8300000, guid: 2be1b902f502d5f4ea430c3f1016bfb8, type: 3}
 --- !u!212 &212263966323988418
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1090,7 +1105,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 303
-  m_Sprite: {fileID: 213520235251496226, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
+  m_Sprite: {fileID: 213489483572360858, guid: 65f2cbca18c3d6a408487e49dc1d4ed8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1184,7 +1199,7 @@ MonoBehaviour:
   doAction: 0
   auto: 0
   emitClipPrude: {fileID: 8300000, guid: c188a61f56a22db4f8494b76311d52f9, type: 3}
-  emitClipSlut: {fileID: 8300000, guid: 2d32258ad3d7246458e3d6b91619413f, type: 3}
+  emitClipSlut: {fileID: 8300000, guid: c188a61f56a22db4f8494b76311d52f9, type: 3}
   coolDownAmt: 0
   spamPunishment: 1.2
 --- !u!58 &58644843431044536
@@ -1259,7 +1274,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 66d9da3bc77d3734689e22b1812beb3b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d94ee7e6de7fbf04db246ccf1647c92b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1
@@ -1358,8 +1373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtClip:
-  - {fileID: 8300000, guid: 13f7ccd2b13fd2d41a5b5cdb7f712b91, type: 3}
-  - {fileID: 8300000, guid: 13f7ccd2b13fd2d41a5b5cdb7f712b91, type: 3}
+  - {fileID: 8300000, guid: fe978f77bd24e9e41814f095398cda3e, type: 3}
+  - {fileID: 8300000, guid: 9d523a95567d7604084414411c93469d, type: 3}
   healClip: {fileID: 8300000, guid: 3f289e1edc3f60c48aedcb7789d5e462, type: 3}
   doHurt: 0
   goodHurt: 0

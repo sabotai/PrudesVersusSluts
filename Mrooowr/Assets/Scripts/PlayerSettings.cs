@@ -15,6 +15,7 @@ public class PlayerSettings : MonoBehaviour {
 	public Color color1, color2;
 	public GameObject botScene;
 	CamMove camMove;
+    public GameObject leftArrow, rightArrow;
 
 
     float debounce = 0f;
@@ -33,8 +34,19 @@ public class PlayerSettings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (selection == 1) subAnnouncer.text = "Practice >";
-		if (selection == 2) subAnnouncer.text = "< Multiplayer";
+		if (selection == 1) {
+            subAnnouncer.text = "Single-Player Practice >";
+            leftArrow.SetActive(false);
+            rightArrow.SetActive(true);
+            } else if (selection == 2) {
+                subAnnouncer.text = "< Multiplayer >";
+                leftArrow.SetActive(true);
+                rightArrow.SetActive(true);
+                } else if (selection == 3) {
+                    subAnnouncer.text = "< Quit game";
+                    leftArrow.SetActive(true);
+                    rightArrow.SetActive(false);
+                }
 
 
 
@@ -52,8 +64,7 @@ public class PlayerSettings : MonoBehaviour {
                     sceneS.enabled = true;
                     sceneSUI.SetActive(true);
                 }
-                else
-                {
+                else if (selection == 1)     {
                     pruuds.SetActive(true);
                     for (int i = 0; i < sloots.transform.childCount; i++)
                     {
@@ -80,6 +91,8 @@ public class PlayerSettings : MonoBehaviour {
                     //pruuds.SetActive(true);
 
                     //camMove.enabled = true;
+                } else if (selection == 3){
+                    Application.Quit();
                 }
 
                 man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
@@ -114,28 +127,54 @@ public class PlayerSettings : MonoBehaviour {
 
         if (axisReady) { 
         if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
-				selection = 2;
-				GetComponent<Image>().color = color2;
-				//bot.enabled = false;
-				p2Controls.SetActive(true);
-				//hide botscene and show multi scene
-                botScene.SetActive(false);
-                sceneS.transform.GetChild(0).gameObject.SetActive(true);
+                if (selection == 1){
+				    selection = 2;
+				    GetComponent<Image>().color = color2;
+				    //bot.enabled = false;
+                    p1Controls.SetActive(true);
+				    p2Controls.SetActive(true);
+				    //hide botscene and show multi scene
+                    botScene.SetActive(false);
+                    sceneS.transform.GetChild(0).gameObject.SetActive(true);
 
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+				    man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+                } else if (selection == 2){
+                    selection = 3;
+                    GetComponent<Image>().color = color1;
+                    //bot.enabled = false;
+                    p2Controls.SetActive(false);
+                    p1Controls.SetActive(false);
+                    //hide botscene and show multi scene
+                    botScene.SetActive(false);
+                    sceneS.transform.GetChild(0).gameObject.SetActive(true);
+
+                    man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+                }
 			}
 			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
-				selection = 1;
-				GetComponent<Image>().color = color1;
+                if (selection == 2){
+        				selection = 1;
+        				GetComponent<Image>().color = color1;
 
-				//bot.enabled = true;
-				p2Controls.SetActive(false);
-				//show botscene and hide multi scene
-                botScene.SetActive(true);
-                sceneS.transform.GetChild(0).gameObject.SetActive(false);
+        				//bot.enabled = true;
+        				p2Controls.SetActive(false);
+        				//show botscene and hide multi scene
+                        botScene.SetActive(true);
+                        sceneS.transform.GetChild(0).gameObject.SetActive(false);
 
-				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+        				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+                } else if (selection == 3){
+                    selection = 2;
+                    GetComponent<Image>().color = color2;
+                    //bot.enabled = false;
+                    p1Controls.SetActive(true);
+                    p2Controls.SetActive(true);
+                    //hide botscene and show multi scene
+                    botScene.SetActive(false);
+                    sceneS.transform.GetChild(0).gameObject.SetActive(true);
 
+                    man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+                }
 			}
 
 

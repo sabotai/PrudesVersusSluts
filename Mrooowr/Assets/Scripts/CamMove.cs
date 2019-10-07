@@ -24,18 +24,24 @@ public class CamMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 move = Vector3.Lerp(transform.position, AvgCharPos(), speed);
-		if (reversed.Length > 0) {
-			foreach(GameObject fore in reversed)
-				fore.transform.position += parallaxAmt * (transform.parent.position - move);
-		}
+		
+			Vector3 move = Vector3.Lerp(transform.position, AvgCharPos(), speed);
+			if (reversed.Length > 0) {
+				foreach(GameObject fore in reversed){
+					if (!float.IsNaN(move.x))
+					fore.transform.position += parallaxAmt * (transform.parent.position - move);
+				}
+			}
 
-		if (background.Length > 0) {
-			foreach(GameObject back in background)
-				back.transform.position += -0.5f * parallaxAmt * (transform.parent.position - move);
-		}
-		transform.parent.position = move;//Vector3.Lerp(transform.position, AvgCharPos(), speed);
-
+			if (background.Length > 0) {
+				foreach(GameObject back in background){
+					if (!float.IsNaN(move.x))
+					back.transform.position += -0.5f * parallaxAmt * (transform.parent.position - move);
+				}
+			}
+			if (!float.IsNaN(move.x))
+			transform.parent.position = move;//Vector3.Lerp(transform.position, AvgCharPos(), speed);
+		
 
 	}
 	Vector3 AvgCharPos(){
@@ -51,7 +57,7 @@ public class CamMove : MonoBehaviour {
 		} 
 		
 		if (!Manager.usingBots){
-		avg /= (slutParent.childCount + prudeParent.childCount);
+			avg /= (slutParent.childCount + prudeParent.childCount);
 		} else {
 			avg /= prudeParent.childCount;
 		}

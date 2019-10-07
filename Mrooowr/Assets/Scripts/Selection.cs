@@ -13,10 +13,18 @@ public class Selection : MonoBehaviour {
 	public GameObject selectEffect;
 	public bool isBot = false;
 	Vector3 oldSelect;
+	public float coolDownAmt = 0f;
+	float startTime = 0f;
+	float origCoolDownAmt = 0f;
+	public float maxCool = 2f;
+	public float spamPunishment = 1.2f;
+	public AudioClip badClip;
+	public GameObject punishMeter;
 
 	// Use this for initialization
 	void Start () {
 		//if (isBot) GetComponent<Bot>().enabled = true;
+		origCoolDownAmt = coolDownAmt;
 	}
 	
 	// Update is called once per frame
@@ -33,9 +41,20 @@ public class Selection : MonoBehaviour {
 			GetComponent<Spawner>().enabled = !GetComponent<Spawner>().enabled;
 		} 
 		*/
-
 		if ((Input.GetButtonDown("P" + player + "_Next")) && begun){
-			CycleSelection();
+			if (Time.time > startTime + coolDownAmt){ //cooled down
+				coolDownAmt = origCoolDownAmt;
+				CycleSelection();
+			}else { //player is spamming
+				
+				coolDownAmt *= spamPunishment;
+				coolDownAmt = Mathf.Min(coolDownAmt, maxCool);
+				GetComponent<AudioSource>().PlayOneShot(badClip);
+				GameObject punishMet = Instantiate(punishMeter, transform.GetChild(selected).GetChild(2)) as GameObject;
+				punishMet.GetComponent<TimerUI>().timerAmt = coolDownAmt;
+				punishMet.GetComponent<TimerUI>().start();
+			}
+			startTime = Time.time;
 		}
 
 		if (transform.childCount == 0 && !Manager.gameOver){
@@ -49,7 +68,8 @@ public class Selection : MonoBehaviour {
 			Manager.gameOver = true;
 		}
 
-		if (transform.childCount > 0 && Manager.gameOver){
+		if (transform.childCount > 0 && Manager.gameOver ){
+			if (!Manager.usingBots || (player == 1))
 			Select();
 			
 		}
