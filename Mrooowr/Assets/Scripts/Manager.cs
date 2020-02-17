@@ -15,8 +15,12 @@ public class Manager : MonoBehaviour {
 	public static string winner = " ";
 	public static Color prudeColor;
 	public static Color slutColor;
+	public static Color prudeUIColor;
+	public static Color slutUIColor;
 	public Color prudeColorPub;
 	public Color slutColorPub;
+	public Color prudeUIColorPub;
+	public Color slutUIColorPub;
 	public static bool usingBots = false;
 	public bool muteMusic = false;
 	bool mutedMusic = false;
@@ -43,6 +47,8 @@ public class Manager : MonoBehaviour {
 	void Update () {
 		prudeColor = prudeColorPub;
 		slutColor = slutColorPub;
+		prudeUIColor = prudeUIColorPub;
+		slutUIColor = slutUIColorPub;
 
 		//Debug.Log("p1ready = " + p1Ready + "; p2ready = " + p2Ready);
 		if (p1Ready && p2Ready){

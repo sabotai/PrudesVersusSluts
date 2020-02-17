@@ -14,14 +14,26 @@ public class SceneSelection : MonoBehaviour {
     float debounce = 0f;
     public float repeat = 0.1f;  // reduce to speed up auto-repeat input
     bool axisReady = true;
+    public Image[] UIDots;
+    string currentSelector = "";
+
 
     // Use this for initialization
     void Start () {
 		man = Camera.main.gameObject;
+
+        foreach(Image uidot in UIDots) {
+            uidot.gameObject.SetActive(true);
+            uidot.enabled = true;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        for (int i = 0; i < transform.childCount; i++){
+            if (i != selection) UIDots[i].color = Manager.prudeUIColor;
+            else UIDots[i].color = Manager.slutUIColor;
+        }
 
 
         if (Time.time > textDelay)
@@ -30,42 +42,48 @@ public class SceneSelection : MonoBehaviour {
             subAnnouncer.text = "< Choose your battleground >";//"<◀ Choose your battleground ▶>";
         }
 
-        //DEBOUNCE STUFF
+        //whoever presses button first controls which scene
+        if (currentSelector == ""){
+            if (Input.GetAxis("P1_Vertical") != 0f || Input.GetAxis("P1_Horizontal") != 0f) currentSelector = "P1";
+            if (Input.GetAxis("P2_Vertical") != 0f || Input.GetAxis("P2_Horizontal") != 0f) currentSelector = "P2";
+        } else {
 
-        float vAxis = Input.GetAxis("P1_Vertical") + Input.GetAxis("P2_Vertical");
-        float hAxis = Input.GetAxis("P1_Horizontal") + Input.GetAxis("P2_Horizontal");
+        //DEBOUNCE STUFF
+        float vAxis = Input.GetAxisRaw(currentSelector + "_Vertical");//"P1_Vertical") + Input.GetAxis("P2_Vertical");
+        float hAxis = Input.GetAxisRaw(currentSelector + "_Horizontal");//_Horizontal") + Input.GetAxis("P2_Horizontal");
         float now = Time.realtimeSinceStartup;
         // check if user let go of the stick; if so, reset the input bounce control
-        if (Mathf.Abs(vAxis) < 0.1f && Mathf.Abs(hAxis) < 0.1f)
+        if (Mathf.Abs(hAxis) < 0.1f)
         {
-            debounce = 0f;
+            debounce = 0f; //nothing being pressed
         }
 
         // if it's been long enough since the last input, then we allow it
-        if (now - debounce > repeat)
+        if (now - debounce > repeat || debounce == 0f)
         {
             axisReady = true;
 
-            debounce = Time.realtimeSinceStartup;
         }
         else
         {
             axisReady = false;
         }
+        Debug.Log("vAxis = " + vAxis + " // hAxis = " + hAxis + " // axisReady = " + axisReady );
         //END DEBOUNCE
 
 		if (axisReady)
         {
-			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
+			if (Input.GetButtonDown(currentSelector+"_Action") || Input.GetButtonDown(currentSelector+"_Action")){
 				prudes.SetActive(true);
 				sluts.SetActive(true);
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
 				//subAnnouncer.transform.parent.gameObject.SetActive(false);
+                UIDots[0].transform.parent.gameObject.SetActive(false);
 				this.enabled = false;
 
 			}
 
-			if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
+			if (hAxis > 0f){//Input.GetAxis(currentSelector+"_Horizontal") > 0f){// || Input.GetAxis(currentSelector+"_Horizontal") > 0f ){
 				if (selection < transform.childCount - 1){
 					selection++;
 				} else {
@@ -77,7 +95,7 @@ public class SceneSelection : MonoBehaviour {
 
                 UpdateAvailable();
             }
-			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
+			if (hAxis < 0f){//Input.GetAxis(currentSelector+"_Horizontal") < 0f){// || Input.GetAxis(currentSelector+"_Horizontal") < 0f ){
 				if (selection > 0){
 					selection--;
 				} else {
@@ -89,6 +107,7 @@ public class SceneSelection : MonoBehaviour {
 
 			}
 		}
+    }
 	}
 
     void UpdateAvailable()
@@ -101,5 +120,7 @@ public class SceneSelection : MonoBehaviour {
         }
 
         transform.GetChild(selection).gameObject.SetActive(true);
+
+        debounce = Time.realtimeSinceStartup; //ONLY RESET THE DEBOUNCE IF IT IS ACTUALLY BEING USED!!!
     }
 }

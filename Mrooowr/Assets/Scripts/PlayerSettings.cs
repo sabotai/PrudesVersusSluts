@@ -16,11 +16,14 @@ public class PlayerSettings : MonoBehaviour {
 	public GameObject botScene;
 	CamMove camMove;
     public GameObject leftArrow, rightArrow;
+    public Image dotA, dotB, dotC;
 
 
-    float debounce = 0f;
+    float debounce1 = 0f;
+    float debounce2 = 0f;
     public float repeat = 0.1f;  // reduce to speed up auto-repeat input
-    bool axisReady = true;
+    bool axisReady1 = true;
+    bool axisReady2 = true;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +33,10 @@ public class PlayerSettings : MonoBehaviour {
 		
         p1Controls.SetActive(true);
         p2Controls.SetActive(true);
+
+        dotA.enabled = true;
+        dotB.enabled = true;
+        dotC.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -38,14 +45,23 @@ public class PlayerSettings : MonoBehaviour {
             subAnnouncer.text = "Single-Player Practice >";
             leftArrow.SetActive(false);
             rightArrow.SetActive(true);
-            } else if (selection == 2) {
+            dotA.color = color1;
+            dotB.color = color2;
+            dotC.color = color2;
+           } else if (selection == 2) {
                 subAnnouncer.text = "< Multiplayer >";
                 leftArrow.SetActive(true);
                 rightArrow.SetActive(true);
+           		dotA.color = color2;
+           		dotB.color = color1;
+          		dotC.color = color2;
                 } else if (selection == 3) {
                     subAnnouncer.text = "< Quit game";
                     leftArrow.SetActive(true);
                     rightArrow.SetActive(false);
+          			dotA.color = color2;
+	            	dotB.color = color2;
+	            	dotC.color = color1;
                 }
 
 
@@ -104,29 +120,44 @@ public class PlayerSettings : MonoBehaviour {
         }
 
 
-        float vAxis = Input.GetAxis("P1_Vertical") + Input.GetAxis("P2_Vertical");
-        float hAxis = Input.GetAxis("P1_Horizontal") + Input.GetAxis("P2_Horizontal");                                                   //bot
+        float vAxis1 = Input.GetAxis("P1_Vertical");
+        float hAxis1 = Input.GetAxis("P1_Horizontal"); 
+        float vAxis2 = Input.GetAxis("P2_Vertical");
+        float hAxis2 = Input.GetAxis("P2_Horizontal");                                                   //bot
         float now = Time.realtimeSinceStartup;
         // check if user let go of the stick; if so, reset the input bounce control
-        if (Mathf.Abs(vAxis) < 0.1f && Mathf.Abs(hAxis) < 0.1f)
+        if (vAxis1 != 0f && hAxis1 != 0f)
         {
-            debounce = 0f;
+            debounce1 = 0f; //resets debounce
         }
-
-        // if it's been long enough since the last input, then we allow it
-        if (now - debounce > repeat)
+        if (vAxis2 != 0f && hAxis2 != 0f)
         {
-            axisReady = true;
-
-            debounce = Time.realtimeSinceStartup;
+            debounce2 = 0f; //resets debounce
+        }
+        // if it's been long enough since the last input, then we allow it
+        if (now - debounce1 > repeat)
+        {
+            axisReady1 = true;
+            debounce1 = Time.realtimeSinceStartup;
         }
         else
         {
-            axisReady = false;
+            axisReady1 = false;
         }
 
-        if (axisReady) { 
-        if (Input.GetAxis("P1_Horizontal") > 0f || Input.GetAxis("P2_Horizontal") > 0f ){
+        // if it's been long enough since the last input, then we allow it
+        if (now - debounce2 > repeat)
+        {
+            axisReady2 = true;
+            debounce2 = Time.realtimeSinceStartup;
+        }
+        else
+        {
+            axisReady2 = false;
+        }
+
+        if (axisReady2) { 
+        if (Input.GetAxis("P2_Horizontal") > 0f){// || Input.GetAxis("P1_Horizontal") > 0f ){
                 if (selection == 1){
 				    selection = 2;
 				    GetComponent<Image>().color = color2;
@@ -151,7 +182,7 @@ public class PlayerSettings : MonoBehaviour {
                     man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
                 }
 			}
-			if (Input.GetAxis("P1_Horizontal") < 0f || Input.GetAxis("P2_Horizontal") < 0f ){
+			if (Input.GetAxis("P2_Horizontal") < 0f){//} || Input.GetAxis("P1_Horizontal") < 0f ){
                 if (selection == 2){
         				selection = 1;
         				GetComponent<Image>().color = color1;

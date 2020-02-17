@@ -16,6 +16,7 @@ public class Meter : MonoBehaviour {
 	float botTimeOut = 1f;
 	float startTime = 0f;
 	public bool fullHealth = true;
+	bool convertShake = true;
 	// Use this for initialization
 	void Start () {
 		fullHealth = true;
@@ -40,6 +41,7 @@ public class Meter : MonoBehaviour {
 
 			if (!Manager.usingBots)		{
 				Prudify();
+				if (convertShake) StartCoroutine (ScreenShake.Shake (Mathf.Min(max * 0.1f, 0.4f), 0.5f));
 			}
 			else if (!botDead){
 
@@ -62,6 +64,7 @@ public class Meter : MonoBehaviour {
 			}
 		} else if (amt < 0 && !isSlut) {
 			Slutify();
+				if (convertShake) StartCoroutine (ScreenShake.Shake (max * 0.1f, 0.5f));
 		}
 
 		amt = Mathf.Clamp(amt, -max, max);
