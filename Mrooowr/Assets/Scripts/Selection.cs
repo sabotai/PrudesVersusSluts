@@ -60,9 +60,11 @@ public class Selection : MonoBehaviour {
 		if (transform.childCount == 0 && !Manager.gameOver){
 			if (player == 1){
 				announcer.text = Randomizer.prudeName + " Win!";
+				announcer.transform.parent.gameObject.GetComponent<Image>().color = Manager.prudeUIColor;
 				Manager.winner = Randomizer.prudeName;
 			} else {
 				announcer.text = Randomizer.slutName + " Win!";
+				announcer.transform.parent.gameObject.GetComponent<Image>().color = Manager.slutUIColor;
 				Manager.winner = Randomizer.slutName;
 			}
 			Manager.gameOver = true;

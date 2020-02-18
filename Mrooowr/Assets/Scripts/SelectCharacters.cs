@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class SelectCharacters : MonoBehaviour {
 
 	public GameObject[] prefab;
-	int currentSelection = 0;
+	public int currentSelection = 0;
 	int player;
 	public Text sub;
 	public AudioClip selectSound;
 	AudioSource aud;
-	public GameObject instructions;
+	public GameObject uiInstructions, instructions;
 	Bot bot;
 
 
@@ -23,7 +23,7 @@ public class SelectCharacters : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
-		sub.text = "Choose 3 " + Randomizer.prudeName + "(P1) / " + Randomizer.slutName + "(P2)!";
+		sub.text = "Choose your three characters!";// + Randomizer.prudeName + "(P1) / " + Randomizer.slutName + "(P2)!";
 		aud = Camera.main.GetComponent<AudioSource>();
 		//GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<DoodleAnimator>().File;
 		transform.localScale = prefab[currentSelection].transform.localScale;
@@ -182,7 +182,8 @@ public class SelectCharacters : MonoBehaviour {
 				if (sib.CompareTag("Wall")) sib.GetComponent<MoveMe>().move = true;
 				sub.text = "";
 				sub.transform.parent.gameObject.SetActive(false);
-				instructions.SetActive(false);
+				uiInstructions.SetActive(false);
+				instructions.SetActive(true);
 			}
 			if (Manager.numPlayers == 1 && bot) bot.enabled = true;
 			Destroy(gameObject);//.SetActive(false);

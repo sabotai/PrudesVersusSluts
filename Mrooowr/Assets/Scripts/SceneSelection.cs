@@ -15,7 +15,8 @@ public class SceneSelection : MonoBehaviour {
     public float repeat = 0.1f;  // reduce to speed up auto-repeat input
     bool axisReady = true;
     public Image[] UIDots;
-    string currentSelector = "";
+    string currentSelector = "P2";
+    public GameObject[] disableUponNext;
 
 
     // Use this for initialization
@@ -43,10 +44,10 @@ public class SceneSelection : MonoBehaviour {
         }
 
         //whoever presses button first controls which scene
-        if (currentSelector == ""){
+        //if (currentSelector == ""){
             if (Input.GetAxis("P1_Vertical") != 0f || Input.GetAxis("P1_Horizontal") != 0f) currentSelector = "P1";
             if (Input.GetAxis("P2_Vertical") != 0f || Input.GetAxis("P2_Horizontal") != 0f) currentSelector = "P2";
-        } else {
+        //} else {
 
         //DEBOUNCE STUFF
         float vAxis = Input.GetAxisRaw(currentSelector + "_Vertical");//"P1_Vertical") + Input.GetAxis("P2_Vertical");
@@ -71,18 +72,20 @@ public class SceneSelection : MonoBehaviour {
         Debug.Log("vAxis = " + vAxis + " // hAxis = " + hAxis + " // axisReady = " + axisReady );
         //END DEBOUNCE
 
-		if (axisReady)
-        {
-			if (Input.GetButtonDown(currentSelector+"_Action") || Input.GetButtonDown(currentSelector+"_Action")){
+			if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action")){
 				prudes.SetActive(true);
 				sluts.SetActive(true);
 				man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().confirmClip, 0.85f);
 				//subAnnouncer.transform.parent.gameObject.SetActive(false);
-                UIDots[0].transform.parent.gameObject.SetActive(false);
+
+                foreach(GameObject disable in disableUponNext) disable.SetActive(false);
+                //UIDots[0].transform.parent.gameObject.SetActive(false);
 				this.enabled = false;
 
 			}
 
+        if (axisReady)
+        {
 			if (hAxis > 0f){//Input.GetAxis(currentSelector+"_Horizontal") > 0f){// || Input.GetAxis(currentSelector+"_Horizontal") > 0f ){
 				if (selection < transform.childCount - 1){
 					selection++;
@@ -107,7 +110,7 @@ public class SceneSelection : MonoBehaviour {
 
 			}
 		}
-    }
+    //}
 	}
 
     void UpdateAvailable()

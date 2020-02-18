@@ -79,9 +79,11 @@ public class PlayerSettings : MonoBehaviour {
 
                     sceneS.enabled = true;
                     sceneSUI.SetActive(true);
+                    p2Controls.SetActive(true);
                 }
                 else if (selection == 1)     {
                     pruuds.SetActive(true);
+                    sceneSUI.SetActive(true);
                     for (int i = 0; i < sloots.transform.childCount; i++)
                     {
                         Destroy(sloots.transform.GetChild(i).gameObject);//.gameObject.SetActive(false);
@@ -92,6 +94,8 @@ public class PlayerSettings : MonoBehaviour {
                     {
                         botHolder.GetChild(0).parent = sloots.transform;
                     }
+
+                    dotA.transform.parent.gameObject.SetActive(false);
 
                     //enable scene selection?
                     //sceneS.enabled = true;
@@ -120,20 +124,25 @@ public class PlayerSettings : MonoBehaviour {
         }
 
 
-        float vAxis1 = Input.GetAxis("P1_Vertical");
-        float hAxis1 = Input.GetAxis("P1_Horizontal"); 
-        float vAxis2 = Input.GetAxis("P2_Vertical");
-        float hAxis2 = Input.GetAxis("P2_Horizontal");                                                   //bot
+        //float vAxis1 = Input.GetAxisRaw("P1_Vertical");
+        //float hAxis1 = Input.GetAxisRaw("P1_Horizontal"); 
+        float vAxis2 = Input.GetAxisRaw("P2_Vertical");
+        float hAxis2 = Input.GetAxisRaw("P2_Horizontal");                                                   //bot
         float now = Time.realtimeSinceStartup;
+
+        /*
         // check if user let go of the stick; if so, reset the input bounce control
         if (vAxis1 != 0f && hAxis1 != 0f)
         {
             debounce1 = 0f; //resets debounce
         }
+        */
         if (vAxis2 != 0f && hAxis2 != 0f)
         {
             debounce2 = 0f; //resets debounce
         }
+
+        /*
         // if it's been long enough since the last input, then we allow it
         if (now - debounce1 > repeat)
         {
@@ -144,12 +153,13 @@ public class PlayerSettings : MonoBehaviour {
         {
             axisReady1 = false;
         }
+		*/
 
         // if it's been long enough since the last input, then we allow it
-        if (now - debounce2 > repeat)
+        if (now - debounce2 > repeat || debounce2 == 0f)
         {
             axisReady2 = true;
-            debounce2 = Time.realtimeSinceStartup;
+            //debounce2 = Time.realtimeSinceStartup;
         }
         else
         {
@@ -157,17 +167,16 @@ public class PlayerSettings : MonoBehaviour {
         }
 
         if (axisReady2) { 
-        if (Input.GetAxis("P2_Horizontal") > 0f){// || Input.GetAxis("P1_Horizontal") > 0f ){
+        if (Input.GetAxisRaw("P2_Horizontal") > 0f){// || Input.GetAxis("P1_Horizontal") > 0f ){
                 if (selection == 1){
 				    selection = 2;
 				    GetComponent<Image>().color = color2;
 				    //bot.enabled = false;
                     p1Controls.SetActive(true);
-				    p2Controls.SetActive(true);
+				    //p2Controls.SetActive(true);
 				    //hide botscene and show multi scene
                     botScene.SetActive(false);
                     sceneS.transform.GetChild(0).gameObject.SetActive(true);
-
 				    man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
                 } else if (selection == 2){
                     selection = 3;
@@ -178,11 +187,12 @@ public class PlayerSettings : MonoBehaviour {
                     //hide botscene and show multi scene
                     botScene.SetActive(false);
                     sceneS.transform.GetChild(0).gameObject.SetActive(true);
-
                     man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
                 }
+
+				debounce2 = Time.realtimeSinceStartup;
 			}
-			if (Input.GetAxis("P2_Horizontal") < 0f){//} || Input.GetAxis("P1_Horizontal") < 0f ){
+			if (Input.GetAxisRaw("P2_Horizontal") < 0f){//} || Input.GetAxis("P1_Horizontal") < 0f ){
                 if (selection == 2){
         				selection = 1;
         				GetComponent<Image>().color = color1;
@@ -206,6 +216,8 @@ public class PlayerSettings : MonoBehaviour {
 
                     man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
                 }
+
+				debounce2 = Time.realtimeSinceStartup;
 			}
 
 

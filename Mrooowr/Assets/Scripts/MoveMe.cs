@@ -18,18 +18,20 @@ public class MoveMe : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (move) Move();
 	}
 
 	public void Move(){
 	
-		if (transform.position.y < gateThresh) {
+		if (transform.GetChild(0).localPosition.y < gateThresh) {
 			if (!aud.isPlaying) {
 				aud.clip = gateSound;
 				aud.Play();
 			}
-			transform.position += new Vector3(0f, gateTime * Time.deltaTime, 0f);
+			transform.GetChild(0).position += new Vector3(0f, gateTime * Time.deltaTime, 0f);
+
+			transform.GetChild(1).localScale += new Vector3(0f, 0.2f * Time.deltaTime, 0f);
 		} else {
 			//dont forget that players are swapped
 			if (player == 2) Manager.p1Ready = true; else if (player == 1) Manager.p2Ready = true;
