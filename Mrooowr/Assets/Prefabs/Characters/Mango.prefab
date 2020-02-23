@@ -5341,7 +5341,7 @@ SpriteRenderer:
   m_SortingLayerID: -1506341195
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213410860643365080, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
+  m_Sprite: {fileID: 213246326895866222, guid: 4879518a12002ed41a5b6c46d06d1d18, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5475,6 +5475,7 @@ MonoBehaviour:
   botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+  fullHealth: 1
 --- !u!222 &222365877136503590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8161,6 +8162,7 @@ GameObject:
   - component: {fileID: 9147008846391400189}
   - component: {fileID: 6143434124084511410}
   - component: {fileID: 2321963881333082909}
+  - component: {fileID: 770369924418360644}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -8239,6 +8241,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c362d69567644b54784d5f1bbd31b4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &770369924418360644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764521927032456944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f72e0d98336ec4fbe97fafbef0c984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2855785300888839132

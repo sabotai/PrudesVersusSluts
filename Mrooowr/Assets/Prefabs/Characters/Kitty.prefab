@@ -5632,6 +5632,7 @@ MonoBehaviour:
   botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+  fullHealth: 1
 --- !u!222 &222943616470346944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11109,6 +11110,7 @@ GameObject:
   - component: {fileID: 4025244631296273543}
   - component: {fileID: 838931699196111536}
   - component: {fileID: 5925727675263165816}
+  - component: {fileID: 7149663120112134201}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -11187,6 +11189,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c362d69567644b54784d5f1bbd31b4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7149663120112134201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581243561870396405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f72e0d98336ec4fbe97fafbef0c984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6851993936585801219

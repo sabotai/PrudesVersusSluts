@@ -6039,7 +6039,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213094611700653660, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213057837959802658, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6068,6 +6068,7 @@ MonoBehaviour:
   playWalkSound: 0
   stopActionAudioWhileWalking: 0
   stopForAction: 0
+  bot: {fileID: 0}
   moveCancelsPS: 1
 --- !u!114 &114242750161232990
 MonoBehaviour:
@@ -6176,8 +6177,11 @@ MonoBehaviour:
   max: 0.19
   slutConvertClip: {fileID: 8300000, guid: 0a838c2acc76fe34fa8648dd84e8293a, type: 3}
   prudeConvertClip: {fileID: 8300000, guid: 4f6bb8b6f635d5d4090481ce5bb6e8af, type: 3}
+  botDeathPoof: {fileID: 0}
+  botDeath: {fileID: 0}
   slutParent: {fileID: 0}
   prudeParent: {fileID: 0}
+  fullHealth: 1
 --- !u!82 &82072701835357064
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11292,6 +11296,7 @@ GameObject:
   - component: {fileID: 4390000151450710668}
   - component: {fileID: 1110594646026114007}
   - component: {fileID: 1921508601461155119}
+  - component: {fileID: 6006353745708488586}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -11370,6 +11375,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c362d69567644b54784d5f1bbd31b4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6006353745708488586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053868132154589803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f72e0d98336ec4fbe97fafbef0c984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7180108659407713753

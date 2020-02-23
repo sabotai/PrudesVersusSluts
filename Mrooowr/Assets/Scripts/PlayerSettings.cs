@@ -13,7 +13,7 @@ public class PlayerSettings : MonoBehaviour {
 	public Text subAnnouncer;
 	GameObject man;
 	public Color color1, color2;
-	public GameObject botScene;
+	public GameObject botScene, quitDisplay;
 	CamMove camMove;
     public GameObject leftArrow, rightArrow;
     public Image dotA, dotB, dotC;
@@ -32,7 +32,7 @@ public class PlayerSettings : MonoBehaviour {
 		GetComponent<Image>().color = color2;
 		
         p1Controls.SetActive(true);
-        p2Controls.SetActive(true);
+        //p2Controls.SetActive(true);
 
         dotA.enabled = true;
         dotB.enabled = true;
@@ -48,6 +48,7 @@ public class PlayerSettings : MonoBehaviour {
             dotA.color = color1;
             dotB.color = color2;
             dotC.color = color2;
+            quitDisplay.SetActive(false);
            } else if (selection == 2) {
                 subAnnouncer.text = "< Multiplayer >";
                 leftArrow.SetActive(true);
@@ -55,6 +56,7 @@ public class PlayerSettings : MonoBehaviour {
            		dotA.color = color2;
            		dotB.color = color1;
           		dotC.color = color2;
+                quitDisplay.SetActive(false);
                 } else if (selection == 3) {
                     subAnnouncer.text = "< Quit game";
                     leftArrow.SetActive(true);
@@ -62,6 +64,7 @@ public class PlayerSettings : MonoBehaviour {
           			dotA.color = color2;
 	            	dotB.color = color2;
 	            	dotC.color = color1;
+                    quitDisplay.SetActive(true);
                 }
 
 
@@ -209,7 +212,7 @@ public class PlayerSettings : MonoBehaviour {
                     GetComponent<Image>().color = color2;
                     //bot.enabled = false;
                     p1Controls.SetActive(true);
-                    p2Controls.SetActive(true);
+                   // p2Controls.SetActive(true);
                     //hide botscene and show multi scene
                     botScene.SetActive(false);
                     sceneS.transform.GetChild(0).gameObject.SetActive(true);

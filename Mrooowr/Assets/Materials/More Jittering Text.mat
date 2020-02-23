@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: More Jittering Text
   m_Shader: {fileID: 4800000, guid: 079af11cfc8e1bc46a24bd6d05793831, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -85,8 +86,8 @@ Material:
     - _StencilWriteMask: 255
     - _UVSec: 0
     - _UseUIAlphaClip: 0
-    - _WobbleAmplitude: 0.3
-    - _WobblePeriod: 1.79
+    - _WobbleAmplitude: 87.7
+    - _WobblePeriod: 43.24
     - _WobblesPerSecond: 0.69
     - _ZWrite: 1
     m_Colors:
