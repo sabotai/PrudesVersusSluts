@@ -50,13 +50,13 @@ public class CamMove : MonoBehaviour {
 			avg += prudeParent.GetChild(i).position;
 		}
 
-		if (!Manager.usingBots){
+		if (Manager.numPlayers == 2 || Manager.usingBots){
 			for (int i = 0; i < slutParent.childCount; i++){
 				avg += slutParent.GetChild(i).position;
 			}
 		} 
 		
-		if (!Manager.usingBots){
+		if (Manager.numPlayers == 2 || Manager.usingBots){
 			avg /= (slutParent.childCount + prudeParent.childCount);
 		} else {
 			avg /= prudeParent.childCount;

@@ -35,11 +35,11 @@ public class Action : MonoBehaviour {
         //auto for eggy and anyone else who gets the auto
 		if (auto && !doAction 
 			&& (Input.GetButton("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
-				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
+				|| (GetComponent<Bot>().enabled && GetComponent<Bot>().attack))
 			&& move.selected) {
 			if (Time.time > startTime + coolDownAmt){ //cooled down
 				coolDownAmt = origCoolDownAmt;
-				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
+				if (GetComponent<Bot>().enabled) GetComponent<Bot>().attack = false;
 				doAction = true;
 				startTime = Time.time;
     			ActionSounds();
@@ -51,12 +51,12 @@ public class Action : MonoBehaviour {
 			
 		} else if (!doAction 
 			&& (Input.GetButtonDown("P" + transform.parent.gameObject.GetComponent<Selection>().player + "_Action") 
-				|| (GetComponent<Bot>() && GetComponent<Bot>().attack))
+				|| (GetComponent<Bot>().enabled && GetComponent<Bot>().attack))
 			&& move.selected){
 			if (Time.time > startTime + coolDownAmt){ //cooled down
 				if (stopsForActionToggle) move.stopForAction = true;
 				coolDownAmt = origCoolDownAmt;
-				if (GetComponent<Bot>()) GetComponent<Bot>().attack = false;
+				if (GetComponent<Bot>().enabled) GetComponent<Bot>().attack = false;
 
 				doAction = true;
 				startTime = Time.time;

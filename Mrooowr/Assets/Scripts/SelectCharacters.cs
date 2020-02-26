@@ -14,7 +14,7 @@ public class SelectCharacters : MonoBehaviour {
 	AudioSource aud;
 	public GameObject uiInstructions, instructions;
 	Bot bot;
-
+	public 
 
     float debounce = 0f;
     public float repeat = 0.2f;  // reduce to speed up auto-repeat input
@@ -33,112 +33,87 @@ public class SelectCharacters : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+    	if (Manager.numPlayers == 2 || transform.parent.GetComponent<Selection>().player == 2){
+	    	// OLD combined method
+	        float vAxis = Input.GetAxisRaw("P" + player + "_Vertical");
+	        float hAxis = Input.GetAxisRaw("P" + player + "_Horizontal");                                                      //bot
+	        float now = Time.realtimeSinceStartup;
+	        // check if user let go of the stick; if so, reset the input bounce control
+	        if (Mathf.Abs(hAxis) < 0.1f)
+	        {
+	            debounce = 0f;
+	        }
 
-    	// OLD combined method
-        float vAxis = Input.GetAxisRaw("P" + player + "_Vertical");
-        float hAxis = Input.GetAxisRaw("P" + player + "_Horizontal");                                                      //bot
-        float now = Time.realtimeSinceStartup;
-        // check if user let go of the stick; if so, reset the input bounce control
-        if (Mathf.Abs(hAxis) < 0.1f)
-        {
-            debounce = 0f;
-        }
+	        // if it's been long enough since the last input, then we allow it
+	        if (now - debounce > repeat || debounce == 0f)
+	        {
+	            axisReady = true;
 
-        // if it's been long enough since the last input, then we allow it
-        if (now - debounce > repeat || debounce == 0f)
-        {
-            axisReady = true;
-
-            //debounce = Time.realtimeSinceStartup;
-        }
-        else
-        {
-            axisReady = false;
-        }
-        Debug.Log("vAxis = " + vAxis + " // hAxis = " + hAxis + " // axisReady = " + axisReady );
-
-/*
-
-        float vAxis1 = Input.GetAxis("P1_Vertical");
-        float hAxis1 = Input.GetAxis("P1_Horizontal"); 
-        float vAxis2 = Input.GetAxis("P2_Vertical");
-        float hAxis2 = Input.GetAxis("P2_Horizontal");                                                   //bot
-        float now = Time.realtimeSinceStartup;
-        // check if user let go of the stick; if so, reset the input bounce control
-        if (vAxis1 != 0f && hAxis1 != 0f)
-        {
-            debounce1 = 0f; //resets debounce
-        }
-        if (vAxis2 != 0f && hAxis2 != 0f)
-        {
-            debounce2 = 0f; //resets debounce
-        }
-        // if it's been long enough since the last input, then we allow it
-        if (now - debounce1 > repeat)
-        {
-            axisReady1 = true;
-        }
-        else
-        {
-            axisReady1 = false;
-        }
-
-        // if it's been long enough since the last input, then we allow it
-        if (now - debounce2 > repeat)
-        {
-            axisReady2 = true;
-            debounce2 = Time.realtimeSinceStartup;
-        }
-        else
-        {
-            axisReady2 = false;
-        }
-        */
+	            //debounce = Time.realtimeSinceStartup;
+	        }
+	        else
+	        {
+	            axisReady = false;
+	        }
+	        //Debug.Log("vAxis = " + vAxis + " // hAxis = " + hAxis + " // axisReady = " + axisReady );
 
 
+	        if (axisReady){ //limit to only when key is being pressed
 
-        if (axisReady){ //limit to only when key is being pressed
+	                if (hAxis > 0f){//Input.GetAxis("P" + player + "_Horizontal") > 0f){
+						if (currentSelection < prefab.Length - 1){
+							currentSelection++;
+						} else {
+							currentSelection = 0;
+						}
+						Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
+						if (player == 1) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim);
+						else if (player == 2) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim);
+						transform.localScale = prefab[currentSelection].transform.localScale;
 
-                if (hAxis > 0f){//Input.GetAxis("P" + player + "_Horizontal") > 0f){
-					if (currentSelection < prefab.Length - 1){
-						currentSelection++;
+	            		debounce = Time.realtimeSinceStartup;
+	            		
+					}
+					
+				if (hAxis < 0f)//Input.GetAxis("P" + player + "_Horizontal") < 0f)
+	            {
+					if (currentSelection > 0){
+						currentSelection--;
 					} else {
-						currentSelection = 0;
+						currentSelection = prefab.Length - 1;
 					}
 					Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
+					//GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
+
 					if (player == 1) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim);
 					else if (player == 2) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim);
 					transform.localScale = prefab[currentSelection].transform.localScale;
-
-            		debounce = Time.realtimeSinceStartup;
-            		
+	            	debounce = Time.realtimeSinceStartup;
+	            	
 				}
-				
-			if (hAxis < 0f)//Input.GetAxis("P" + player + "_Horizontal") < 0f)
-            {
-				if (currentSelection > 0){
-					currentSelection--;
-				} else {
-					currentSelection = prefab.Length - 1;
-				}
-				Camera.main.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().selectClip, 0.5f);
-				//GetComponent<DoodleAnimator>().File = prefab[currentSelection].GetComponent<DoodleAnimator>().File;
-
-				if (player == 1) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().slutIdleAnim);
-				else if (player == 2) GetComponent<DoodleAnimator>().ChangeAnimation(prefab[currentSelection].GetComponent<AnimManager>().prudeIdleAnim);
-				transform.localScale = prefab[currentSelection].transform.localScale;
-            	debounce = Time.realtimeSinceStartup;
-            	
 			}
-		}
 
-		if (Input.GetButtonDown("P" + player + "_Action")){
+			if (Input.GetButtonDown("P" + player + "_Action")){
+				Spawn(false);
+			}
+		}  
+			if (Manager.numPlayers == 1 && Manager.usingBots && Manager.p1Ready){
+				Spawn(true);
+				Debug.Log("spawn bots");
+			}
+	
+	}
+
+	public void Spawn(bool rando){
+			if (rando) currentSelection = Random.Range(0, prefab.Length - 1);
+
 			Quaternion rot;
 			if (player == 2){
 				rot = Quaternion.identity;
 			} else {
 				rot = Quaternion.Euler(0f, 180f, 0f);
 			}
+
 			GameObject newbie = Instantiate(prefab[currentSelection], transform.position, rot, transform.parent);
 			if (player == 2){
 				newbie.GetComponent<Move>().facingRight = true;
@@ -183,12 +158,15 @@ public class SelectCharacters : MonoBehaviour {
 				sub.text = "";
 				sub.transform.parent.gameObject.SetActive(false);
 				uiInstructions.SetActive(false);
-				instructions.SetActive(true);
+				if (player == 2 || !Manager.usingBots)
+					instructions.SetActive(true);
+					/*
+				if (player == 2){
+					Manager.p1Ready;
+				}
+				*/
 			}
-			if (Manager.numPlayers == 1 && bot) bot.enabled = true;
 			Destroy(gameObject);//.SetActive(false);
-		}
-	
 	}
 
 }

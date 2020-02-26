@@ -5569,6 +5569,7 @@ GameObject:
   - component: {fileID: 114737375499196554}
   - component: {fileID: 114026566376545968}
   - component: {fileID: 58474628591881944}
+  - component: {fileID: 3804399794561467740}
   m_Layer: 11
   m_Name: Dumply
   m_TagString: Characters
@@ -5636,7 +5637,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213328968128811814, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
+  m_Sprite: {fileID: 213380380654767384, guid: 87ac5d04a3e3c99488a93e60502d9fe3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5950,6 +5951,25 @@ CircleCollider2D:
   m_Offset: {x: -0.0066812634, y: -0.39999992}
   serializedVersion: 2
   m_Radius: 1.12
+--- !u!114 &3804399794561467740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490633683173818}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00148e97606854c4b9686ce8baf8f13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 0
+  attack: 0
+  distThresh: 5
+  hori: 0
+  vert: 0
+  target: {fileID: 0}
+  awarenessDistance: 50
 --- !u!1 &1541481807623476
 GameObject:
   m_ObjectHideFlags: 0

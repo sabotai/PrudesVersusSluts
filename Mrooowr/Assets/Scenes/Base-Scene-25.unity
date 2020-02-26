@@ -7229,6 +7229,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   uiInstructions: {fileID: 464575139}
   instructions: {fileID: 204810825}
+  debounce: 0
   repeat: 0.13
 --- !u!1 &320881240
 GameObject:
@@ -11411,7 +11412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneMe: {fileID: 1389983835045750, guid: f2d64e02724039e489706f2eaedd68f3, type: 3}
-  spawnRate: 100
+  spawnRate: 200
   randomize: 1
   spawnDir: {x: 0, y: 0, z: 0}
 --- !u!1 &463305676
@@ -13320,6 +13321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac28fa121a73f64bb5b7e1f1e05426c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numPlayersPub: 0
   camMover: {fileID: 1173468002}
   selectClip: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   confirmClip: {fileID: 8300000, guid: d94ee7e6de7fbf04db246ccf1647c92b, type: 3}
@@ -13327,6 +13329,7 @@ MonoBehaviour:
   slutColorPub: {r: 0, g: 0.81251574, b: 1, a: 1}
   prudeUIColorPub: {r: 1, g: 0, b: 0.44705886, a: 1}
   slutUIColorPub: {r: 0.1254902, g: 0.54509807, b: 0.98823535, a: 1}
+  usingBotsPub: 0
   muteMusic: 0
   musicPlayers:
   - {fileID: 108775656}
@@ -15329,9 +15332,10 @@ MonoBehaviour:
   quitDisplay: {fileID: 2020909004}
   leftArrow: {fileID: 273122138}
   rightArrow: {fileID: 1177068894}
-  dotA: {fileID: 426782064}
-  dotB: {fileID: 1046100534}
-  dotC: {fileID: 1260434882}
+  dotA: {fileID: 1846893472}
+  dotB: {fileID: 426782064}
+  dotC: {fileID: 1046100534}
+  dotD: {fileID: 1260434882}
   repeat: 0.2
 --- !u!114 &620294484
 MonoBehaviour:
@@ -16723,6 +16727,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: c3f3cac34ae6999469a55e166a8fc8a4, type: 3}
   uiInstructions: {fileID: 261320557}
   instructions: {fileID: 1261580986}
+  debounce: 0
   repeat: 0.13
 --- !u!1 &694009276
 GameObject:
@@ -19437,14 +19442,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114225321276117144, guid: 611e6b34100181e4b8e665de2168a345,
         type: 3}
-      propertyPath: m_File
-      value: 
-      objectReference: {fileID: 11400000, guid: 63a90ca5e381ce54f8362efd61861561,
-        type: 2}
-    - target: {fileID: 114225321276117144, guid: 611e6b34100181e4b8e665de2168a345,
-        type: 3}
-      propertyPath: m_Settings.customPlaybackMode
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517990341787556, guid: 611e6b34100181e4b8e665de2168a345, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20591,6 +20590,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: c3f3cac34ae6999469a55e166a8fc8a4, type: 3}
   uiInstructions: {fileID: 261320557}
   instructions: {fileID: 1261580986}
+  debounce: 0
   repeat: 0.13
 --- !u!1 &870826122
 GameObject:
@@ -26155,6 +26155,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1146167903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1738066927181048, guid: 611e6b34100181e4b8e665de2168a345,
+    type: 3}
+  m_PrefabInstance: {fileID: 844243203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1146167907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146167903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_States: []
+  m_File: {fileID: 11400000, guid: 507e9825af91dd1439092aa228403616, type: 2}
+  speed: 1
+  m_Settings:
+    randomizeOnStart: 1
+    playOnStart: 1
+    overrideFileSettings: 0
+    customPlaybackMode: 2
+    customFramesPerSecond: 8
+    customBorder: {x: 0, y: 0, z: 0, w: 0}
+    customPixelsPerUnit: 100
+    customFilterMode: 2
+    wrapMode: 1
+    startFrame: 0
+    useUnscaledTime: 0
 --- !u!1 &1147705097
 GameObject:
   m_ObjectHideFlags: 0
@@ -27455,6 +27488,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   uiInstructions: {fileID: 464575139}
   instructions: {fileID: 204810825}
+  debounce: 0
   repeat: 0.13
 --- !u!1 &1210174794
 GameObject:
@@ -38728,7 +38762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneMe: {fileID: 1389983835045750, guid: f2d64e02724039e489706f2eaedd68f3, type: 3}
-  spawnRate: 130
+  spawnRate: 260
   randomize: 1
   spawnDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1708753012
@@ -39615,6 +39649,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: adf045875ef818649b17de726230ab1b, type: 3}
   uiInstructions: {fileID: 464575139}
   instructions: {fileID: 204810825}
+  debounce: 0
   repeat: 0.13
 --- !u!114 &1747427110
 MonoBehaviour:
@@ -41940,7 +41975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1846893469
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45785,6 +45820,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: c3f3cac34ae6999469a55e166a8fc8a4, type: 3}
   uiInstructions: {fileID: 261320557}
   instructions: {fileID: 1261580986}
+  debounce: 0
   repeat: 0.13
 --- !u!1 &1998414533
 GameObject:

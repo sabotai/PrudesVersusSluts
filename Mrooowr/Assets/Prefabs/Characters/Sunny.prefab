@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 82519117361383494}
   - component: {fileID: 114648540364109984}
   - component: {fileID: 114604396186248110}
+  - component: {fileID: 2096657666228245901}
   m_Layer: 17
   m_Name: Sunny
   m_TagString: Characters
@@ -597,7 +598,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213755943776272014, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
+  m_Sprite: {fileID: 213832772274235468, guid: c591a7fdf79cb274d8995474137f6095, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -885,6 +886,25 @@ MonoBehaviour:
   animTimeOut: 2
   namePrude: Stormy
   nameSlut: Sunny
+--- !u!114 &2096657666228245901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416131170247956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00148e97606854c4b9686ce8baf8f13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 0
+  attack: 0
+  distThresh: 5
+  hori: 0
+  vert: 0
+  target: {fileID: 0}
+  awarenessDistance: 50
 --- !u!1 &1468165960033864
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,10 +19,12 @@ public class ProximityActivateBot : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
     		Debug.Log("camBounds hit something");
-    	if (col.transform.GetComponent<Bot>()){
+    	if (col.transform.GetComponent<Bot>().enabled){
     		Debug.Log("bot activated");
-    		col.gameObject.GetComponent<Move>().selected = true;
-    		col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+            if (Manager.numPlayers == 1 && !Manager.usingBots){
+        		col.gameObject.GetComponent<Move>().selected = true;
+        		col.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+            }
     	}
     }
 }

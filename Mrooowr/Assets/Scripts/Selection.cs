@@ -39,9 +39,18 @@ public class Selection : MonoBehaviour {
 		/*
 		if (Input.GetKeyDown(KeyCode.N) && player == 1){
 			GetComponent<Spawner>().enabled = !GetComponent<Spawner>().enabled;
-		} 
-		*/
-		if ((Input.GetButtonDown("P" + player + "_Next")) && begun){
+		} 	
+		*/	
+		bool botGo = false;
+		if (player == 1 && Manager.usingBots && transform.childCount > 0) 
+			if ( transform.childCount > 0)
+			if (transform.GetChild(selected).GetComponent<Bot>()) 
+				if (transform.GetChild(selected).GetComponent<Bot>().swap) botGo = true;
+		if (botGo) Debug.Log("go bot!");
+		
+		if ((Input.GetButtonDown("P" + player + "_Next") || botGo) && begun){
+			if (botGo) transform.GetChild(selected).GetComponent<Bot>().swap = false;
+
 			if (Time.time > startTime + coolDownAmt){ //cooled down
 				coolDownAmt = origCoolDownAmt;
 				CycleSelection();
@@ -57,7 +66,7 @@ public class Selection : MonoBehaviour {
 			startTime = Time.time;
 		}
 
-		if (transform.childCount == 0 && !Manager.gameOver){
+		if (transform.childCount == 0 && !Manager.gameOver){ //swap to game over display state
 			if (player == 1){
 				announcer.text = Randomizer.prudeName + " Win!";
 				announcer.transform.parent.gameObject.GetComponent<Image>().color = Manager.prudeUIColor;
@@ -71,7 +80,7 @@ public class Selection : MonoBehaviour {
 		}
 
 		if (transform.childCount > 0 && Manager.gameOver ){
-			if (!Manager.usingBots || (player == 1))
+			//if (!Manager.usingBots || (player == 1))
 			Select();
 			
 		}
@@ -140,8 +149,7 @@ public class Selection : MonoBehaviour {
 					}
 					*/
 
-				}
-				else {//select all when game over
+				} else {//select all when game over
 					transform.GetChild(i).gameObject.GetComponent<Move>().selected = true;
 					//enable name label
 					transform.GetChild(i).GetChild(2).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().enabled = true;

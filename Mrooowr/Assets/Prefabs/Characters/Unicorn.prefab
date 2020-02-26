@@ -1022,6 +1022,7 @@ GameObject:
   - component: {fileID: 82217419758738328}
   - component: {fileID: 114459158650121654}
   - component: {fileID: 114319746954701254}
+  - component: {fileID: 1816505469241536772}
   m_Layer: 16
   m_Name: Unicorn
   m_TagString: Characters
@@ -1394,6 +1395,25 @@ MonoBehaviour:
   animTimeOut: 2
   namePrude: Horsey
   nameSlut: Uni
+--- !u!114 &1816505469241536772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660177177405656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00148e97606854c4b9686ce8baf8f13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 0
+  attack: 0
+  distThresh: 5
+  hori: 0
+  vert: 0
+  target: {fileID: 0}
+  awarenessDistance: 50
 --- !u!1 &1814034378898134
 GameObject:
   m_ObjectHideFlags: 0

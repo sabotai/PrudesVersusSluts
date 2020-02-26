@@ -26,6 +26,14 @@ public class Move : MonoBehaviour {
 		player = transform.parent.gameObject.GetComponent<Selection>().player;
 		if (GetComponent<Bot>() != null){
 			bot = GetComponent<Bot>();
+			if (Manager.numPlayers == 1 && player == 1) {
+				bot.enabled = true;
+			}
+			else {
+				bot.enabled = false;
+				//Destroy(bot);// = null;
+				//bot = null;
+			}
 		}
 	}
 	
@@ -36,10 +44,10 @@ public class Move : MonoBehaviour {
 		if (selected && !GetComponent<Hurt>().doHurt){
 			rb.velocity = Vector2.zero;
 
-			if (!stopForAction || bot != null){
+			if (!stopForAction || bot.enabled){
 				if (Input.GetAxis("P" + player + "_Horizontal") > 0f
 
-					||  (bot != null && bot.hori > 0f)){
+					||  (bot.enabled && bot.hori > 0f)){
 					walking = true;
 					rb.velocity += new Vector2(1.0f, 0f) * speed;
 					if (!facingRight) {
@@ -51,7 +59,7 @@ public class Move : MonoBehaviour {
 				}
 
 				if (Input.GetAxis("P" + player + "_Horizontal") < 0f
-					||  (bot != null && bot.hori < 0f)){
+					||  (bot.enabled && bot.hori < 0f)){
 
 					walking = true;
 					rb.velocity += new Vector2(-1.0f, 0f) * speed;
@@ -63,14 +71,14 @@ public class Move : MonoBehaviour {
 					} 
 				}
 				if (Input.GetAxis("P" + player + "_Vertical") > 0f
-					||  (bot != null && bot.vert > 0f)){
+					||  (bot.enabled && bot.vert > 0f)){
 
 					walking = true;
 					rb.velocity += new Vector2(0f, 1f) * speed;
 				}
 
 				if (Input.GetAxis("P" + player + "_Vertical") < 0f
-					||  (bot != null && bot.vert < 0f)){
+					||  (bot.enabled && bot.vert < 0f)){
 
 					walking = true;
 					rb.velocity += new Vector2(0f,-1f) * speed;

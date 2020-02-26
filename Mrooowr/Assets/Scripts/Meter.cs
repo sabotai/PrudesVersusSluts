@@ -39,7 +39,7 @@ public class Meter : MonoBehaviour {
 	void Update () {
 		if (amt > 0 && isSlut) {
 
-			if (!Manager.usingBots)		{
+			if (Manager.usingBots || Manager.numPlayers == 2)		{
 				Prudify();
 				if (convertShake) StartCoroutine (ScreenShake.Shake (Mathf.Min(max * 0.1f, 0.4f), 0.5f));
 			}
@@ -106,10 +106,12 @@ public class Meter : MonoBehaviour {
 			prudeParent.gameObject.GetComponent<Selection>().CycleSelection();
 		}
 		if (Manager.usingBots){
-			gameObject.AddComponent<Bot>();
+			//gameObject.AddComponent<Bot>();
+			//gameObject.GetComponent<Move>().bot = GetComponent<Bot>();
+			gameObject.GetComponent<Bot>().enabled = true;
 			gameObject.GetComponent<Move>().bot = GetComponent<Bot>();
-			gameObject.tag = "bot";
-			gameObject.GetComponent<Move>().selected = true;
+			//gameObject.tag = "bot";
+			//gameObject.GetComponent<Move>().selected = true;
 			//gameObject.GetComponent<Move>().Start();
 			//gameObject.GetComponent<Bot>().enabled = true;
 		}

@@ -5971,6 +5971,7 @@ GameObject:
   - component: {fileID: 82072701835357064}
   - component: {fileID: 114181186120163860}
   - component: {fileID: 114231907288936856}
+  - component: {fileID: 8034548908632650996}
   m_Layer: 12
   m_Name: Eggy
   m_TagString: Characters
@@ -6039,7 +6040,7 @@ SpriteRenderer:
   m_SortingLayerID: -233709207
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213057837959802658, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
+  m_Sprite: {fileID: 213094611700653660, guid: 2d2f55199ef7da449acb1bde93372d73, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6327,6 +6328,25 @@ MonoBehaviour:
   animTimeOut: 2
   namePrude: Birdy
   nameSlut: Eggy
+--- !u!114 &8034548908632650996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897057575640120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00148e97606854c4b9686ce8baf8f13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 0
+  attack: 0
+  distThresh: 5
+  hori: 0
+  vert: 0
+  target: {fileID: 0}
+  awarenessDistance: 50
 --- !u!1 &1996621083523092
 GameObject:
   m_ObjectHideFlags: 0

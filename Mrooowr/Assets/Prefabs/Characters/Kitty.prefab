@@ -5430,6 +5430,7 @@ GameObject:
   - component: {fileID: 114272928217160322}
   - component: {fileID: 114600146629562374}
   - component: {fileID: 61337064452754878}
+  - component: {fileID: 5420959497551745239}
   m_Layer: 13
   m_Name: Kitty
   m_TagString: Characters
@@ -5498,7 +5499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213171352151965296, guid: 18dfc079831314b459d817f31aed425c, type: 2}
+  m_Sprite: {fileID: 213146691243898234, guid: 18dfc079831314b459d817f31aed425c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5812,6 +5813,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7, y: 2.03}
   m_EdgeRadius: 0
+--- !u!114 &5420959497551745239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340378810683076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00148e97606854c4b9686ce8baf8f13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 0
+  attack: 0
+  distThresh: 5
+  hori: 0
+  vert: 0
+  target: {fileID: 0}
+  awarenessDistance: 50
 --- !u!1 &1349994271099316
 GameObject:
   m_ObjectHideFlags: 0

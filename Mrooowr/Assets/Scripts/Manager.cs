@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour {
 	public static bool p1Ready = false;
 	public static bool p2Ready = false;
 	public static int numPlayers = 2;
+	public int numPlayersPub;
 	public CamMove camMover;
 	public AudioClip selectClip, confirmClip;
 	public static string winner = " ";
@@ -22,6 +23,7 @@ public class Manager : MonoBehaviour {
 	public Color prudeUIColorPub;
 	public Color slutUIColorPub;
 	public static bool usingBots = false;
+	public bool usingBotsPub;
 	public bool muteMusic = false;
 	bool mutedMusic = false;
 	public AudioSource[] musicPlayers;
@@ -49,6 +51,8 @@ public class Manager : MonoBehaviour {
 		slutColor = slutColorPub;
 		prudeUIColor = prudeUIColorPub;
 		slutUIColor = slutUIColorPub;
+		numPlayersPub = numPlayers;
+		usingBotsPub = usingBots;
 
 		//Debug.Log("p1ready = " + p1Ready + "; p2ready = " + p2Ready);
 		if (p1Ready && p2Ready){
@@ -87,6 +91,12 @@ public class Manager : MonoBehaviour {
 				Time.timeScale = 1f;
 				pauseCanvas.SetActive(false);
 				closeTransition.SetActive(true);
+			}
+		} else {
+
+			if (Input.GetButtonDown("Cancel")) {
+				SceneManager.LoadScene(0);
+
 			}
 		}
 		/*
