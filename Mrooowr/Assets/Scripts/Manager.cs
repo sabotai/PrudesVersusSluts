@@ -12,7 +12,7 @@ public class Manager : MonoBehaviour {
 	public static int numPlayers = 2;
 	public int numPlayersPub;
 	public CamMove camMover;
-	public AudioClip selectClip, confirmClip;
+	public AudioClip selectClip, confirmClip, denyClip, cancelClip;
 	public static string winner = " ";
 	public static Color prudeColor;
 	public static Color slutColor;
@@ -33,6 +33,8 @@ public class Manager : MonoBehaviour {
 	public static bool paused = false;
 	public GameObject pauseCanvas;
 	public static int gameState = 0;
+    public static bool debug = false;
+    public GameObject debugDot;
 
 	// Use this for initialization
 	void Start () {
@@ -43,10 +45,18 @@ public class Manager : MonoBehaviour {
 		usingBots = false;
 		paused = false;
 		gameState = 0;
+		debug = false;
+		debugDot.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.F12)) {
+			debug = !debug;
+
+			if (debug) debugDot.SetActive(false);
+			else  debugDot.SetActive(true);
+		}
 		prudeColor = prudeColorPub;
 		slutColor = slutColorPub;
 		prudeUIColor = prudeUIColorPub;

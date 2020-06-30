@@ -54,8 +54,9 @@ public class PlayerSettings : MonoBehaviour {
             Manager.usingBots = false;
             Manager.numPlayers = 1;
         } else if (selection == 1) {
-            subAnnouncer.text = "< Bot Match >";
-            leftArrow.SetActive(true);
+            if (Manager.debug) subAnnouncer.text = "< Bot Practice Match >";
+            else subAnnouncer.text = "Bot Practice Match >"; 
+            if (Manager.debug) leftArrow.SetActive(true); else leftArrow.SetActive(false); 
             rightArrow.SetActive(true);
             dotA.color = color2;
             dotB.color = color1;
@@ -228,6 +229,10 @@ public class PlayerSettings : MonoBehaviour {
                     botScene.SetActive(false);
                     sceneS.transform.GetChild(0).gameObject.SetActive(true);
                     man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
+                } else if (selection == 3){
+
+                        man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().denyClip, 0.5f);
+ 
                 }
 
 				debounce2 = Time.realtimeSinceStartup;
@@ -256,8 +261,8 @@ public class PlayerSettings : MonoBehaviour {
 
                     man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
                 } else if (selection == 1){
-
-                    selection = 0;
+                    if (Manager.debug){
+                        selection = 0;
                         //show botscene and hide multi scene
                         botScene.SetActive(true);
                         sceneS.transform.GetChild(0).gameObject.SetActive(false);
@@ -283,7 +288,10 @@ public class PlayerSettings : MonoBehaviour {
                         sceneS.transform.GetChild(0).gameObject.SetActive(false);
 */
                         man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().selectClip, 0.5f);
-
+                    } else {
+                        man.GetComponent<AudioSource>().PlayOneShot(man.GetComponent<Manager>().denyClip, 0.5f);
+ 
+                    }
                 }
 
 				debounce2 = Time.realtimeSinceStartup;

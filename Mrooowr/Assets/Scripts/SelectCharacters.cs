@@ -96,6 +96,27 @@ public class SelectCharacters : MonoBehaviour {
 			if (Input.GetButtonDown("P" + player + "_Action")){
 				Spawn(false);
 			}
+			if (Input.GetButtonDown("P" + player + "_Next")){
+				if (gameObject.name == "SlotA") {
+
+                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().denyClip, 0.5f);
+ 
+				} else if (gameObject.name == "SlotB") {
+					Destroy(transform.parent.GetChild(transform.parent.childCount - 1).gameObject); //destroy first character
+					transform.parent.GetChild(0).gameObject.SetActive(true); //turn previous on
+					transform.parent.GetChild(1).gameObject.SetActive(false); //turn me off
+                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 0.5f);
+				} else if (gameObject.name == "SlotC") {
+
+					//Destroy(transform.parent.GetChild(transform.parent.childCount - 1).gameObject); //destroy first character
+					Destroy(transform.parent.GetChild(transform.parent.childCount - 1).gameObject); //destroy 2nd character
+					transform.parent.GetChild(1).gameObject.SetActive(true); //turn previous on
+					transform.parent.GetChild(2).gameObject.SetActive(false); //turn me off
+
+                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 0.5f);
+				}
+
+			}
 		}  
 			if (Manager.numPlayers == 1 && Manager.usingBots && Manager.p1Ready){
 				Spawn(true);
@@ -166,7 +187,13 @@ public class SelectCharacters : MonoBehaviour {
 				}
 				*/
 			}
-			Destroy(gameObject);//.SetActive(false);
+			if (gameObject.name == "SlotC") {
+				Destroy(transform.parent.GetChild(0).gameObject); //destroy slot A
+				Destroy(transform.parent.GetChild(1).gameObject); //destroy slot B
+				Destroy(transform.parent.GetChild(2).gameObject); //destroy slot C
+			} else {
+				gameObject.SetActive(false);
+			}
 	}
 
 }
