@@ -15,7 +15,8 @@ public class Intro : MonoBehaviour {
 		
 		next.SetActive(false);
 		introTime = 0f;
-	}
+
+ 	}
 	
 	// Update is called once per frame
 	void Update () {

@@ -105,7 +105,7 @@ public class SelectCharacters : MonoBehaviour {
 					Destroy(transform.parent.GetChild(transform.parent.childCount - 1).gameObject); //destroy first character
 					transform.parent.GetChild(0).gameObject.SetActive(true); //turn previous on
 					transform.parent.GetChild(1).gameObject.SetActive(false); //turn me off
-                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 0.5f);
+                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 1f);
 				} else if (gameObject.name == "SlotC") {
 
 					//Destroy(transform.parent.GetChild(transform.parent.childCount - 1).gameObject); //destroy first character
@@ -113,7 +113,7 @@ public class SelectCharacters : MonoBehaviour {
 					transform.parent.GetChild(1).gameObject.SetActive(true); //turn previous on
 					transform.parent.GetChild(2).gameObject.SetActive(false); //turn me off
 
-                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 0.5f);
+                    aud.PlayOneShot(Camera.main.gameObject.GetComponent<Manager>().cancelClip, 1f);
 				}
 
 			}

@@ -65,20 +65,22 @@ public class PlayerSettings : MonoBehaviour {
             quitDisplay.SetActive(false);
             Manager.usingBots = true;
             Manager.numPlayers = 1;
-           } else if (selection == 2) {
+        } else if (selection == 2) {
                 subAnnouncer.text = "< 2-Player >";
                 leftArrow.SetActive(true);
                 rightArrow.SetActive(true);
+                Manager.usingBots = false;
                 dotA.color = color2;
                 dotB.color = color2;
                 dotC.color = color1;
                 dotD.color = color2;
                 quitDisplay.SetActive(false);
                 Manager.numPlayers = 2;
-                } else if (selection == 3) {
+        } else if (selection == 3) {
                     subAnnouncer.text = "< Quit game";
                     leftArrow.SetActive(true);
                     rightArrow.SetActive(false);
+                    Manager.usingBots = false;
                     dotA.color = color2;
                     dotB.color = color2;
                     dotC.color = color2;
