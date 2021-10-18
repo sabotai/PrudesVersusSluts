@@ -58,7 +58,7 @@ public class Selection : MonoBehaviour {
 				
 				coolDownAmt *= spamPunishment;
 				coolDownAmt = Mathf.Min(coolDownAmt, maxCool);
-				GetComponent<AudioSource>().PlayOneShot(badClip);
+				GetComponent<AudioSource>().PlayOneShot(badClip, 0.7f);
 				GameObject punishMet = Instantiate(punishMeter, transform.GetChild(selected).GetChild(2)) as GameObject;
 				punishMet.GetComponent<TimerUI>().timerAmt = coolDownAmt;
 				punishMet.GetComponent<TimerUI>().start();

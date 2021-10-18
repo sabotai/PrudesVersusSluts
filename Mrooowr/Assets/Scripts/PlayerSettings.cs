@@ -17,6 +17,7 @@ public class PlayerSettings : MonoBehaviour {
 	CamMove camMove;
     public GameObject leftArrow, rightArrow;
     public Image dotA, dotB, dotC, dotD;
+    public bool skip = false;
 
 
     float debounce1 = 0f;
@@ -92,9 +93,9 @@ public class PlayerSettings : MonoBehaviour {
 
 
 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown || skip)
         {
-            if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action"))
+            if (Input.GetButtonDown("P1_Action") || Input.GetButtonDown("P2_Action") || skip)
             {
                 //p1Controls.SetActive(true);
                 Manager.numPlayers = Mathf.Max(1, selection);

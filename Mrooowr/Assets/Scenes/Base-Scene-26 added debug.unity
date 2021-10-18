@@ -5954,7 +5954,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273122138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
@@ -5981,7 +5981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273122138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -13349,6 +13349,7 @@ MonoBehaviour:
   closeTransition: {fileID: 366582380}
   pauseCanvas: {fileID: 2139290608}
   debugDot: {fileID: 1846893468}
+  IntroScene: {fileID: 82266066}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -15339,6 +15340,7 @@ MonoBehaviour:
   dotB: {fileID: 426782064}
   dotC: {fileID: 1046100534}
   dotD: {fileID: 1260434882}
+  skip: 1
   repeat: 0.2
 --- !u!114 &620294484
 MonoBehaviour:
@@ -26965,7 +26967,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177068894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
@@ -26992,7 +26994,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177068894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -49176,7 +49178,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 213979210127049454, guid: 5397f08c276eda241a9af36b3b47cc58, type: 2}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

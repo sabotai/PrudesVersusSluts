@@ -35,6 +35,7 @@ public class Manager : MonoBehaviour {
 	public static int gameState = 0;
     public static bool debug = false;
     public GameObject debugDot;
+    public GameObject IntroScene;
 
 	// Use this for initialization
 	void Start () {
@@ -105,7 +106,8 @@ public class Manager : MonoBehaviour {
 		} else {
 
 			if (Input.GetButtonDown("Cancel")) {
-				SceneManager.LoadScene(0);
+				if (IntroScene.activeSelf) Application.Quit();
+				else SceneManager.LoadScene(0);
 
 			}
 		}
